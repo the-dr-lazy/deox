@@ -13,11 +13,14 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "npm run test --watch",
     "prebuild": "npm run clean",
     "build": "tsc -p tsconfig.build.json && rollup -c",
     "postbuild": "rimraf tmp",
-    "clean": "rimraf tmp dist"
+    "clean": "rimraf tmp dist",
+    "fix": "tslint -p . --fix",
+    "pretty": "prettier --write"
   },
   "dependencies": {
     "tslib": "^1.9.3"
@@ -25,7 +28,9 @@
   "devDependencies": {
     "@types/jest": "^23.3.12",
     "@types/node": "^10.12.18",
+    "husky": "^1.3.1",
     "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.1.0",
     "rollup-plugin-commonjs": "^9.2.0",
@@ -35,6 +40,9 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-terser": "^4.0.2",
     "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.2.2"
   },
   "keywords": [
@@ -48,5 +56,20 @@
     "ngrx",
     "typescript",
     "action-creator"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run fix",
+      "git add"
+    ],
+    "*.{md,json,js}": [
+      "npm run pretty",
+      "git add"
+    ]
+  }
 }
