@@ -6,6 +6,19 @@
   "repository": "https://github.com/thebrodmann/flux-typesafe",
   "author": "Mohammad Hasani <atretoname@gmail.com> (https://github.com/thebrodmann)",
   "license": "MIT",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  },
   "keywords": [
     "reducer",
     "action",
