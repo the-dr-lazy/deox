@@ -1,0 +1,21 @@
+{
+  "name": "flux-typesafe",
+  "version": "0.0.0",
+  "description": "Typesafe Flux Standard Utilities",
+  "main": "dist/index.js",
+  "repository": "https://github.com/thebrodmann/flux-typesafe",
+  "author": "Mohammad Hasani <atretoname@gmail.com> (https://github.com/thebrodmann)",
+  "license": "MIT",
+  "keywords": [
+    "reducer",
+    "action",
+    "typesafe",
+    "redux",
+    "react",
+    "angular",
+    "rxjs",
+    "ngrx",
+    "typescript",
+    "action-creator"
+  ]
+}
