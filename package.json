@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test --watch",
+    "test:watch": "npm run test -- --watch",
     "prebuild": "npm run clean",
     "build": "tsc -p tsconfig.build.json && rollup -c",
     "postbuild": "rimraf tmp",
@@ -68,11 +68,11 @@
   },
   "lint-staged": {
     "*.ts": [
-      "npm run fix",
+      "npm run fix --",
       "git add"
     ],
     "*.{md,json,js}": [
-      "npm run pretty",
+      "npm run pretty --",
       "git add"
     ]
   }
