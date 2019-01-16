@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
+  "browser": "dist/index.umd.min.js",
   "repository": "https://github.com/thebrodmann/deox",
   "author": "Mohammad Hasani <atretoname@gmail.com> (https://github.com/thebrodmann)",
   "license": "MIT",
