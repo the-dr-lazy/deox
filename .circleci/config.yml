@@ -29,30 +29,60 @@ jobs:
       - run:
           name: Unit Testing
           command: yarn test
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Build distributable bundles and type definitions
+          command: npm run build
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
   publish:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
+
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+
       - run:
           name: Publish package
           command: npm publish
 
 workflows:
   version: 2
-  test-publish:
+  test-build-publish:
     jobs:
       - test:
           filters:
             tags:
               only: /.*/
 
-      - publish:
+      - build:
           requires:
             - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
+
+      - publish:
+          requires:
+            - build
           filters:
             tags:
               only: /^v.*/
