@@ -20,7 +20,8 @@
     "postbuild": "rimraf tmp",
     "clean": "rimraf tmp dist",
     "fix": "tslint -p . --fix",
-    "pretty": "prettier --write"
+    "pretty": "prettier --write",
+    "ci:validate": "circleci config validate"
   },
   "dependencies": {
     "tslib": "^1.9.3"
@@ -74,6 +75,9 @@
     "*.{md,json,js}": [
       "npm run pretty --",
       "git add"
+    ],
+    ".circleci/config.yml": [
+      "npm run ci:validate"
     ]
   }
 }
