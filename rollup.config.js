@@ -9,7 +9,7 @@ import pkg from './package.json'
 export default [
   {
     input: './tmp/index.js',
-    output: { name: 'FluxTypesafe', file: pkg.browser, format: 'umd' },
+    output: { name: 'Deox', file: pkg.browser, format: 'umd' },
     plugins: [resolve(), commonjs(), sourcemaps(), terser(), filesize()],
   },
   {
