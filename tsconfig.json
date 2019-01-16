@@ -13,7 +13,7 @@
     "declaration": false,
     "baseUrl": ".",
     "paths": {
-      "flux-typesafe": ["./src"]
+      "deox": ["./src"]
     }
   }
 }
