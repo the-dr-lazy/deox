@@ -28,11 +28,11 @@ jobs:
 
       - run:
           name: Unit Testing
-          command: yarn test
+          command: yarn run test -- --ci
 
       - run:
           name: DTS Testing
-          command: yarn run test:dts
+          command: yarn run test:dts -- --ci
 
       - persist_to_workspace:
           root: ~/repo
