@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createAction should create action creator with error payload 1`] = `
+Object {
+  "error": true,
+  "payload": [Error],
+  "type": "[Todo] fetch rejected",
+}
+`;
+
+exports[`createAction should create action creator with error payload and meta 1`] = `
+Object {
+  "error": true,
+  "meta": Object {
+    "status": 403,
+  },
+  "payload": [Error],
+  "type": "[Todo] fetch rejected",
+}
+`;
+
+exports[`createAction should create action creator with non-error payload 1`] = `
+Object {
+  "payload": Object {
+    "completed": false,
+    "name": "Prepare for practical parasitology course!",
+  },
+  "type": "[Todo] add",
+}
+`;
+
+exports[`createAction should create action creator with non-error payload and meta 1`] = `
+Object {
+  "meta": "Be patient",
+  "payload": Object {
+    "name": "Prepare for practical parasitology course!",
+  },
+  "type": "[Todo] add",
+}
+`;
+
+exports[`createAction should create action creator with type-only action with empty executor 1`] = `
+Object {
+  "type": "[Todo] truncate",
+}
+`;
+
+exports[`createAction should create action creator with type-only action without executor 1`] = `
+Object {
+  "type": "[Todo] truncate",
+}
+`;
