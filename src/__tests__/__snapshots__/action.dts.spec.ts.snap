@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`action action('[Todo] add', { name: \`Read Robbin's\` }) (type) should match snapshot: action action('[Todo] add', { name: \`Read Robbin's\` }) 1`] = `"{ type: \\"[Todo] add\\"; payload: { name: string; }; }"`;
+
+exports[`action action('[Todo] add', { name: \`Read Robbin's\` }, 'Book is on bookshelf') (type) should match snapshot: action action('[Todo] add', { name: \`Read Robbin's\` }, 'Book is on bookshelf') 1`] = `"{ type: \\"[Todo] add\\"; payload: { name: string; }; meta: string; }"`;
+
+exports[`action action('[Todo] add', { name: \`Read Robbin's\` }, 'Book is on bookshelf') (type) should match snapshot: action action('[Todo] add', { name: \`Read Robbin's\` }, 'Book is on bookshelf') 2`] = `"{ type: \\"[Todo] add\\"; payload: { name: string; }; meta: string; }"`;
+
+exports[`action action('[Todo] fetch rejected', new Error()) (type) should match snapshot: action action('[Todo] fetch rejected', new Error()) 1`] = `"{ type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }"`;
+
+exports[`action action('[Todo] fetch rejected', new Error(), { status: 403 }) (type) should match snapshot: action action('[Todo] fetch rejected', new Error(), { status: 403 }) 1`] = `"{ type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }"`;
+
+exports[`action action('[Todo] truncate') (type) should match snapshot: action action('[Todo] truncate') 1`] = `"{ type: \\"[Todo] truncate\\"; }"`;
