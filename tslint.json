@@ -30,8 +30,8 @@
     "label-position": true,
     "member-access": [true, "no-public"],
     "new-parens": true,
-    "no-angle-bracket-type-assertion": true,
-    "no-any": true,
+    "no-angle-bracket-type-assertion": false,
+    "no-any": false,
     "no-arg": true,
     "no-conditional-assignment": true,
     "no-construct": true,
@@ -65,6 +65,15 @@
       "allow-trailing-underscore"
     ],
     "interface-over-type-literal": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "any",
+        "grouped-imports": true,
+        "named-imports-order": "lowercase-first",
+        "module-source-path": "basename"
+      }
+    ]
   }
 }
