@@ -1,3 +1,3 @@
-export * from './action'
+export { action, Action, AnyAction } from './action'
 export { createAction, ActionCreator } from './create-action'
 export { getType } from './get-type'
