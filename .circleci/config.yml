@@ -30,6 +30,10 @@ jobs:
           name: Unit Testing
           command: yarn test
 
+      - run:
+          name: DTS Testing
+          command: yarn run test:dts
+
       - persist_to_workspace:
           root: ~/repo
           paths: .
