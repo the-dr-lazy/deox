@@ -17,7 +17,7 @@ module.exports = {
     _dts_jest_: {
       transpile: false,
       test_value: false,
-      enclosing_declaration: true,
+      enclosing_declaration: false,
       compiler_options: 'tsconfig.spec.json',
     },
   },
