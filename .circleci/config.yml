@@ -32,7 +32,7 @@ jobs:
 
       - run:
           name: DTS Testing
-          command: yarn run test:dts -- --ci
+          command: yarn run test-dts -- --ci
 
       - persist_to_workspace:
           root: ~/repo
