@@ -14,11 +14,11 @@ export default [
   },
   {
     input: './tmp/index.js',
-    externals: ['tslib'],
+    external: ['tslib'],
     output: [
       { file: pkg.module, format: 'es' },
       { file: pkg.main, format: 'cjs' },
     ],
-    plugins: [filesize()],
+    plugins: [resolve(), filesize()],
   },
 ]
