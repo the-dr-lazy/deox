@@ -1,4 +1,7 @@
 {
   "editor.formatOnSave": true,
-  "jest.pathToConfig": "jest.config.js"
+  "jest.pathToConfig": "jest.config.js",
+  "files.associations": {
+    ".releaserc": "json"
+  }
 }
