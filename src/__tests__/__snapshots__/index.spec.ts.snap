@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`public API has proper exports 1`] = `
+Object {
+  "action": [Function],
+  "createAction": [Function],
+  "createReducer": [Function],
+  "getType": [Function],
+}
+`;
