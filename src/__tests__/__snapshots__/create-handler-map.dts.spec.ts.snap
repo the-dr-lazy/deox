@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createHandlerMap handle([increment, increase], (state: number) => state + 1) (type) should match snapshot: createHandlerMap handle([increment, increase], (state: number) => state + 1) 1`] = `"import(\\"/Users/brodmann/Projects/@thebrodmann/deox/src/create-handler-map\\").HandlerMap<number, { type: \\"[Counter] increment\\"; } | { type: \\"[Counter] increase\\"; }>"`;
+
+exports[`createHandlerMap handle(increment, (state: number) => state + 1) (type) should match snapshot: createHandlerMap handle(increment, (state: number) => state + 1) 1`] = `"import(\\"/Users/brodmann/Projects/@thebrodmann/deox/src/create-handler-map\\").HandlerMap<number, { type: \\"[Counter] increment\\"; }>"`;

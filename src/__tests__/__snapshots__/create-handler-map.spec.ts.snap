@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createHandlerMap should belong multiple actions to one handler 1`] = `
+Object {
+  "[Counter] increase": [Function],
+  "[Counter] increment": [Function],
+}
+`;
+
+exports[`createHandlerMap should belong one action to one handler 1`] = `
+Object {
+  "[Counter] increment": [Function],
+}
+`;
