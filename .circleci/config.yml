@@ -28,11 +28,15 @@ jobs:
 
       - run:
           name: Unit Testing
-          command: yarn run test -- --ci
+          command: yarn run test -- --ci --coverage
 
       - run:
           name: DTS Testing
           command: yarn run test-dts -- --ci
+
+      - run:
+          name: Upload coverage to codecov
+          command: npx codecov
 
       - persist_to_workspace:
           root: ~/repo
