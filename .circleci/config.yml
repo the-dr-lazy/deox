@@ -28,11 +28,11 @@ jobs:
 
       - run:
           name: Unit Testing
-          command: yarn run test -- --ci --coverage
+          command: yarn run test --ci --coverage
 
       - run:
           name: DTS Testing
-          command: yarn run test-dts -- --ci
+          command: yarn run test-dts --ci
 
       - run:
           name: Upload coverage to codecov
