@@ -50,7 +50,7 @@ jobs:
 
       - run:
           name: Build distributable bundles and type definitions
-          command: npm run build
+          command: yarn run build
 
       - persist_to_workspace:
           root: ~/repo
