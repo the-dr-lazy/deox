@@ -2,11 +2,15 @@ import { createAction } from '../create-action'
 
 describe('createAction', () => {
   it('should expose action type of action creator via .type', () => {
-    expect(createAction('[Todo] truncate')).toHaveProperty('type')
+    const type = '[Todo] truncate'
+
+    expect(createAction(type).type).toBe(type)
   })
 
-  it('should expose action type of action creator via toString()', () => {
-    expect(createAction('[Todo] truncate')).toHaveProperty('toString')
+  it('should expose action type of action creator via .toString()', () => {
+    const type = '[Todo] truncate'
+
+    expect(createAction(type).toString()).toBe(type)
   })
 
   it('should create action creator with type-only action without executor', () => {
