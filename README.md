@@ -9,6 +9,9 @@
   <a href="https://circleci.com/gh/thebrodmann/deox">
     <img alt="Build Status" src="https://img.shields.io/circleci/project/github/thebrodmann/deox/master.svg?label=build&logo=circleci&style=flat-square">
   </a>
+  <a href="https://codecov.io/gh/thebrodmann/deox">
+    <img alt="Coverage Status" src="https://img.shields.io/codecov/c/gh/thebrodmann/deox.svg?style=flat-square">
+  </a>
   <a href="https://greenkeeper.io/">
     <img alt="Greenkeeper Status" src="https://badges.greenkeeper.io/thebrodmann/deox.svg?style=flat-square">
   </a>
