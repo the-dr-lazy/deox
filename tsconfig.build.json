@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "files": ["./src/index.ts", "./src/types.d.ts"],
+  "files": ["./src/index.ts"],
   "include": [],
   "exclude": [],
   "compilerOptions": {

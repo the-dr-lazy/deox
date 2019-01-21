@@ -1,6 +1,7 @@
 import { ActionCreator } from './create-action'
 import { AnyAction } from './action'
 import { getType } from './get-type'
+import { Reducer } from './types'
 
 export type HandlerMap<State, Actions extends AnyAction> = {
   [key in Actions['type']]: Reducer<State, Actions>
