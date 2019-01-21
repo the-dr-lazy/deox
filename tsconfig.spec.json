@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["./src/**/__tests__/*", "./src/types.d.ts"],
+  "include": ["./src/**/__tests__/*"],
   "compilerOptions": {
     "target": "esnext",
     "esModuleInterop": true
