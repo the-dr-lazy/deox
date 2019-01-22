@@ -1,0 +1,27 @@
+{
+  "name": "tasks",
+  "version": "0.0.0",
+  "description": "Tasks (Example application for Deox)",
+  "main": "index.js",
+  "repository": "https://github.com/thebrodmann/deox",
+  "author": "Mohammad Hasani <thebrodmann@gmail.com> (https://github.com/thebrodmann)",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel serve public/index.html --cache-dir node_modules/.cache/parcel --open",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production parcel build public/index.html --cache-dir node_modules/.cache/parcel",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "cross-env": "^5.2.0",
+    "parcel-bundler": "^1.11.0",
+    "rimraf": "^2.6.3",
+    "sass": "^1.16.1"
+  }
+}

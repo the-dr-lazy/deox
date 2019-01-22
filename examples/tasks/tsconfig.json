@@ -1,0 +1,17 @@
+{
+  "include": ["src/**/*"],
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "baseUrl": "./src",
+    "paths": {}
+  }
+}
