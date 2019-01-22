@@ -88,6 +88,54 @@ counter(undefined, decrement()) //=> -1
 
 ## FAQ
 
+### Why not `redux-actions`, `redux-starter-kit` ?
+
+Both `redux-actions` and `redux-starter-kit` are neat and almost similar to each other.
+Actually `deox` is similar to those projects in the idea, but not in implementation and promise.
+The main goal of `deox` is to use the full power of **type-safety** and **type inferring** in typescript.
+If you have some experience with those libraries, the following piece of code should be familiar for you:
+
+```ts
+type Actions
+  = ReturnType<typeof addTodo>
+  | ReturnType<typeof removeTodo>
+  | ReturnType<typeof editTodo>
+
+const todos = createReducer<State, Actions>(...)
+```
+
+This is horrible; Why define a type like actions that a reducer can handle?! It's completely obvious which actions a reducer handles.
+
+On another hand there is a big problem with the pattern that `redux-actions` and `redux-starter-kit` follows. it's lack of correct type for action handler:
+
+```ts
+const todos = createReducer<State, Actions>(defaultState, {
+  [addTodo]: (state, action) => {...}, // action: Actions
+  [removeTodo]: (state, action) => {...}, // action: Actions
+  [editTodo]: (state, action) => {...}, // action: Actions
+})
+```
+
+Type of action parameter in `addTodo` action handler is overall `Actions` type. It's inaccurate!
+
+And this is where `deox` comes in action and practice:
+
+```ts
+const todos = createReducer(defaultState, handle => [
+  handle(addTodo, (state, action) => {...}), // action: AddTodoAction
+  handle(removeTodo, (state, action) => {...}), // action: RemoveTodoAction
+  handle(editTodo, (state, action) => {...}) // action: EditTodoAction
+])
+```
+
+That's it. Thanks to typescript type inferring **there is no type verbosity** at all. You can be sure `todos` reducer have the proper type of state and actions that it can handle.
+And every action handler's type is just what it should be. It's completely safe and correct!
+
+### What's the difference with `typesafe-actions` ?
+
+The `typesafe-actions` is a great project that `deox` carries huge inspiration from that.
+But `typesafe-actions` doesn't have any plan for a complete set of utilities (specially reducers); **It's all about actions and action creators**.
+
 ## Versioning
 
 Deox uses [Semantic Versioning 2.0.0](https://semver.org/)
