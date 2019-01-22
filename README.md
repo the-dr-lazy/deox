@@ -144,6 +144,11 @@ Deox uses [Semantic Versioning 2.0.0](https://semver.org/)
 
 Please read through our [contributing guidelines](CONTRIBUTING.md).
 
+## Inspiration
+
+- [redux-actions](https://github.com/redux-utilities/redux-actions) - Flux Standard Action utilities for Redux
+- [typesafe-actions](https://github.com/piotrwitek/typesafe-actions) - Typesafe Action Creators for Redux / Flux Architectures (in TypeScript)
+
 ## License
 
 deox is [MIT licensed](LICENSE).
