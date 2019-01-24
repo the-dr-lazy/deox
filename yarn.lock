@@ -342,6 +342,15 @@
     into-stream "^4.0.0"
     lodash "^4.17.4"
 
+"@thebrodmann/tslint-config@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@thebrodmann/tslint-config/-/tslint-config-0.2.0.tgz#3c6c87c9bfb261a8692a20c125802e5a7eadd8a1"
+  integrity sha512-u6GY/V8VJoH5GRQz/7htNdKy8wPjNf69HKu51WaI7pJwsz3Nsshvotgem7G5Ggh998MsCCdoinAAQvqw4OI1Ew==
+  dependencies:
+    tslint "^5.12.1"
+    tslint-config-prettier "^1.17.0"
+    tslint-config-standard "^8.0.1"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
