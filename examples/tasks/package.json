@@ -6,6 +6,7 @@
   "repository": "https://github.com/thebrodmann/deox",
   "author": "Mohammad Hasani <thebrodmann@gmail.com> (https://github.com/thebrodmann)",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "parcel serve public/index.html --cache-dir node_modules/.cache/parcel --open",
     "prebuild": "npm run clean",
