@@ -13,12 +13,18 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@types/redux": "^3.6.0",
+    "deox": "^1.0.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7"
   },
   "devDependencies": {
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^7.0.0",
     "cross-env": "^5.2.0",
     "parcel-bundler": "^1.11.0",
     "rimraf": "^2.6.3",
