@@ -11,7 +11,9 @@
     "start": "parcel serve public/index.html --cache-dir node_modules/.cache/parcel --open",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production parcel build public/index.html --cache-dir node_modules/.cache/parcel",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@types/redux": "^3.6.0",
@@ -27,8 +29,10 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^7.0.0",
     "cross-env": "^5.2.0",
+    "jest": "^23.6.0",
     "parcel-bundler": "^1.11.0",
     "rimraf": "^2.6.3",
-    "sass": "^1.16.1"
+    "sass": "^1.16.1",
+    "ts-jest": "^23.10.5"
   }
 }
