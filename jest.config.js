@@ -7,6 +7,7 @@ module.exports = {
   testPathIgnorePatterns: [
     '(/__tests__/.*\\.dts|\\.dts\\.(test|spec))\\.tsx?$',
   ],
+  roots: ['src'],
   testEnvironment: 'node',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
   collectCoverageFrom: ['src/**/*.ts', '!src/**/*.spec.ts', '!**/__tests__/**'],
