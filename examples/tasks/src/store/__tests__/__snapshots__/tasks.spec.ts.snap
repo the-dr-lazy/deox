@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tasks entity action creators should create an action to add task 1`] = `
+Object {
+  "payload": Object {
+    "description": "Obviously a good tasks is good",
+    "id": "5",
+    "isFinished": false,
+    "title": "A good task",
+  },
+  "type": "[Tasks] add",
+}
+`;
+
+exports[`tasks entity action creators should create an action to add task 2`] = `
+Object {
+  "payload": Object {
+    "description": "Obviously a good tasks is good",
+    "id": "5",
+    "isFinished": true,
+    "title": "A good task",
+  },
+  "type": "[Tasks] add",
+}
+`;
+
+exports[`tasks entity action creators should create an action to edit task 1`] = `
+Object {
+  "payload": Object {
+    "x": Object {
+      "isFinished": true,
+      "title": "New title for task",
+    },
+  },
+  "type": "[Tasks] edit",
+}
+`;
+
+exports[`tasks entity action creators should create an action to remove all finished tasks 1`] = `
+Object {
+  "type": "[Tasks] remove finished",
+}
+`;
+
+exports[`tasks entity action creators should create an action to remove task 1`] = `
+Object {
+  "payload": "x",
+  "type": "[Tasks] remove",
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] add" 1`] = `
+Object {
+  "allIds": Array [
+    "5",
+  ],
+  "byId": Object {
+    "5": Object {
+      "description": "Obviously a good tasks is good",
+      "id": "5",
+      "isFinished": false,
+      "title": "A good task",
+    },
+  },
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] add" 2`] = `
+Object {
+  "allIds": Array [
+    "5",
+  ],
+  "byId": Object {
+    "5": Object {
+      "description": "Obviously a good tasks is good",
+      "id": "5",
+      "isFinished": true,
+      "title": "A good task",
+    },
+  },
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] edit" 1`] = `
+Object {
+  "allIds": Array [
+    "x",
+  ],
+  "byId": Object {
+    "x": Object {
+      "description": "Obviously a good tasks is good",
+      "id": "x",
+      "isFinished": false,
+      "title": "New title for task",
+    },
+  },
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] edit" 2`] = `
+Object {
+  "allIds": Array [
+    "x",
+  ],
+  "byId": Object {
+    "x": Object {
+      "description": "New description for task",
+      "id": "x",
+      "isFinished": false,
+      "title": "A good task",
+    },
+  },
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] edit" 3`] = `
+Object {
+  "allIds": Array [
+    "x",
+  ],
+  "byId": Object {
+    "x": Object {
+      "description": "Obviously a good tasks is good",
+      "id": "x",
+      "isFinished": true,
+      "title": "A good task",
+    },
+  },
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] remove finished" 1`] = `
+Object {
+  "allIds": Array [
+    "y",
+  ],
+  "byId": Object {
+    "y": Object {
+      "description": ":|",
+      "id": "y",
+      "isFinished": false,
+      "title": "Another good task",
+    },
+  },
+}
+`;
+
+exports[`tasks entity tasks reducer should handle "[Tasks] remove" 1`] = `
+Object {
+  "allIds": Array [],
+  "byId": Object {},
+}
+`;
