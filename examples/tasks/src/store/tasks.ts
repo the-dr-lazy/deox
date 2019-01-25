@@ -1,6 +1,6 @@
 import { createAction, createReducer } from 'deox'
 import R from 'ramda'
-import { uuid } from 'utils'
+import { uuid } from '~/utils'
 
 export type Task = {
   id: string
@@ -43,24 +43,14 @@ const defaultState: TasksState = {
 }
 
 export const tasks = createReducer(defaultState, handleAction => [
-  handleAction(addTask, (state, { payload }) =>
-    R.evolve(
-      {
-        byId: R.assoc(payload.id, payload),
-        allIds: R.concat([payload.id]),
-      },
-      state
-    )
-  ),
-  handleAction(removeTask, (state, { payload }) =>
-    R.evolve(
-      {
-        byId: R.dissoc(payload),
-        allIds: R.without([payload]),
-      },
-      state
-    )
-  ),
+  handleAction(addTask, (state, { payload }) => ({
+    byId: R.assoc(payload.id, payload, state.byId),
+    allIds: [...state.allIds, payload.id],
+  })),
+  handleAction(removeTask, (state, { payload }) => ({
+    byId: R.dissoc(payload, state.byId),
+    allIds: R.without([payload], state.allIds),
+  })),
   handleAction(editTask, (state, { payload }) =>
     R.evolve({ byId: R.mergeDeepLeft(payload) }, state)
   ),

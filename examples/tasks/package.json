@@ -8,9 +8,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "parcel serve public/index.html --cache-dir node_modules/.cache/parcel --open",
+    "start": "parcel serve src/index.html --cache-dir node_modules/.cache/parcel --open",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production parcel build public/index.html --cache-dir node_modules/.cache/parcel",
+    "build": "cross-env NODE_ENV=production parcel build src/index.html --cache-dir node_modules/.cache/parcel",
     "clean": "rimraf dist",
     "test": "jest",
     "test:watch": "jest --watch"

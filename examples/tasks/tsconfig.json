@@ -13,6 +13,9 @@
     "noEmitHelpers": true,
     "importHelpers": true,
     "baseUrl": "./src",
-    "paths": {}
+    "paths": {
+      "~*": ["./*"]
+    },
+    "outDir": "./build"
   }
 }
