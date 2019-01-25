@@ -4,6 +4,7 @@ import {
   HandlerMap,
 } from './create-handler-map'
 import { merge } from './utils'
+import { DeepImmutable } from './types'
 
 /**
  * Reducer factory
@@ -21,7 +22,7 @@ export function createReducer<State, HM extends HandlerMap<State, any>>(
   const handlerMap = merge(...handlerMapsCreator(createHandlerMap))
 
   return (
-    state = defaultState,
+    state = <DeepImmutable<State>>defaultState,
     action: HM extends HandlerMap<State, infer T> ? T : never
   ) => {
     const handler = handlerMap[action.type]
