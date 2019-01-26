@@ -1,0 +1,8 @@
+@import '~normalize-scss';
+
+@import './utils/module';
+@import './base/module';
+
+$font-weights: str-replace(#{map-values($font-weight)}, ' ');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:#{$font-weights}');

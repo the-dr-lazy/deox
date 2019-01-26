@@ -32,6 +32,8 @@
     "@types/react-redux": "^7.0.0",
     "cross-env": "^5.2.0",
     "jest": "^23.6.0",
+    "modularscale-sass": "^3.0.8",
+    "normalize-scss": "^7.0.1",
     "parcel-bundler": "^1.11.0",
     "rimraf": "^2.6.3",
     "sass": "^1.16.1",

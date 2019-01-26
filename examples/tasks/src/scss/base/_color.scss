@@ -1,0 +1,11 @@
+$color: (
+  white: #ffffff,
+  big-stone: #152638,
+  blue-bayoux: #506173,
+  heather: #bdcad7,
+  dodger-blue: #208efe,
+);
+
+@function color($name) {
+  @return map-get($color, $name);
+}

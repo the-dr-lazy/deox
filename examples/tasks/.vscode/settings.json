@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    ".sassrc": "json"
+  },
+  "material-icon-theme.files.associations": {
+    ".sassrc": "sass"
+  }
+}
