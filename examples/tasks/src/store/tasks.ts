@@ -1,5 +1,15 @@
 import { createAction, createReducer } from 'deox'
-import R from 'ramda'
+import {
+  assoc,
+  dissoc,
+  evolve,
+  mergeDeepLeft,
+  not,
+  pickBy,
+  pipe,
+  prop,
+  without,
+} from 'ramda'
 import { uuid } from '~/utils'
 
 export type Task = {
@@ -44,21 +54,21 @@ const defaultState: TasksState = {
 
 export const tasks = createReducer(defaultState, handleAction => [
   handleAction(addTask, (state, { payload }) => ({
-    byId: R.assoc(payload.id, payload, state.byId),
+    byId: assoc(payload.id, payload, state.byId),
     allIds: [...state.allIds, payload.id],
   })),
   handleAction(removeTask, (state, { payload }) => ({
-    byId: R.dissoc(payload, state.byId),
-    allIds: R.without([payload], state.allIds),
+    byId: dissoc(payload, state.byId),
+    allIds: without([payload], state.allIds),
   })),
   handleAction(editTask, (state, { payload }) =>
-    R.evolve({ byId: R.mergeDeepLeft(payload) }, state)
+    evolve({ byId: mergeDeepLeft(payload) }, state)
   ),
   handleAction(removeFinishedTasks, state => {
-    const byId = <TasksState['byId']>R.pickBy(
-      R.pipe(
-        R.prop<Task, 'isFinished'>('isFinished'),
-        R.not
+    const byId = <TasksState['byId']>pickBy(
+      pipe(
+        prop<Task, 'isFinished'>('isFinished'),
+        not
       ),
       state.byId
     )
