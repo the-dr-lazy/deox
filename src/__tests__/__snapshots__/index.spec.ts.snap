@@ -6,5 +6,6 @@ Object {
   "createAction": [Function],
   "createReducer": [Function],
   "getType": [Function],
+  "ofType": [Function],
 }
 `;
