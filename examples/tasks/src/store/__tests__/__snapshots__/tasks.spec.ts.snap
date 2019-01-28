@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tasks entity action creators should create an action to add task 1`] = `
+exports[`tasks action creators should create an action to add task 1`] = `
 Object {
   "payload": Object {
     "description": "Obviously a good tasks is good",
@@ -12,7 +12,7 @@ Object {
 }
 `;
 
-exports[`tasks entity action creators should create an action to add task 2`] = `
+exports[`tasks action creators should create an action to add task 2`] = `
 Object {
   "payload": Object {
     "description": "Obviously a good tasks is good",
@@ -24,7 +24,7 @@ Object {
 }
 `;
 
-exports[`tasks entity action creators should create an action to edit task 1`] = `
+exports[`tasks action creators should create an action to edit task 1`] = `
 Object {
   "payload": Object {
     "x": Object {
@@ -36,20 +36,20 @@ Object {
 }
 `;
 
-exports[`tasks entity action creators should create an action to remove all finished tasks 1`] = `
+exports[`tasks action creators should create an action to remove all finished tasks 1`] = `
 Object {
   "type": "[Tasks] remove finished",
 }
 `;
 
-exports[`tasks entity action creators should create an action to remove task 1`] = `
+exports[`tasks action creators should create an action to remove task 1`] = `
 Object {
   "payload": "x",
   "type": "[Tasks] remove",
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] add" 1`] = `
+exports[`tasks reducer should handle "[Tasks] add" 1`] = `
 Object {
   "allIds": Array [
     "5",
@@ -65,7 +65,7 @@ Object {
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] add" 2`] = `
+exports[`tasks reducer should handle "[Tasks] add" 2`] = `
 Object {
   "allIds": Array [
     "5",
@@ -81,7 +81,7 @@ Object {
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] edit" 1`] = `
+exports[`tasks reducer should handle "[Tasks] edit" 1`] = `
 Object {
   "allIds": Array [
     "x",
@@ -97,7 +97,7 @@ Object {
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] edit" 2`] = `
+exports[`tasks reducer should handle "[Tasks] edit" 2`] = `
 Object {
   "allIds": Array [
     "x",
@@ -113,7 +113,7 @@ Object {
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] edit" 3`] = `
+exports[`tasks reducer should handle "[Tasks] edit" 3`] = `
 Object {
   "allIds": Array [
     "x",
@@ -129,7 +129,7 @@ Object {
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] remove finished" 1`] = `
+exports[`tasks reducer should handle "[Tasks] remove finished" 1`] = `
 Object {
   "allIds": Array [
     "y",
@@ -145,9 +145,26 @@ Object {
 }
 `;
 
-exports[`tasks entity tasks reducer should handle "[Tasks] remove" 1`] = `
+exports[`tasks reducer should handle "[Tasks] remove" 1`] = `
 Object {
   "allIds": Array [],
   "byId": Object {},
 }
+`;
+
+exports[`tasks selectors should get all tasks 1`] = `
+Array [
+  Object {
+    "description": "Obviously a good tasks is good",
+    "id": "x",
+    "isFinished": true,
+    "title": "A good task",
+  },
+  Object {
+    "description": ":|",
+    "id": "y",
+    "isFinished": false,
+    "title": "Another good task",
+  },
+]
 `;

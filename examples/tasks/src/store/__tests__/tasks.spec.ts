@@ -1,12 +1,13 @@
 import {
   addTask,
   editTask,
+  getAllTasks,
   removeFinishedTasks,
   removeTask,
   tasks,
 } from '../tasks'
 
-describe('tasks entity', () => {
+describe('tasks', () => {
   describe('action creators', () => {
     it.each([
       {
@@ -42,7 +43,7 @@ describe('tasks entity', () => {
     })
   })
 
-  describe('tasks reducer', () => {
+  describe('reducer', () => {
     it.each([
       {
         title: 'A good task',
@@ -125,6 +126,30 @@ describe('tasks entity', () => {
       const action = removeFinishedTasks()
 
       expect(tasks(state, action)).toMatchSnapshot()
+    })
+  })
+
+  describe('selectors', () => {
+    it('should get all tasks', () => {
+      const state = {
+        byId: {
+          x: {
+            id: 'x',
+            title: 'A good task',
+            description: 'Obviously a good tasks is good',
+            isFinished: true,
+          },
+          y: {
+            id: 'y',
+            title: 'Another good task',
+            description: ':|',
+            isFinished: false,
+          },
+        },
+        allIds: ['x', 'y'],
+      }
+
+      expect(getAllTasks(state)).toMatchSnapshot()
     })
   })
 })
