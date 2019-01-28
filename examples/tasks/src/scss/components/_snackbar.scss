@@ -1,0 +1,91 @@
+// Snackbar block
+$snackbar-border-radius: ratio(16px);
+$snackbar-bottom-offset: ratio(55px);
+$snackbar-vertical-padding: ratio(34px);
+$snackbar-horizontal-padding: ratio(55px);
+$snackbar-background-color: color(charade);
+$snackbar-shadow: 0 ratio(11px) ratio(34px) ratio(-7px)
+  rgba(color(charade), 0.64);
+
+// Snackbar icon element
+$snackbar-icon-width: ratio(32px);
+$snackbar-icon-right-margin: ratio(34px);
+
+// Snackbar title element
+$snackbar-title-foreground-color: color(whisper);
+$snackbar-title-bottom-margin: ratio(8px);
+
+// Snackbar message element
+$snackbar-message-foreground-color: color(santas-gray);
+
+// Snackbar action element
+$snackbar-action-foreground-color: color(spun-pearl);
+$snackbar-action-background-color: color(ship-gray);
+$snackbar-action-horizontal-padding: $snackbar-horizontal-padding;
+$snackbar-action-left-margin: ratio(21px);
+
+.Snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: $snackbar-bottom-offset;
+  transform: translate(-50%, 0);
+  padding: $snackbar-vertical-padding $snackbar-horizontal-padding;
+  border-radius: $snackbar-border-radius;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-color: $snackbar-background-color;
+  box-shadow: $snackbar-shadow;
+
+  opacity: 0;
+
+  -webkit-backface-visibility: hidden;
+
+  &__icon {
+    width: $snackbar-icon-width;
+    height: $snackbar-icon-width;
+
+    margin-right: $snackbar-icon-right-margin;
+
+    fill: color(whisper);
+  }
+
+  &__title {
+    @extend .heading-4;
+
+    margin-bottom: $snackbar-title-bottom-margin;
+
+    color: $snackbar-title-foreground-color;
+  }
+
+  &__message {
+    @extend .paragraph;
+
+    color: $snackbar-message-foreground-color;
+  }
+
+  &__action {
+    @include type-setting(0.1, semi-bold);
+
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    padding: 0 $snackbar-action-horizontal-padding;
+    margin: -#{$snackbar-vertical-padding} -#{$snackbar-horizontal-padding} -#{$snackbar-vertical-padding}
+      $snackbar-action-left-margin;
+
+    border: none;
+
+    text-decoration: none;
+
+    background-color: $snackbar-action-background-color;
+    color: $snackbar-action-foreground-color;
+    outline: none;
+
+    cursor: pointer;
+  }
+}

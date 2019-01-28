@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snackbar action creators should create an action to complete snackbar dismiss 1`] = `
+Object {
+  "type": "[Snackbar] dismiss completed",
+}
+`;
+
+exports[`snackbar action creators should create an action to complete snackbar show 1`] = `
+Object {
+  "type": "[Snackbar] show completed",
+}
+`;
+
+exports[`snackbar action creators should create an action to create snackbar 1`] = `
+Object {
+  "meta": Object {
+    "duration": 3000,
+  },
+  "payload": Object {
+    "message": "An important message",
+    "title": "Title of snackbar",
+  },
+  "type": "[Snackbar] create",
+}
+`;
+
+exports[`snackbar action creators should create an action to create snackbar 2`] = `
+Object {
+  "meta": Object {
+    "duration": 1000,
+  },
+  "payload": Object {
+    "message": "An important message",
+    "title": "Title of snackbar",
+  },
+  "type": "[Snackbar] create",
+}
+`;
+
+exports[`snackbar action creators should create an action to dismiss snackbar 1`] = `
+Object {
+  "type": "[Snackbar] dismiss",
+}
+`;
+
+exports[`snackbar action creators should create an action to show snackbar 1`] = `
+Object {
+  "meta": Object {
+    "duration": 1000,
+  },
+  "payload": Object {
+    "message": "An important message",
+    "title": "Title of snackbar",
+  },
+  "type": "[Snackbar] show",
+}
+`;
+
+exports[`snackbar reducer should handle "[Snackbar] dismiss" 1`] = `null`;
+
+exports[`snackbar reducer should handle "[Snackbar] show" 1`] = `
+Object {
+  "message": "An important message",
+  "title": "Title of snackbar",
+}
+`;
+
+exports[`snackbar selectors should get snackbar 1`] = `
+Object {
+  "message": "An important message",
+  "title": "A great title",
+}
+`;

@@ -9,5 +9,11 @@ export {
   editTask,
   Task,
 } from './tasks'
+export {
+  createSnackbar,
+  showSnackbarCompleted,
+  dismissSnackbar,
+  dismissSnackbarCompleted,
+} from './snackbar'
 
 export * from './selectors'

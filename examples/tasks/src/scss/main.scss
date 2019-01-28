@@ -1,7 +1,9 @@
+@import '~mathsass';
 @import '~normalize-scss';
 
 @import './utils/module';
 @import './base/module';
+@import './components/module';
 
 $font-weights: str-replace(#{map-values($font-weight)}, ' ');
 
