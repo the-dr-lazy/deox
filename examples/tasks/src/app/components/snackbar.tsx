@@ -1,29 +1,24 @@
 import React from 'react'
-import { animated, config, Transition } from 'react-spring'
-import { connect } from 'react-redux'
-import {
-  dismissSnackbar,
-  dismissSnackbarCompleted,
-  getSnackbar,
-  showSnackbarCompleted,
-  RootState,
-} from '~/store'
+import { animated, Transition } from 'react-spring'
+import { SnackbarState } from '~/store'
 
 import { Icon } from './icon'
 
-type SnackbarInnerProps = {
-  snackbar: { title: string; message: string } | null
-  showSnackbarCompleted: typeof showSnackbarCompleted
-  dismissSnackbar: typeof dismissSnackbar
-  dismissSnackbarCompleted: typeof dismissSnackbarCompleted
+export type SnackbarStateProps = { snackbar: SnackbarState }
+export type SnackbarDispatchProps = {
+  showSnackbarCompleted: () => void
+  dismissSnackbar: () => void
+  dismissSnackbarCompleted: () => void
 }
 
-export function SnackbarInner({
+export type SnackbarProps = SnackbarStateProps & SnackbarDispatchProps
+
+export function Snackbar({
   snackbar,
   showSnackbarCompleted,
   dismissSnackbar,
   dismissSnackbarCompleted,
-}: SnackbarInnerProps) {
+}: SnackbarProps) {
   return (
     <Transition
       native
@@ -67,10 +62,3 @@ export function SnackbarInner({
     </Transition>
   )
 }
-
-export const Snackbar = connect(
-  (state: RootState) => ({
-    snackbar: getSnackbar(state),
-  }),
-  { showSnackbarCompleted, dismissSnackbar, dismissSnackbarCompleted }
-)(SnackbarInner)

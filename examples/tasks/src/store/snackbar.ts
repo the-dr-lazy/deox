@@ -16,7 +16,7 @@ import { async } from 'rxjs/internal/scheduler/async'
 import { RootState } from './root'
 import * as fromRoot from './selectors'
 
-type SnackbarState = null | { title: string; message: string }
+export type SnackbarState = null | { title: string; message: string }
 
 type SnackbarOptions = { title: string; message: string }
 

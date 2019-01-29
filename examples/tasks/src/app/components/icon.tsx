@@ -21,7 +21,7 @@ const createIcon = ({
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d={d} fill="#fff" fill-rule="nonzero" />
+    <path d={d} fill="#fff" fillRule="nonzero" />
   </svg>
 )
 

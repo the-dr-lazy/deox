@@ -14,6 +14,7 @@ export {
   showSnackbarCompleted,
   dismissSnackbar,
   dismissSnackbarCompleted,
+  SnackbarState,
 } from './snackbar'
 
 export * from './selectors'

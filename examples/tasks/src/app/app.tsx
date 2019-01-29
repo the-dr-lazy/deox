@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Snackbar } from './components/snackbar'
+import { SnackbarContainer } from './containers'
 
 export function App() {
   return (
     <>
-      <Snackbar />
+      <SnackbarContainer />
     </>
   )
 }
