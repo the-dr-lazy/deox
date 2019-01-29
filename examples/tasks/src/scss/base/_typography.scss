@@ -1,5 +1,3 @@
-@import '~modularscale-sass';
-
 $modularscale: (
   base: ratio(1rem),
   ratio: $fourth,
@@ -35,12 +33,12 @@ $font-weight: (
 }
 
 $heading-weights: (
-  1: font-weight(bold),
-  2: font-weight(semi-bold),
-  3: font-weight(semi-bold),
-  4: font-weight(semi-bold),
-  5: font-weight(semi-bold),
-  6: font-weight(semi-bold),
+  1: bold,
+  2: semi-bold,
+  3: medium,
+  4: semi-bold,
+  5: semi-bold,
+  6: semi-bold,
 );
 
 @for $i from 1 through 6 {
