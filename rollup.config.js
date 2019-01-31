@@ -6,6 +6,11 @@ import { terser } from 'rollup-plugin-terser'
 
 import pkg from './package.json'
 
+const externals = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {}),
+].map(name => RegExp(`^${name}`))
+
 export default [
   {
     input: './tmp/index.js',
@@ -14,7 +19,7 @@ export default [
   },
   {
     input: './tmp/index.js',
-    external: ['tslib'],
+    external: id => externals.some(external => external.test(id)),
     output: [
       { file: pkg.module, format: 'es' },
       { file: pkg.main, format: 'cjs' },
