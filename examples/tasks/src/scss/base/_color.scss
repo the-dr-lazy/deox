@@ -12,5 +12,10 @@ $color: (
 );
 
 @function color($name) {
-  @return map-get($color, $name);
+  @if map-has-key($color, $name) {
+    @return map-get($color, $name);
+  }
+
+  @warn "Unkown '#{$key}' in $color.";
+  @return null;
 }
