@@ -70,7 +70,7 @@ $heading-weights: (
 
 .caption {
   @extend %reset-margin;
-  @include type-setting(-1);
+  @include type-setting(-0.5);
 
   color: color(heather);
 }
