@@ -15,7 +15,12 @@ $font-weight: (
 }
 
 @function font-weight($weight) {
-  @return map-get($font-weight, $weight);
+  @if map-has-key($font-weight, $weight) {
+    @return map-get($font-weight, $weight);
+  }
+
+  @warn "Unkown '#{$key}' in $font-weight.";
+  @return null;
 }
 
 @function line-height($level) {
