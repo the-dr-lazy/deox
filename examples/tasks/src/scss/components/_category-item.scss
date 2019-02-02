@@ -1,0 +1,52 @@
+$category-item-width: ratio(216px);
+$category-item-height: ratio(140px);
+$category-item-vertical-padding: ratio(21px);
+$category-item-horizontal-padding: ratio(34px);
+$category-item-border-radius: ratio(21px);
+$category-item-background-color: color(white);
+
+.CategoryItem {
+  width: $category-item-width;
+  height: $category-item-height;
+  padding: $category-item-vertical-padding $category-item-horizontal-padding;
+
+  border-radius: $category-item-border-radius;
+
+  box-shadow: 0 0 68px rgba(color(big-stone), 0.13);
+
+  display: grid;
+  grid-template-columns: auto $category-indicator-width;
+  grid-template-rows: $category-indicator-height auto;
+  grid-template-areas:
+    '. indicator'
+    'content .';
+
+  justify-content: space-between;
+  align-content: space-between;
+
+  cursor: pointer;
+
+  &__indicator {
+    grid-area: indicator;
+  }
+
+  &__content {
+    grid-area: content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__label {
+    @extend .heading-4;
+
+    grid-area: label;
+  }
+
+  &__value {
+    @extend .caption;
+
+    grid-area: value;
+  }
+}

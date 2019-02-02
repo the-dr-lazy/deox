@@ -1,0 +1,18 @@
+$category-list-column-gap: ratio(34px);
+$category-list-row-gap: $category-list-column-gap;
+$category-list-top-padding: $category-list-row-gap;
+$category-list-left-padding: ratio(20px);
+
+.CategoryList {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: $category-list-column-gap;
+  grid-row-gap: $category-list-row-gap;
+  justify-content: start;
+
+  padding-top: $category-list-top-padding;
+  padding-left: $category-list-left-padding;
+  margin: 0;
+
+  list-style: none;
+}

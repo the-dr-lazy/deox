@@ -1,0 +1,21 @@
+$category-indicator-width: round(ratio(21px));
+$category-indicator-height: $category-indicator-width;
+$category-indicator-border-radius: percentage(1 - (1 / $golden));
+$category-indicator-default-background-color: color(dodger-blue);
+$category-indicator-border-width: ratio(4px);
+
+.CategoryIndicator {
+  width: $category-indicator-width;
+  height: $category-indicator-height;
+
+  border-radius: $category-indicator-border-radius;
+
+  background-color: transparent;
+  border-style: solid;
+  border-width: $category-indicator-border-width;
+
+  &--active {
+    background-color: $category-indicator-default-background-color;
+    border-color: transparent;
+  }
+}

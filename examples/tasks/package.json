@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@types/redux": "^3.6.0",
+    "classnames": "^2.2.6",
     "deox": "^1.0.2",
     "ramda": "^0.26.1",
     "react": "^16.7.0",
@@ -29,6 +30,7 @@
     "rxjs": "^6.3.3"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
     "@types/ramda": "types/npm-ramda#dist",
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
