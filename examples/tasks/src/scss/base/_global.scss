@@ -8,13 +8,22 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Montserrat', sans-serif;
 
   background-color: color(white);
+}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+  font-family: 'Montserrat', sans-serif;
 }
 
 *,
