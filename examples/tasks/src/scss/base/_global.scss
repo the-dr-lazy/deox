@@ -24,3 +24,7 @@ body {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+
+::selection {
+  background-color: color(zumthor);
+}
