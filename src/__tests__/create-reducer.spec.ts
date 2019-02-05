@@ -34,7 +34,9 @@ describe('createReducer', () => {
   })
 
   it('should pass through state when there is no proper handler', () => {
-    expect(counter(defaultState, { type: 'NOT DEFINED' })).toBe(defaultState)
+    expect(counter(defaultState, { type: 'NOT DEFINED' } as any)).toBe(
+      defaultState
+    )
   })
 
   it('should calls related handler of the given action', () => {
