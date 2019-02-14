@@ -1,5 +1,13 @@
 # Deox Changelog
 
+# [1.1.0](https://github.com/thebrodmann/deox/compare/v1.0.2...v1.1.0) (2019-02-14)
+
+
+### Features
+
+* add ofType operator ([63fb590](https://github.com/thebrodmann/deox/commit/63fb590)), closes [#11](https://github.com/thebrodmann/deox/issues/11)
+* deep immutable reducer type state ([de98e30](https://github.com/thebrodmann/deox/commit/de98e30)), closes [#3](https://github.com/thebrodmann/deox/issues/3)
+
 ## [1.0.2](https://github.com/thebrodmann/deox/compare/v1.0.1...v1.0.2) (2019-01-21)
 
 
