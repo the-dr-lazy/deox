@@ -1,5 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`action should create action with "\`''\` meta" 1`] = `
+Object {
+  "meta": "",
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`''\` payload" 1`] = `
+Object {
+  "payload": "",
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`0\` meta" 1`] = `
+Object {
+  "meta": 0,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`0\` payload" 1`] = `
+Object {
+  "payload": 0,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`NaN\` meta" 1`] = `
+Object {
+  "meta": NaN,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`NaN\` payload" 1`] = `
+Object {
+  "payload": NaN,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`false\` meta" 1`] = `
+Object {
+  "meta": false,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`false\` payload" 1`] = `
+Object {
+  "payload": false,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`null\` meta" 1`] = `
+Object {
+  "meta": null,
+  "type": "[Todo] show",
+}
+`;
+
+exports[`action should create action with "\`null\` payload" 1`] = `
+Object {
+  "payload": null,
+  "type": "[Todo] show",
+}
+`;
+
 exports[`action should create action with "error and meta" 1`] = `
 Object {
   "error": true,

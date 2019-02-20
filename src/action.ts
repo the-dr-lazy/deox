@@ -78,8 +78,8 @@ export function action<Type extends string, Payload, Meta>(
 ) {
   return {
     type,
-    ...(payload ? { payload } : {}),
-    ...(meta ? { meta } : {}),
+    ...(payload !== undefined ? { payload } : {}),
+    ...(meta !== undefined ? { meta } : {}),
     ...(payload instanceof Error ? { error: true } : {}),
   }
 }
