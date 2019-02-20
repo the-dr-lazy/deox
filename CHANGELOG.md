@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [1.1.1](https://github.com/thebrodmann/deox/compare/v1.1.0...v1.1.1) (2019-02-20)
+
+
+### Bug Fixes
+
+* attach non-undefined falsy values to payload and meta of action ([1fd8ed8](https://github.com/thebrodmann/deox/commit/1fd8ed8)), closes [#15](https://github.com/thebrodmann/deox/issues/15)
+
 # [1.1.0](https://github.com/thebrodmann/deox/compare/v1.0.2...v1.1.0) (2019-02-14)
 
 
