@@ -25,3 +25,12 @@ createAction('[Todo] add', resolve => (name: string, completed = false) =>
 createAction('[Todo] add', resolve => (name: string, completed = false) =>
   resolve({ name, completed }, 'Meta data of all todos')
 )
+
+// @dts-jest:pass:snap
+createAction('[Todo] generic', resolve => <Name>(name: Name) => resolve(name))
+
+// @dts-jest:pass:snap
+createAction(
+  '[Todo] generic',
+  resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
+)
