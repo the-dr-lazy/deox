@@ -455,10 +455,10 @@
     into-stream "^4.0.0"
     lodash "^4.17.4"
 
-"@thebrodmann/tslint-config@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@thebrodmann/tslint-config/-/tslint-config-0.2.0.tgz#3c6c87c9bfb261a8692a20c125802e5a7eadd8a1"
-  integrity sha512-u6GY/V8VJoH5GRQz/7htNdKy8wPjNf69HKu51WaI7pJwsz3Nsshvotgem7G5Ggh998MsCCdoinAAQvqw4OI1Ew==
+"@thebrodmann/tslint-config@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@thebrodmann/tslint-config/-/tslint-config-0.2.1.tgz#61688ea5552716a33281e5ea2e550e4895e38003"
+  integrity sha512-NpWtXT8/a3UKvY9cEW+VysHTSPg7tdm4CvQXUID75ObGFoVz3X6UA+1lypoAcvb7PY3uTvgaRkgH1zIbyUipIA==
   dependencies:
     tslint "^5.12.1"
     tslint-config-prettier "^1.17.0"
