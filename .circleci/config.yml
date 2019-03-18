@@ -38,6 +38,10 @@ jobs:
           name: Upload coverage to codecov
           command: npx codecov
 
+      - run:
+          name: Lint
+          command: yarn run lint
+
       - persist_to_workspace:
           root: ~/repo
           paths: .
