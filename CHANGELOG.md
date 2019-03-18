@@ -1,5 +1,12 @@
 # Deox Changelog
 
+# [1.2.0](https://github.com/thebrodmann/deox/compare/v1.1.1...v1.2.0) (2019-03-18)
+
+
+### Features
+
+* add generic type capability to action creator ([4044db2](https://github.com/thebrodmann/deox/commit/4044db2))
+
 ## [1.1.1](https://github.com/thebrodmann/deox/compare/v1.1.0...v1.1.1) (2019-02-20)
 
 
