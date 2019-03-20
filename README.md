@@ -53,6 +53,18 @@ yarn add deox
 npm install deox
 ```
 
+Notice that `deox` internally uses some ES2015 type definitions to represent better developer experience. So if you are using [`typescript`](https://github.com/Microsoft/TypeScript) and targeting `es5`, be sure `es2015` lib has been added in tsconfig.json:
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "target": "es5",
+    "lib": ["es2105"]
+  }
+}
+```
+
 The `deox` npm package contains a [CommonJS](http://www.commonjs.org/specs/modules/1.0/) build that can be use with [Node.js](https://nodejs.org/en/) or module bundlers (e.g. [Rollup](https://github.com/rollup/rollup), [Webpack](https://github.com/webpack/webpack), etc.). it also includes an [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) build that works well with [tree-shaking](https://webpack.js.org/guides/tree-shaking/).
 
 If you don't use module bundler, it's also fine. The `deox` npm package also includes a production minified [UMD](https://github.com/umdjs/umd) build that makes Deox available as global variable called `window.Deox`; you can add it simply to your page via following script tag:
