@@ -1,9 +1,12 @@
 type Primitive = undefined | null | boolean | string | number | Function
 
-interface DeepImmutableArray<T> extends ReadonlyArray<DeepImmutable<T>> {}
-interface DeepImmutableMap<K, V>
+export interface DeepImmutableArray<T>
+  extends ReadonlyArray<DeepImmutable<T>> {}
+export interface DeepImmutableMap<K, V>
   extends ReadonlyMap<DeepImmutable<K>, DeepImmutable<V>> {}
-type DeepImmutableObject<T> = { readonly [K in keyof T]: DeepImmutable<T[K]> }
+export type DeepImmutableObject<T> = {
+  readonly [K in keyof T]: DeepImmutable<T[K]>
+}
 
 export type Immutable<T> = T extends Primitive
   ? T
