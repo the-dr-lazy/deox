@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [1.2.1](https://github.com/thebrodmann/deox/compare/v1.2.0...v1.2.1) (2019-03-25)
+
+
+### Bug Fixes
+
+* export DeepImmutable* types ([c9d0b3b](https://github.com/thebrodmann/deox/commit/c9d0b3b)), closes [#21](https://github.com/thebrodmann/deox/issues/21)
+
 # [1.2.0](https://github.com/thebrodmann/deox/compare/v1.1.1...v1.2.0) (2019-03-18)
 
 
