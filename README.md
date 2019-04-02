@@ -31,7 +31,7 @@ The only completely functional **type-safe** approach to Flux that its main goal
 Behold, the art of `deox`:
 
 <p align="center">
-  <img alt="Deox counter example" src="media/counter-example.jpg">
+  <img alt="Deox counter example" src="docs/media/counter-example.jpg">
 </p>
 
 ## Highlights
