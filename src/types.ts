@@ -1,3 +1,6 @@
+import { ActionCreator } from './create-action'
+import { Action, AnyAction } from './action'
+
 type Primitive = undefined | null | boolean | string | number | Function
 
 export interface DeepImmutableArray<T>
@@ -28,3 +31,9 @@ export type Reducer<State, Actions> = (
   prevState: DeepImmutable<State>,
   action: Actions
 ) => DeepImmutable<State> | State
+
+export type ActionType<
+  T extends ActionCreator<AnyAction> | Reducer<any, Action<any>>
+> = T extends ActionCreator<AnyAction>
+  ? ReturnType<T>
+  : (T extends Reducer<any, infer U> ? U : never)
