@@ -98,6 +98,8 @@ counter(undefined, decrement()) //=> -1
 
 ## Documentation
 
+- [Introduction](https://deox.netlify.com)
+
 ## FAQ
 
 ### Why not `redux-actions`, `redux-starter-kit` ?
