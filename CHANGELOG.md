@@ -1,5 +1,14 @@
 # Deox Changelog
 
+# [1.3.0](https://github.com/thebrodmann/deox/compare/v1.2.1...v1.3.0) (2019-04-02)
+
+
+### Features
+
+* add ActionType helper ([0b2906a](https://github.com/thebrodmann/deox/commit/0b2906a))
+* export ActionType in public API ([f349705](https://github.com/thebrodmann/deox/commit/f349705))
+* export configureStore from redux-starter-kit ([2499a02](https://github.com/thebrodmann/deox/commit/2499a02)), closes [#9](https://github.com/thebrodmann/deox/issues/9)
+
 ## [1.2.1](https://github.com/thebrodmann/deox/compare/v1.2.0...v1.2.1) (2019-03-25)
 
 
