@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createAction should create action creator with error payload 1`] = `
+exports[`createActionCreator should create action creator with error payload 1`] = `
 Object {
   "error": true,
   "payload": [Error],
@@ -8,7 +8,7 @@ Object {
 }
 `;
 
-exports[`createAction should create action creator with error payload and meta 1`] = `
+exports[`createActionCreator should create action creator with error payload and meta 1`] = `
 Object {
   "error": true,
   "meta": Object {
@@ -19,7 +19,7 @@ Object {
 }
 `;
 
-exports[`createAction should create action creator with non-error payload 1`] = `
+exports[`createActionCreator should create action creator with non-error payload 1`] = `
 Object {
   "payload": Object {
     "completed": false,
@@ -29,7 +29,7 @@ Object {
 }
 `;
 
-exports[`createAction should create action creator with non-error payload and meta 1`] = `
+exports[`createActionCreator should create action creator with non-error payload and meta 1`] = `
 Object {
   "meta": "Be patient",
   "payload": Object {
@@ -39,13 +39,13 @@ Object {
 }
 `;
 
-exports[`createAction should create action creator with type-only action with empty executor 1`] = `
+exports[`createActionCreator should create action creator with type-only action with empty executor 1`] = `
 Object {
   "type": "[Todo] truncate",
 }
 `;
 
-exports[`createAction should create action creator with type-only action without executor 1`] = `
+exports[`createActionCreator should create action creator with type-only action without executor 1`] = `
 Object {
   "type": "[Todo] truncate",
 }

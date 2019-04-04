@@ -1,10 +1,10 @@
-import { createAction } from '../create-action'
+import { createActionCreator } from '../create-action-creator'
 import { createHandlerMap as handle } from '../create-handler-map'
 
 // @dts-jest:group createHandlerMap
 
-const increment = createAction('[Counter] increment')
-const increase = createAction('[Counter] increase')
+const increment = createActionCreator('[Counter] increment')
+const increase = createActionCreator('[Counter] increase')
 
 // @dts-jest:pass:snap
 handle(increment, (state: number) => state + 1)
