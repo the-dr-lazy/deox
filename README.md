@@ -99,6 +99,7 @@ counter(undefined, decrement()) //=> -1
 ## Documentation
 
 - [Introduction](https://deox.js.org)
+- [Getting started](https://deox.js.org/getting-started)
 
 ## FAQ
 
