@@ -1,4 +1,4 @@
-import { ActionCreator } from './create-action'
+import { ActionCreator } from './create-action-creator'
 import { Action, AnyAction } from './action'
 
 type Primitive = undefined | null | boolean | string | number | Function

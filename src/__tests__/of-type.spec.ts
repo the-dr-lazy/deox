@@ -1,17 +1,17 @@
 import { marbles } from 'rxjs-marbles/jest'
 
-import { createAction } from '../create-action'
+import { createActionCreator } from '../create-action-creator'
 import { ofType } from '../of-type'
 
 describe('ofType', () => {
-  const a = createAction('a')
-  const b = createAction('b')
-  const c = createAction('c')
-  const d = createAction('d')
-  const e = createAction('e')
-  const f = createAction('f')
-  const g = createAction('g')
-  const h = createAction('h')
+  const a = createActionCreator('a')
+  const b = createActionCreator('b')
+  const c = createActionCreator('c')
+  const d = createActionCreator('d')
+  const e = createActionCreator('e')
+  const f = createActionCreator('f')
+  const g = createActionCreator('g')
+  const h = createActionCreator('h')
 
   const values = {
     a: a(),
