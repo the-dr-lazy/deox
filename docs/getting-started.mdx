@@ -1,0 +1,96 @@
+---
+name: Getting started
+route: /getting-started
+---
+
+# Getting Started
+
+Deox is the utility belt for [FSA](https://github.com/redux-utilities/flux-standard-action)-compliant actions
+that can be used together with [Redux](https://redux.js.org/) or [NGRX](https://ngrx.io/)/[NGXS](https://ngxs.gitbook.io/ngxs).
+
+## Installation
+
+For [Yarn](https://yarnpkg.com/) users:
+
+```application/x-sh
+yarn add deox
+```
+
+For [NPM](https://www.npmjs.com/) users:
+
+```application/x-sh
+npm install --save deox
+```
+
+The Deox NPM package contains a [CommonJS](http://www.commonjs.org/specs/modules/1.0/) build
+that can be used with [Node](https://nodejs.org/) application or module bundlers (e.g. [Rollup](https://github.com/rollup/rollup), [Webpack](https://github.com/webpack/webpack), etc.).
+it also includes an [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) build that works well with [tree-shaking](https://webpack.js.org/guides/tree-shaking/).
+
+> **Typescript tip**: notice that Deox internally uses some **ES2015** type definitions to represent better developer experience.
+> So if you are using [Typescript](https://github.com/Microsoft/TypeScript) and targeting `es5`, be sure `es2015` lib has been added in the tsconfig.json:
+
+```application/json
+{
+  "compilerOptions": {
+    ...
+    "target": "es5",
+    "lib": ["es2105"]
+  }
+}
+```
+
+If you don't use module bundler, it's also fine.
+The Deox NPM package also includes a production minified [UMD](https://github.com/umdjs/umd) build that makes Deox available as global variable called `window.Deox`;
+you can add it simply to your page via following script tag:
+
+```xml
+<script src="https://unpkg.com/deox@latest"></script>
+```
+
+## Basic Usage
+
+Deox provides lots of helpful utility functions and types to **help you reduce Flux boilerplate**;
+You can see all of these utilities at API reference page.
+
+The most important utility functions that Deox provides are:
+
+- `createActionCreator`: creates an **action creator** by given action type (AKA `createAction`)
+- `createReducer`: creates a **reducer** by given default state and an array of action handlers
+
+Let's see the famous simple counter example:
+
+```ts
+import { createActionCreator, createReducer } from 'deox'
+
+const increment = createActionCreator('INCREMENT')
+const decrement = createActionCreator('DECREMENT')
+const reset = createActionCreator('RESET', resolve => (count: number) =>
+  resolve(count)
+)
+
+const defaultState = 0
+
+const counter = createReducer(defaultState, handle => [
+  handle(increment, state => state + 1),
+  handle(decrement, state => state - 1),
+  handle(reset, (_, { payload }) => payload),
+])
+
+counter(undefined, increment()) //=> 1
+counter(undefined, decrement()) //=> -1
+counter(3, reset(0)) //=> 0
+```
+
+It's that simple but there is a hidden feature in the above example that makes Deox wonderful.
+Although there isn't any type notation in the above example but there is full **type-safety**.
+How? It's Magic!
+
+## More Examples
+
+The [Deox repository](https://github.com/thebrodmann/deox) contains several example demonstrating various aspects of how to use Deox.
+
+- **Tasks**: [Source](https://github.com/thebrodmann/deox/tree/master/examples/tasks)
+
+## Help and Discussion
+
+You can ask questions on [Deox repository](https://github.com/thebrodmann/deox) with an **issue**.
