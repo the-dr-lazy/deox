@@ -43,7 +43,7 @@ Behold, the art of `deox`:
 
 ## Installation
 
-You can install `deox` package by running:
+You can install Deox package by running:
 
 ```bash
 # YARN
@@ -53,7 +53,8 @@ yarn add deox
 npm install deox
 ```
 
-Notice that `deox` internally uses some ES2015 type definitions to represent better developer experience. So if you are using [`typescript`](https://github.com/Microsoft/TypeScript) and targeting `es5`, be sure `es2015` lib has been added in tsconfig.json:
+> **Typescript tip**: notice that Deox internally uses some ES2015 type definitions to represent better developer experience.
+> So if you are using [`Typescript`](https://github.com/Microsoft/TypeScript) and targeting `es5`, be sure `es2015` lib has been added in tsconfig.json:
 
 ```json
 {
@@ -65,9 +66,9 @@ Notice that `deox` internally uses some ES2015 type definitions to represent bet
 }
 ```
 
-The `deox` npm package contains a [CommonJS](http://www.commonjs.org/specs/modules/1.0/) build that can be use with [Node.js](https://nodejs.org/en/) or module bundlers (e.g. [Rollup](https://github.com/rollup/rollup), [Webpack](https://github.com/webpack/webpack), etc.). it also includes an [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) build that works well with [tree-shaking](https://webpack.js.org/guides/tree-shaking/).
+The Deox NPM package contains a [CommonJS](http://www.commonjs.org/specs/modules/1.0/) build that can be use with [Node.js](https://nodejs.org/en/) or module bundlers (e.g. [Rollup](https://github.com/rollup/rollup), [Webpack](https://github.com/webpack/webpack), etc.). it also includes an [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) build that works well with [tree-shaking](https://webpack.js.org/guides/tree-shaking/).
 
-If you don't use module bundler, it's also fine. The `deox` npm package also includes a production minified [UMD](https://github.com/umdjs/umd) build that makes Deox available as global variable called `window.Deox`; you can add it simply to your page via following script tag:
+If you don't use module bundler, it's also fine. The Deox NPM package also includes a production minified [UMD](https://github.com/umdjs/umd) build that makes Deox available as global variable called `window.Deox`; you can add it simply to your page via following script tag:
 
 ```html
 <script src="https://unpkg.com/deox@latest"></script>
@@ -133,7 +134,7 @@ const todos = createReducer<State, Actions>(defaultState, {
 
 Type of action parameter in `addTodo` action handler is overall `Actions` type. It's inaccurate!
 
-And this is where `deox` comes in action and practice:
+And this is where Deox comes in action and practice:
 
 ```ts
 const todos = createReducer(defaultState, handle => [
@@ -148,7 +149,7 @@ And every action handler's type is just what it should be. It's completely safe 
 
 ### What's the difference with `typesafe-actions` ?
 
-The `typesafe-actions` is a great project that `deox` carries huge inspiration from that.
+The `typesafe-actions` is a great project that Deox carries huge inspiration from that.
 But `typesafe-actions` doesn't have any plan for a complete set of utilities (specially reducers); **It's all about actions and action creators**.
 
 ## Versioning
@@ -166,4 +167,4 @@ Please read through our [contributing guidelines](CONTRIBUTING.md).
 
 ## License
 
-deox is [MIT licensed](LICENSE).
+Deox is released under [MIT license](LICENSE).
