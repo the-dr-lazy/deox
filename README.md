@@ -98,7 +98,7 @@ counter(undefined, decrement()) //=> -1
 
 ## Documentation
 
-- [Introduction](https://deox.netlify.com)
+- [Introduction](https://deox.js.org)
 
 ## FAQ
 
