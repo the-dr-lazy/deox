@@ -40,7 +40,7 @@ export type ActionCreator<T extends AnyAction | string> = T extends AnyAction
  * )
  *
  */
-export function createAction<
+export function createActionCreator<
   Type extends string,
   Callable extends <T>(...args: any[]) => Action<Type> = () => Action<Type>
 >(

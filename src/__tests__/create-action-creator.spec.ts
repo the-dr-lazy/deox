@@ -1,34 +1,35 @@
-import { createAction } from '../create-action'
+import { createActionCreator } from '../create-action-creator'
 
-describe('createAction', () => {
+describe('createActionCreator', () => {
   it('should expose action type of action creator via .type', () => {
     const type = '[Todo] truncate'
 
-    expect(createAction(type).type).toBe(type)
+    expect(createActionCreator(type).type).toBe(type)
   })
 
   it('should expose action type of action creator via .toString()', () => {
     const type = '[Todo] truncate'
 
-    expect(createAction(type).toString()).toBe(type)
+    expect(createActionCreator(type).toString()).toBe(type)
   })
 
   it('should create action creator with type-only action without executor', () => {
-    const actionCreator = createAction('[Todo] truncate')
+    const actionCreator = createActionCreator('[Todo] truncate')
 
     expect(actionCreator()).toMatchSnapshot()
   })
 
   it('should create action creator with type-only action with empty executor', () => {
-    const actionCreator = createAction('[Todo] truncate', resolve => () =>
-      resolve()
+    const actionCreator = createActionCreator(
+      '[Todo] truncate',
+      resolve => () => resolve()
     )
 
     expect(actionCreator()).toMatchSnapshot()
   })
 
   it('should create action creator with error payload', () => {
-    const actionCreator = createAction(
+    const actionCreator = createActionCreator(
       '[Todo] fetch rejected',
       resolve => (error: Error) => resolve(error)
     )
@@ -37,7 +38,7 @@ describe('createAction', () => {
   })
 
   it('should create action creator with error payload and meta', () => {
-    const actionCreator = createAction(
+    const actionCreator = createActionCreator(
       '[Todo] fetch rejected',
       resolve => (error: Error, meta: { status: number }) =>
         resolve(error, meta)
@@ -47,7 +48,7 @@ describe('createAction', () => {
   })
 
   it('should create action creator with non-error payload', () => {
-    const actionCreator = createAction(
+    const actionCreator = createActionCreator(
       '[Todo] add',
       resolve => (name: string, completed = false) =>
         resolve({ name, completed })
@@ -59,7 +60,7 @@ describe('createAction', () => {
   })
 
   it('should create action creator with non-error payload and meta', () => {
-    const actionCreator = createAction(
+    const actionCreator = createActionCreator(
       '[Todo] add',
       resolve => (name: string, meta: string) => resolve({ name }, meta)
     )

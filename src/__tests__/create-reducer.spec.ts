@@ -1,11 +1,12 @@
 import { createReducer } from '../create-reducer'
-import { createAction } from '../create-action'
+import { createActionCreator } from '../create-action-creator'
 
 describe('createReducer', () => {
-  const increment = createAction('[Counter] increment')
-  const decrement = createAction('[Counter] decrement')
-  const reset = createAction('[Counter] reset', resolve => (value: number) =>
-    resolve(value)
+  const increment = createActionCreator('[Counter] increment')
+  const decrement = createActionCreator('[Counter] decrement')
+  const reset = createActionCreator(
+    '[Counter] reset',
+    resolve => (value: number) => resolve(value)
   )
 
   const handleIncrement = jest.fn((state: number) => state + 1)

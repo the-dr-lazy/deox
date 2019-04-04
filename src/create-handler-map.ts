@@ -1,4 +1,4 @@
-import { ActionCreator } from './create-action'
+import { ActionCreator } from './create-action-creator'
 import { AnyAction } from './action'
 import { getType } from './get-type'
 import { Reducer } from './types'

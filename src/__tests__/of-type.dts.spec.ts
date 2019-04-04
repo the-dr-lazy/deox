@@ -1,13 +1,13 @@
 import { of } from 'rxjs'
 
-import { createAction } from '../create-action'
+import { createActionCreator } from '../create-action-creator'
 import { ofType } from '../of-type'
 
 // @dts-jest:group ofType
 
-const a = createAction('a')
-const b = createAction('b')
-const c = createAction('c')
+const a = createActionCreator('a')
+const b = createActionCreator('b')
+const c = createActionCreator('c')
 
 // @dts-jest:pass:snap
 of(a(), b(), c()).pipe(ofType(a))
