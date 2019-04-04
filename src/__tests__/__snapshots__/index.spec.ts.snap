@@ -4,6 +4,7 @@ exports[`public API has proper exports 1`] = `
 Object {
   "action": [Function],
   "configureStore": [Function],
+  "createAction": [Function],
   "createActionCreator": [Function],
   "createReducer": [Function],
   "getType": [Function],
