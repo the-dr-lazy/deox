@@ -1,5 +1,13 @@
 # Deox Changelog
 
+## [1.3.1](https://github.com/thebrodmann/deox/compare/v1.3.0...v1.3.1) (2019-04-05)
+
+
+### Bug Fixes
+
+* **tree-shaking:** rename browser field to unpkg in package.json ([159f2e7](https://github.com/thebrodmann/deox/commit/159f2e7)), closes [#43](https://github.com/thebrodmann/deox/issues/43)
+* **tree-shaking:** set sideEffects field in package.json ([dd5889d](https://github.com/thebrodmann/deox/commit/dd5889d))
+
 # [1.3.0](https://github.com/thebrodmann/deox/compare/v1.2.1...v1.3.0) (2019-04-02)
 
 
