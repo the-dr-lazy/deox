@@ -14,7 +14,15 @@ const externals = [
 export default [
   {
     input: './tmp/index.js',
-    output: { name: 'Deox', file: pkg.unpkg, format: 'umd' },
+    external: ['rxjs/operators'],
+    output: {
+      name: 'Deox',
+      file: pkg.unpkg,
+      format: 'umd',
+      globals: {
+        'rxjs/operators': 'rxjs.operators',
+      },
+    },
     plugins: [resolve(), commonjs(), sourcemaps(), terser(), filesize()],
   },
   {
