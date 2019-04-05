@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/deox.umd.min.js",
+  "sideEffects": false,
   "repository": "https://github.com/thebrodmann/deox",
   "author": "Mohammad Hasani <atretoname@gmail.com> (https://github.com/thebrodmann)",
   "license": "MIT",
