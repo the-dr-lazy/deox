@@ -14,7 +14,7 @@ const externals = [
 export default [
   {
     input: './tmp/index.js',
-    output: { name: 'Deox', file: pkg.browser, format: 'umd' },
+    output: { name: 'Deox', file: pkg.unpkg, format: 'umd' },
     plugins: [resolve(), commonjs(), sourcemaps(), terser(), filesize()],
   },
   {
