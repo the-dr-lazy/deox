@@ -4455,10 +4455,10 @@ dotenv@^7.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-7.0.0.tgz#a2be3cd52736673206e8a85fb5210eea29628e7c"
   integrity sha512-M3NhsLbV1i6HuGzBUH8vXrtxOk+tWmzWKDMbAVSUp3Zsjm7ywFeuwrUXhmhQyRK1q5B5GGy7hcXPbj3bnfZg2g==
 
-dts-jest@^22.0.4:
-  version "22.0.4"
-  resolved "https://registry.yarnpkg.com/dts-jest/-/dts-jest-22.0.4.tgz#c2f0ed823acfddec75212772f593c883cf4c580f"
-  integrity sha512-guGnIhzDzAA2KPha9voM07VJYrZsnLlUItVRTE4KacsdDgWmFaMYevShGchJJNG7c2D67P+zDllv4vPEaS3x1A==
+dts-jest@^23.0.0:
+  version "23.0.0"
+  resolved "https://registry.yarnpkg.com/dts-jest/-/dts-jest-23.0.0.tgz#67baf8f58763e22584e0498f5e627126db73cbb4"
+  integrity sha512-QDCJukM529nBuQxz87K5YeQetr7bCJ8vw5e7W4Q37xTCiTh/imHZ2vJQiLKTve1oYIH9oo8iYjfnlOmHu5CQXA==
   dependencies:
     globby "^6.1.0"
     jest-snapshot-parser "^1.0.0"
