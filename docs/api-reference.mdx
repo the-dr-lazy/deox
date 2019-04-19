@@ -4,3 +4,66 @@ route: /api-reference
 ---
 
 # API Reference
+
+## _createActionCreator(type[, executor])_
+
+Creates an action creator.
+
+### Arguments
+
+1. `type` (**_string_** ): the type of action being created. It should typically be defined as string constants and is the only required parameter.
+2. `executor` (**_Function_** ): a function that gives an argument named resolve that gives payload and meta as optional arguments and returns an action.
+
+### Returns
+
+(**_ActionCreator_** )
+
+### Examples
+
+#### With only type:
+
+```ts
+import { createActionCreator } from 'deox'
+
+const completeAllTodos = createActionCreator('COMPLETE_ALL_TODOS')
+completeAllTodos() //=> { type: 'COMPLETE_ALL_TODOS' }
+```
+
+#### With type and payload:
+
+```ts
+import { createActionCreator } from 'deox'
+
+const addTodo = createActionCreator('ADD_TODO', resolve => (text: string) =>
+  resolve(text)
+)
+addTodo('Read the docs') //=> { type: 'ADD_TODO', payload: 'Read the docs' }
+```
+
+#### With type and meta:
+
+```ts
+import { createActionCreator } from 'deox'
+
+const showTodos = createActionCreator(
+  'SHOW_TODOS',
+  resolve => (param: number) => resolve(undefined, param)
+)
+showTodos(10) //=> { type: 'ADD_TODO', meta: 10 }
+```
+
+#### With type, payload and meta:
+
+```ts
+import { createActionCreator } from 'deox'
+
+const getTodo = createActionCreator(
+  'GET_TODO',
+  resolve => (id: number, meta: string) => resolve(id, meta)
+)
+getTodo(700, 'some-meta') //=> { type: 'GET_TODO', payload: 700, meta: 'some-meta' }
+```
+
+## _createAction(type[, executor])_
+
+Alias of [createActionCreator](#createactioncreatortype-executor).
