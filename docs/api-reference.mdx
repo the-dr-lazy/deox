@@ -67,3 +67,58 @@ getTodo(700, 'some-meta') //=> { type: 'GET_TODO', payload: 700, meta: 'some-met
 ## _createAction(type[, executor])_
 
 Alias of [createActionCreator](#createactioncreatortype-executor).
+
+## _createReducer(defaultState, handlerMapsCreator)_
+
+Creates a reducer.
+
+### Arguments
+
+1. `defaultState` (**_any_** ): returning state when _undefined_ is passed to the created reducer.
+2. `handlerMapsCreator` (**_Function_** ): a function that gives an argument named handleAction that gives action creator(s) and handler as arguments and returns a _HandlerMap_.
+
+### Returns
+
+(**_Reduer_** ).
+
+### Examples
+
+#### Basic:
+
+```ts
+import { createActionCreator, createReducer } from 'deox'
+
+const increment = createActionCreator('INCREMENT')
+const decrement = createActionCreator('DECREMENT')
+const reset = createActionCreator('reset', resolve => (count: number) =>
+  resolve(count)
+)
+
+const defaultState = 0
+
+const counterReducer = createReducer(defaultState, handleAction => [
+  handleAction(increment, state => state + 1),
+  handleAction(decrement, state => state - 1),
+  handleAction(reset, (_, { payload }) => payload),
+])
+```
+
+#### Handle multiple actions in one handler:
+
+```ts
+import { createActionCreator, createReducer } from 'deox'
+
+const fetch = {
+  next: createActionCreator('FETCH_NEXT')
+  complete: createActionCreator('FETCH_COMPLETE')
+  error: createActionCreator('FETCH_ERROR')
+  cancel: createActionCreator('FETCH_CANCEL')
+}
+
+const defaultState = false
+
+const isFetchingReducer = createReducer(defaultState, handleAction => [
+  handleAction(fetch.next, () => true),
+  handleAction([fetch.complete, fetch.error, fetch.cancel], () => false)
+])
+```
