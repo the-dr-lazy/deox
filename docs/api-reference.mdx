@@ -122,3 +122,25 @@ const isFetchingReducer = createReducer(defaultState, handleAction => [
   handleAction([fetch.complete, fetch.error, fetch.cancel], () => false)
 ])
 ```
+
+## _getType(actionCreator)_
+
+Get wrapped action type of an action creator.
+
+### Arguments
+
+1. **`actionCreator`** (**_ActionCreator_** ): an action creator.
+
+### Returns
+
+(**_string_** ). The action type that the action creator wraps.
+
+### Example
+
+```ts
+import { createActionCreator, getType } from 'deox'
+
+const increment = createActionCreator('INCREMENT')
+
+getType(increment) //=> 'INCREMENT'
+```
