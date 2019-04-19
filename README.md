@@ -101,6 +101,7 @@ counter(undefined, decrement()) //=> -1
 
 - [Introduction](https://deox.js.org)
 - [Getting started](https://deox.js.org/getting-started)
+- [API reference](https://deox.js.org/api-reference)
 
 ## FAQ
 
