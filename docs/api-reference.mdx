@@ -144,3 +144,74 @@ const increment = createActionCreator('INCREMENT')
 
 getType(increment) //=> 'INCREMENT'
 ```
+
+## _ofType(keys)_
+
+An RxJS operator that filters input actions according to the given action creator(s) or action(s) or action type(s).
+
+### Arguments
+
+1. **`keys`** (**_ActionCreator[]_** | **_Action[]_** | **_string[]_** ):
+
+### Examples
+
+#### With action creator:
+
+```ts
+import { createActionCreator, ofType } from 'deox'
+import { delay, mapTo } from 'rxjs/operators'
+
+const ping = createActionCreator('PING')
+
+const pingEpic = action$ =>
+  action$.pipe(
+    ofType(ping),
+    delay(1000),
+    mapTo({ type: 'PONG' })
+  )
+```
+
+#### With multiple action creators:
+
+```ts
+import { createActionCreator, ofType } from 'deox'
+import { delay, mapTo } from 'rxjs/operators'
+
+const ping = createActionCreator('PING')
+const pong = createActionCreator('PONG')
+
+const pingPongEpic = action$ =>
+  action$.pipe(
+    ofType([ping, pong]),
+    delay(1000),
+    mapTo({ type: 'DONE' })
+  )
+```
+
+#### With action:
+
+```ts
+import { createActionCreator, ofType } from 'deox'
+import { delay, mapTo } from 'rxjs/operators'
+
+const pingEpic = action$ =>
+  action$.pipe(
+    ofType({ type: 'PING' }),
+    delay(1000),
+    mapTo({ type: 'PONG' })
+  )
+```
+
+#### With action type:
+
+```ts
+import { createActionCreator, ofType } from 'deox'
+import { delay, mapTo } from 'rxjs/operators'
+
+const pingEpic = action$ =>
+  action$.pipe(
+    ofType('PING'),
+    delay(1000),
+    mapTo({ type: 'PONG' })
+  )
+```
