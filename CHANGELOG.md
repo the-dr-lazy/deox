@@ -1,5 +1,17 @@
 # Deox Changelog
 
+# [1.4.0](https://github.com/thebrodmann/deox/compare/v1.3.1...v1.4.0) (2019-04-21)
+
+
+### Bug Fixes
+
+* make rxjs/operators in UMD bundle an external dependency ([cf94ab7](https://github.com/thebrodmann/deox/commit/cf94ab7)), closes [#41](https://github.com/thebrodmann/deox/issues/41)
+
+
+### Features
+
+* rename createAction to createActionCreator ([a855997](https://github.com/thebrodmann/deox/commit/a855997)), closes [#30](https://github.com/thebrodmann/deox/issues/30)
+
 ## [1.3.1](https://github.com/thebrodmann/deox/compare/v1.3.0...v1.3.1) (2019-04-05)
 
 
