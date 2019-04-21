@@ -1,4 +1,4 @@
 export default {
   src: 'docs',
-  menu: ['Introduction', 'Getting started', 'API reference'],
+  menu: ['Introduction', 'Getting started', 'FAQ', 'API reference'],
 }
