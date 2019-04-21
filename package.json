@@ -92,7 +92,7 @@
       "npm run test -- --bail --findRelatedTests",
       "npm run test-dts -- --bail --findRelatedTests"
     ],
-    "*.{md,json,js}": [
+    "*.{md,mdx,json,js}": [
       "npm run pretty --",
       "git add"
     ],
