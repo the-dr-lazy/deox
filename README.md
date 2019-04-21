@@ -41,6 +41,13 @@ Behold, the art of `deox`:
 - **Secure** - complete test-suits for all of the edge and corners.
 - **Actively maintained** - monitoring issues and respond in a timely manner.
 
+## Motivation
+
+The most common complaint about Flux is how it makes you write a lot of boilerplate.
+Also, existing solutions like redux-actions or redux-starter-kit are not type-safe by the idea (although there are some other ideas with classes 😱).
+
+So, this is where Deox takes place to **make maintenance of Flux architecture simpler and more readable** by sticking to **functional programming paradigm**.
+
 ## Installation
 
 You can install Deox package by running:
