@@ -28,7 +28,7 @@
 
 The only completely functional **type-safe** approach to Flux that its main goals are to diminish types **verbosity**, **repetition** and **complexity** without losing any type information (type-safe alternative of [redux-actions](https://github.com/redux-utilities/redux-actions)).
 
-Behold, the art of `deox`:
+Behold, the art of Deox:
 
 <p align="center">
   <img alt="Deox counter example" src="docs/media/counter-example.jpg">
