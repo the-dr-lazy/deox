@@ -70,10 +70,10 @@ const reset = createActionCreator('RESET', resolve => (count: number) =>
 
 const defaultState = 0
 
-const counter = createReducer(defaultState, handle => [
-  handle(increment, state => state + 1),
-  handle(decrement, state => state - 1),
-  handle(reset, (_, { payload }) => payload),
+const counter = createReducer(defaultState, handleAction => [
+  handleAction(increment, state => state + 1),
+  handleAction(decrement, state => state - 1),
+  handleAction(reset, (_, { payload }) => payload),
 ])
 
 counter(undefined, increment()) //=> 1
