@@ -94,10 +94,10 @@ const reset = createAction('RESET', resolve => (count: number) =>
 
 const defaultState = 0
 
-const counter = createReducer(defaultState, handle => [
-  handle(increment, state => state + 1),
-  handle(decrement, state => state - 1),
-  handle(reset, (_, { payload }) => payload),
+const counter = createReducer(defaultState, handleAction => [
+  handleAction(increment, state => state + 1),
+  handleAction(decrement, state => state - 1),
+  handleAction(reset, (_, { payload }) => payload),
 ])
 
 counter(undefined, increment()) //=> 1
@@ -147,10 +147,10 @@ Type of action parameter in `addTodo` action handler is overall `Actions` type. 
 And this is where Deox comes in action and practice:
 
 ```ts
-const todos = createReducer(defaultState, handle => [
-  handle(addTodo, (state, action) => {...}), // action: AddTodoAction
-  handle(removeTodo, (state, action) => {...}), // action: RemoveTodoAction
-  handle(editTodo, (state, action) => {...}) // action: EditTodoAction
+const todos = createReducer(defaultState, handleAction => [
+  handleAction(addTodo, (state, action) => {...}), // action: AddTodoAction
+  handleAction(removeTodo, (state, action) => {...}), // action: RemoveTodoAction
+  handleAction(editTodo, (state, action) => {...}) // action: EditTodoAction
 ])
 ```
 
