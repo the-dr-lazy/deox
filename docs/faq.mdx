@@ -5,16 +5,38 @@ route: /faq
 
 # Frequently Asked Questions
 
+> **Time-saving tip**: notice that you can use Deox with almost all [Redux middlewares](https://redux.js.org/introduction/ecosystem#library-integration-and-bindings) without any problem.
+
 ## Using redux-thunk with Deox
 
 [Redux Thunk middleware](https://github.com/reduxjs/redux-thunk) allows you to write action creators that return a function instead of an action.
 The following codesandbox is a working example of using Redux Thunk middleware with Deox.
 
-> **Time-saving tip**: notice that you can use Deox with almost all [Redux middlewares](https://redux.js.org/introduction/ecosystem#library-integration-and-bindings) without any problem.
-
 <iframe
   src="https://codesandbox.io/embed/40nlpqq3px?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstore%2Ftodos.ts&view=editor"
   title="redux-thunk-example"
+  style={{
+    width: '100%',
+    height: '800px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+/>
+
+## Using redux-saga with Deox
+
+[Redux Saga middleware](https://redux-saga.js.org) is a library that aims to make application side effects
+(i.e. asynchronous things like data fetching and impure things like accessing the browser cache)
+easier to manage,
+more efficient to execute,
+easy to test,
+and better at handling failures.
+
+<iframe
+  src="https://codesandbox.io/embed/o4j94qnp2y?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstore%2Ftodos.ts&view=editor"
+  title="redux-saga-example"
   style={{
     width: '100%',
     height: '800px',
