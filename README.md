@@ -111,6 +111,7 @@ counter(undefined, decrement()) //=> -1
 - [API reference](https://deox.js.org/api-reference)
 - [FAQ](https://deox.js.org/api-reference)
   - [Using redux-thunk with Deox](https://deox.js.org/faq#using-redux-thunk-with-deox)
+  - [Using redux-saga with Deox](https://deox.js.org/faq#using-redux-saga-with-deox)
 
 ## FAQ
 
