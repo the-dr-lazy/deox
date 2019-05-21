@@ -59,7 +59,7 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-sizes": "^0.4.2",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-terser": "^4.0.2",
+    "rollup-plugin-terser": "^5.0.0",
     "rxjs-marbles": "^5.0.0",
     "semantic-release": "^15.13.3",
     "ts-jest": "^24.0.0",
