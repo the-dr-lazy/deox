@@ -84,24 +84,25 @@ If you don't use module bundler, it's also fine. The Deox NPM package also inclu
 ## Usage
 
 ```ts
-import { createAction, createReducer } from 'deox'
+import { createActionCreator, createReducer } from 'deox'
 
-const increment = createAction('INCREMENT')
-const decrement = createAction('DECREMENT')
-const reset = createAction('RESET', resolve => (count: number) =>
+const increment = createActionCreator('INCREMENT')
+const decrement = createActionCreator('DECREMENT')
+const reset = createActionCreator('RESET', resolve => (count: number) =>
   resolve(count)
 )
 
 const defaultState = 0
 
-const counter = createReducer(defaultState, handleAction => [
+const counterReducer = createReducer(defaultState, handleAction => [
   handleAction(increment, state => state + 1),
   handleAction(decrement, state => state - 1),
-  handleAction(reset, (_, { payload }) => payload),
+  handleAction(reset, (_state, { payload }) => payload),
 ])
 
-counter(undefined, increment()) //=> 1
-counter(undefined, decrement()) //=> -1
+counterReducer(undefined, increment()) //=> 1
+counterReducer(undefined, decrement()) //=> -1
+counterReducer(3, reset(0)) //=> 0
 ```
 
 ## Documentation
@@ -128,7 +129,7 @@ type Actions
   | ReturnType<typeof removeTodo>
   | ReturnType<typeof editTodo>
 
-const todos = createReducer<State, Actions>(...)
+const todosReducer = createReducer<State, Actions>(...)
 ```
 
 This is horrible; Why define a type like actions that a reducer can handle?! It's completely obvious which actions a reducer handles.
@@ -136,7 +137,7 @@ This is horrible; Why define a type like actions that a reducer can handle?! It'
 On another hand there is a big problem with the pattern that `redux-actions` and `redux-starter-kit` follows. it's lack of correct type for action handler:
 
 ```ts
-const todos = createReducer<State, Actions>(defaultState, {
+const todosReducer = createReducer<State, Actions>(defaultState, {
   [addTodo]: (state, action) => {...}, // action: Actions
   [removeTodo]: (state, action) => {...}, // action: Actions
   [editTodo]: (state, action) => {...}, // action: Actions
@@ -148,7 +149,7 @@ Type of action parameter in `addTodo` action handler is overall `Actions` type. 
 And this is where Deox comes in action and practice:
 
 ```ts
-const todos = createReducer(defaultState, handleAction => [
+const todosReducer = createReducer(defaultState, handleAction => [
   handleAction(addTodo, (state, action) => {...}), // action: AddTodoAction
   handleAction(removeTodo, (state, action) => {...}), // action: RemoveTodoAction
   handleAction(editTodo, (state, action) => {...}) // action: EditTodoAction
