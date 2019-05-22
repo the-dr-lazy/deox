@@ -68,7 +68,7 @@ npm install deox
   "compilerOptions": {
     ...
     "target": "es5",
-    "lib": ["es2105"]
+    "lib": ["es2015"]
   }
 }
 ```
