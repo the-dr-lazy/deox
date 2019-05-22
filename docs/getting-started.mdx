@@ -70,15 +70,15 @@ const reset = createActionCreator('RESET', resolve => (count: number) =>
 
 const defaultState = 0
 
-const counter = createReducer(defaultState, handleAction => [
+const counterReducer = createReducer(defaultState, handleAction => [
   handleAction(increment, state => state + 1),
   handleAction(decrement, state => state - 1),
-  handleAction(reset, (_, { payload }) => payload),
+  handleAction(reset, (_state, { payload }) => payload),
 ])
 
-counter(undefined, increment()) //=> 1
-counter(undefined, decrement()) //=> -1
-counter(3, reset(0)) //=> 0
+counterReducer(undefined, increment()) //=> 1
+counterReducer(undefined, decrement()) //=> -1
+counterReducer(3, reset(0)) //=> 0
 ```
 
 It's that simple but there is a hidden feature in the above example that makes Deox wonderful.
