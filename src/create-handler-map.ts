@@ -3,17 +3,23 @@ import { AnyAction } from './action'
 import { getType } from './get-type'
 import { Reducer } from './types'
 
-export type HandlerMap<State, Actions extends AnyAction> = {
-  [key in Actions['type']]: Reducer<State, Actions>
+export type HandlerMap<TState, TAction extends AnyAction> = {
+  [type in TAction['type']]: Reducer<TState, TAction>
 }
 
-export type CreateHandlerMap<State> = <
-  AC extends ActionCreator<string>,
-  Actions extends AnyAction = AC extends (...args: any[]) => infer T ? T : never
+export type InferActionFromHandlerMap<
+  THandlerMap extends HandlerMap<any, any>
+> = THandlerMap extends HandlerMap<any, infer T> ? T : never
+
+export type CreateHandlerMap<TPrevState> = <
+  TActionCreator extends ActionCreator<string>,
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
 >(
-  actionCreators: AC | AC[],
-  handler: Reducer<State, Actions>
-) => HandlerMap<State, Actions>
+  actionCreators: TActionCreator | TActionCreator[],
+  handler: Reducer<TPrevState, TAction>
+) => HandlerMap<TPrevState, TAction>
 
 /**
  * Handler map factory
@@ -24,16 +30,18 @@ export type CreateHandlerMap<State> = <
  * createHandlerMap([increment, increase], (state: number) => state + 1)
  */
 export const createHandlerMap = <
-  AC extends ActionCreator<string>,
-  State,
-  Actions extends AnyAction = AC extends (...args: any[]) => infer T ? T : never
+  TActionCreator extends ActionCreator<string>,
+  TState,
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
 >(
-  actionCreators: AC | AC[],
-  reducer: Reducer<State, Actions>
+  actionCreators: TActionCreator | TActionCreator[],
+  reducer: Reducer<TState, TAction>
 ) =>
   (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
     .map(getType)
-    .reduce<HandlerMap<State, Actions>>(
+    .reduce<HandlerMap<TState, TAction>>(
       (acc, type) => {
         acc[type] = reducer
         return acc

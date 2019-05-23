@@ -15,15 +15,18 @@ import { DeepImmutable } from './types'
  *   handle(decrement, state => state - 1),
  * ])
  */
-export function createReducer<State, HM extends HandlerMap<State, any>>(
-  defaultState: State,
-  handlerMapsCreator: (handle: CreateHandlerMap<State>) => HM[]
+export function createReducer<
+  TState,
+  THandlerMap extends HandlerMap<TState, any>
+>(
+  defaultState: TState,
+  handlerMapsCreator: (handle: CreateHandlerMap<TState>) => THandlerMap[]
 ) {
   const handlerMap = merge(...handlerMapsCreator(createHandlerMap))
 
   return (
-    state = <DeepImmutable<State>>defaultState,
-    action: HM extends HandlerMap<State, infer T> ? T : never
+    state = <DeepImmutable<TState>>defaultState,
+    action: THandlerMap extends HandlerMap<any, infer T> ? T : never
   ) => {
     const handler = handlerMap[action.type]
 
