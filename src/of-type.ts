@@ -20,17 +20,17 @@ import { getType } from './get-type'
  * )
  */
 export function ofType<
-  Source extends AnyAction,
-  Key extends ActionCreator<Source> | Source | Source['type'],
-  Sink extends Source = Key extends (...args: any[]) => infer U
-    ? (U extends Source ? U : never)
-    : (Key extends Source ? Key : never)
->(keys: Key | Key[]) {
+  TSource extends AnyAction,
+  TKey extends ActionCreator<TSource> | TSource | TSource['type'],
+  TSink extends TSource = TKey extends (...args: any[]) => infer U
+    ? (U extends TSource ? U : never)
+    : (TKey extends TSource ? TKey : never)
+>(keys: TKey | TKey[]) {
   const types: string[] = (Array.isArray(keys) ? keys : [keys]).map(key =>
     typeof key === 'string' ? key : getType(key)
   )
 
-  return filter<Source, Sink>(
-    (action): action is Sink => types.includes(action.type)
+  return filter<TSource, TSink>(
+    (action): action is TSink => types.includes(action.type)
   )
 }
