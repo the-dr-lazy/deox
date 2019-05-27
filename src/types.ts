@@ -17,6 +17,10 @@ export type Immutable<T> = T extends Primitive
   ? ReadonlyArray<U>
   : T extends Map<infer K, infer V>
   ? ReadonlyMap<K, V>
+  : T extends ReadonlyArray<any>
+  ? T
+  : T extends ReadonlyMap<any, any>
+  ? T
   : Readonly<T>
 
 export type DeepImmutable<T> = T extends Primitive
@@ -24,6 +28,10 @@ export type DeepImmutable<T> = T extends Primitive
   : T extends Array<infer U>
   ? DeepImmutableArray<U>
   : T extends Map<infer K, infer V>
+  ? DeepImmutableMap<K, V>
+  : T extends ReadonlyArray<infer U>
+  ? DeepImmutableArray<U>
+  : T extends ReadonlyMap<infer K, infer V>
   ? DeepImmutableMap<K, V>
   : DeepImmutableObject<T>
 
