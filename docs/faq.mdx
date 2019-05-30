@@ -46,3 +46,24 @@ and better at handling failures.
   }}
   sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 />
+
+## Using redux-observable with Deox
+
+[Redux Observable middleware](https://redux-observable.js.org) is a
+[RxJS](https://github.com/ReactiveX/rxjs) middleware for action side effects in Redux using **Epics**.
+
+Deox exports a RxJS operator named [`ofType`](/api-reference#oftypekeys) which can filter action observable by **action creator**, **action** and **action type**.
+The following codesandbox is a working example of using Redux Observable middleware with Deox.
+
+<iframe
+  src="https://codesandbox.io/embed/reduxobservableexample-z6sdk?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2Fstore%2Ftodos.ts&view=editor"
+  title="redux-observable-example"
+  style={{
+    width: '100%',
+    height: '800px',
+    border: 0,
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+/>
