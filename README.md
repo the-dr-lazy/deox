@@ -113,6 +113,7 @@ counterReducer(3, reset(0)) //=> 0
 - [FAQ](https://deox.js.org/api-reference)
   - [Using redux-thunk with Deox](https://deox.js.org/faq#using-redux-thunk-with-deox)
   - [Using redux-saga with Deox](https://deox.js.org/faq#using-redux-saga-with-deox)
+  - [Using redux-observable with Deox](https://deox.js.org/faq#using-redux-observable-with-deox)
 
 ## FAQ
 
