@@ -1,10 +1,10 @@
 import { ActionCreator } from './create-action-creator'
 import { AnyAction } from './action'
 import { getType } from './get-type'
-import { Reducer } from './types'
+import { Handler } from './types'
 
 export type HandlerMap<TState, TAction extends AnyAction> = {
-  [type in TAction['type']]: Reducer<TState, TAction>
+  [type in TAction['type']]: Handler<TState, TAction>
 }
 
 export type InferActionFromHandlerMap<
@@ -18,7 +18,7 @@ export type CreateHandlerMap<TPrevState> = <
     : never
 >(
   actionCreators: TActionCreator | TActionCreator[],
-  handler: Reducer<TPrevState, TAction>
+  handler: Handler<TPrevState, TAction>
 ) => HandlerMap<TPrevState, TAction>
 
 /**
@@ -37,13 +37,13 @@ export const createHandlerMap = <
     : never
 >(
   actionCreators: TActionCreator | TActionCreator[],
-  reducer: Reducer<TState, TAction>
+  handler: Handler<TState, TAction>
 ) =>
   (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
     .map(getType)
     .reduce<HandlerMap<TState, TAction>>(
       (acc, type) => {
-        acc[type] = reducer
+        acc[type] = handler
         return acc
       },
       {} as any
