@@ -34,11 +34,57 @@ exports[`createActionCreator createActionCreator(
       resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
     ) 1`] = `"(<Name, Meta>(name: Name, meta: Meta) => Action<\\"[Todo] generic\\", Name, Meta>) & { type: \\"[Todo] generic\\"; toString(): \\"[Todo] generic\\"; }"`;
 
+exports[`createActionCreator createActionCreator(
+      '[Todo] add',
+      resolve => (name: string, completed = false) =>
+        resolve({ name, completed }, 'Meta data of all todos')
+    ) (type) should match snapshot: createActionCreator createActionCreator(
+      '[Todo] add',
+      resolve => (name: string, completed = false) =>
+        resolve({ name, completed }, 'Meta data of all todos')
+    ) 1`] = `"(<T>(name: string, completed?: any) => { type: \\"[Todo] add\\"; payload: { name: string; completed: any; }; meta: string; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] add',
+      resolve => (name: string, completed = false) => resolve({ name, completed })
+    ) (type) should match snapshot: createActionCreator createActionCreator(
+      '[Todo] add',
+      resolve => (name: string, completed = false) => resolve({ name, completed })
+    ) 1`] = `"(<T>(name: string, completed?: any) => { type: \\"[Todo] add\\"; payload: { name: string; completed: any; }; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] fetch rejected',
+      resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
+    ) (type) should match snapshot: createActionCreator createActionCreator(
+      '[Todo] fetch rejected',
+      resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
+    ) 1`] = `"((error: Error, meta?: { status: number; } | undefined) => { type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }) & { type: \\"[Todo] fetch rejected\\"; toString(): \\"[Todo] fetch rejected\\"; }"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] generic',
+      resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
+    ) (type) should match snapshot: createActionCreator createActionCreator(
+      '[Todo] generic',
+      resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
+    ) 1`] = `"(<Name, Meta>(name: Name, meta: Meta) => Action<\\"[Todo] generic\\", Name, Meta>) & { type: \\"[Todo] generic\\"; toString(): \\"[Todo] generic\\"; }"`;
+
 exports[`createActionCreator createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
       resolve(error)
     ) (type) should match snapshot: createActionCreator createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
       resolve(error)
     ) 1`] = `"((error: Error) => { type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }) & { type: \\"[Todo] fetch rejected\\"; toString(): \\"[Todo] fetch rejected\\"; }"`;
+
+exports[`createActionCreator createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
+      resolve(error)
+    ) (type) should match snapshot: createActionCreator createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
+      resolve(error)
+    ) 1`] = `"((error: Error) => { type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }) & { type: \\"[Todo] fetch rejected\\"; toString(): \\"[Todo] fetch rejected\\"; }"`;
+
+exports[`createActionCreator createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
+      resolve(name)
+    ) (type) should match snapshot: createActionCreator createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
+      resolve(name)
+    ) 1`] = `"(<Name>(name: Name) => Action<\\"[Todo] generic\\", Name, undefined>) & { type: \\"[Todo] generic\\"; toString(): \\"[Todo] generic\\"; }"`;
 
 exports[`createActionCreator createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
       resolve(name)
