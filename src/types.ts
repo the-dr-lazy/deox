@@ -40,6 +40,11 @@ export type Handler<TState, TAction> = (
   action: TAction
 ) => DeepImmutable<TState> | TState
 
+export type Reducer<TState, TAction> = (
+  state: DeepImmutable<TState> | undefined,
+  action: TAction
+) => DeepImmutable<TState> | TState
+
 export type ActionType<
   T extends ActionCreator<AnyAction> | Handler<any, Action<any>>
 > = T extends ActionCreator<AnyAction>
