@@ -17,24 +17,24 @@ export type ActionCreator<T extends AnyAction | string> = T extends AnyAction
 /**
  * Flux standard action creator factory
  * @example
- * createAction('[Todo] truncate');
+ * createActionCreator('[Todo] truncate');
  * @example
- * createAction(
+ * createActionCreator(
  *   '[Todo] fetch rejected',
  *   resolve => (error: Error) => resolve(error)
  * );
  * @example
- * createAction(
+ * createActionCreator(
  *   '[Todo] fetch rejected',
  *   resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
  * )
  * @example
- * createAction(
+ * createActionCreator(
  *   '[Todo] add',
  *   resolve => (name: string, completed = false) => resolve({ name, completed })
  * )
  * @example
- * createAction(
+ * createActionCreator(
  *   '[Todo] add',
  *   resolve => (name: string, completed = false) => resolve({ name, completed }, 'Meta data of all todos')
  * )
