@@ -1,5 +1,13 @@
 # Deox Changelog
 
+## [1.4.1](https://github.com/thebrodmann/deox/compare/v1.4.0...v1.4.1) (2019-06-09)
+
+
+### Bug Fixes
+
+* infer return type of reducer from return type of handlers ([6b6edaa](https://github.com/thebrodmann/deox/commit/6b6edaa)), closes [#55](https://github.com/thebrodmann/deox/issues/55)
+* nested DeepImmutable and Immutable types neutralization ([d3f9a1a](https://github.com/thebrodmann/deox/commit/d3f9a1a)), closes [#65](https://github.com/thebrodmann/deox/issues/65)
+
 # [1.4.0](https://github.com/thebrodmann/deox/compare/v1.3.1...v1.4.0) (2019-04-21)
 
 

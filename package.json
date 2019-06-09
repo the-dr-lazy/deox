@@ -1,6 +1,6 @@
 {
   "name": "deox",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Functional Type-safe Flux Standard Utilities",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
