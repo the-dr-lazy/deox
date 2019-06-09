@@ -1,7 +1,7 @@
 import { filter } from 'rxjs/operators'
 
 import { ActionCreator } from './create-action-creator'
-import { AnyAction } from './action'
+import { AnyAction } from './create-action'
 import { getType } from './get-type'
 
 /**

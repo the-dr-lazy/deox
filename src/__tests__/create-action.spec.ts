@@ -1,4 +1,4 @@
-import { action } from '../action'
+import { createAction } from '../create-action'
 
 describe('action', () => {
   it.each`
@@ -19,6 +19,6 @@ describe('action', () => {
     ${'`NaN` meta'}                 | ${'[Todo] show'}           | ${undefined}                 | ${NaN}
     ${"`''` meta"}                  | ${'[Todo] show'}           | ${undefined}                 | ${''}
   `('should create action with $name', ({ type, payload, meta }) => {
-    expect(action(type, payload, meta)).toMatchSnapshot()
+    expect(createAction(type, payload, meta)).toMatchSnapshot()
   })
 })

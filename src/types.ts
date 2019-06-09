@@ -1,5 +1,5 @@
 import { ActionCreator } from './create-action-creator'
-import { Action, AnyAction } from './action'
+import { Action, AnyAction } from './create-action'
 
 type Primitive = undefined | null | boolean | string | number | Function
 
