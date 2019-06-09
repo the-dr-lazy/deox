@@ -37,13 +37,13 @@ export type DeepImmutable<T> = T extends Primitive
 
 export type Handler<
   TPrevState,
-  TAction, // TODO: extend from AnyAction
+  TAction,
   TNextState extends TPrevState = TPrevState
 > = (prevState: TPrevState, action: TAction) => TNextState
 
 export type Reducer<
   TPrevState,
-  TAction, // TODO: extend from AnyAction
+  TAction,
   TNextState extends TPrevState = TPrevState
 > = (state: TPrevState | undefined, action: TAction) => TNextState
 
