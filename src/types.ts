@@ -35,8 +35,13 @@ export type DeepImmutable<T> = T extends Primitive
   ? DeepImmutableMap<K, V>
   : DeepImmutableObject<T>
 
-export type Reducer<TState, TAction> = (
+export type Handler<TState, TAction> = (
   prevState: DeepImmutable<TState>,
+  action: TAction
+) => DeepImmutable<TState> | TState
+
+export type Reducer<TState, TAction> = (
+  state: DeepImmutable<TState> | undefined,
   action: TAction
 ) => DeepImmutable<TState> | TState
 
