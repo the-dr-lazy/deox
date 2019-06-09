@@ -15,11 +15,11 @@ describe('createReducer', () => {
     (_: number, { payload }: ReturnType<typeof reset>) => payload
   )
 
-  const defaultState = 0
-  const counter = createReducer(defaultState, handle => [
-    handle(increment, handleIncrement),
-    handle(decrement, handleDecrement),
-    handle(reset, handleReset),
+  const defaultCounterState = 0
+  const counterReducer = createReducer(defaultCounterState, handleAction => [
+    handleAction(increment, handleIncrement),
+    handleAction(decrement, handleDecrement),
+    handleAction(reset, handleReset),
   ])
 
   beforeEach(() => {
@@ -29,19 +29,19 @@ describe('createReducer', () => {
   })
 
   it('should initiate with default state when state is undefined', () => {
-    expect(counter(undefined, increment())).toBe(
-      counter(defaultState, increment())
+    expect(counterReducer(undefined, increment())).toBe(
+      counterReducer(defaultCounterState, increment())
     )
   })
 
   it('should pass through state when there is no proper handler', () => {
-    expect(counter(defaultState, { type: 'NOT DEFINED' } as any)).toBe(
-      defaultState
+    expect(counterReducer(defaultCounterState, { type: 'NOT DEFINED' } as any)).toBe(
+      defaultCounterState
     )
   })
 
   it('should calls related handler of the given action', () => {
-    expect(counter(defaultState, increment)).toBe(handleIncrement(defaultState))
+    expect(counterReducer(defaultCounterState, increment)).toBe(handleIncrement(defaultCounterState))
     expect(handleIncrement).toBeCalledTimes(2)
     expect(handleDecrement).not.toBeCalled()
     expect(handleReset).not.toBeCalled()
