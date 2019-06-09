@@ -2,7 +2,7 @@
  * Map action creator to it's contained action type
  * @description it gets an object with at least a type property or overridden toString method and returns it.
  * @example
- * const increment = createAction('[Counter] increment')
+ * const increment = createActionCreator('[Counter] increment')
  * getType(increment) //=> '[Counter] increment'
  * @example
  * getType({ type: 'TEST' }) //=> 'TEST'

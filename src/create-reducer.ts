@@ -12,9 +12,9 @@ import { DeepImmutable } from './types'
  * Reducer factory
  * @description combines multiple handler map into single reducer
  * @example
- * const counter = createReducer(0, handle => [
- *   handle(increment, state => state + 1),
- *   handle(decrement, state => state - 1),
+ * const counter = createReducer(0, handleAction => [
+ *   handleAction(increment, state => state + 1),
+ *   handleAction(decrement, state => state - 1),
  * ])
  */
 export function createReducer<
