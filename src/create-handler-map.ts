@@ -1,5 +1,5 @@
 import { ActionCreator } from './create-action-creator'
-import { AnyAction } from './action'
+import { AnyAction } from './create-action'
 import { getType } from './get-type'
 import { Handler } from './types'
 

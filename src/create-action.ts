@@ -18,13 +18,13 @@ export type AnyAction = Action<string>
  * @example
  * const clearTodos = action('[Todo] truncate');
  */
-export function action<TType extends string>(type: TType): Action<TType>
+export function createAction<TType extends string>(type: TType): Action<TType>
 /**
  * Action with error factory
  * @example
  * const fetchTodosRejected = (payload: Error) => action('[Todo] fetch rejected', payload);
  */
-export function action<TType extends string, TPayload extends Error>(
+export function createAction<TType extends string, TPayload extends Error>(
   type: TType,
   payload: TPayload
 ): Action<TType, TPayload>
@@ -33,7 +33,7 @@ export function action<TType extends string, TPayload extends Error>(
  * @example
  * const addTodo = ({ name, completed = false }: Todo) => action('[Todo] add', { name, completed });
  */
-export function action<TType extends string, TPayload>(
+export function createAction<TType extends string, TPayload>(
   type: TType,
   payload: TPayload
 ): Action<TType, TPayload>
@@ -42,17 +42,17 @@ export function action<TType extends string, TPayload>(
  * @example
  * const fetchTodosRejected = (payload: Error, meta?: Meta) => action('[Todo] fetch rejected', payload, meta);
  */
-export function action<TType extends string, TPayload extends Error, TMeta>(
-  type: TType,
-  payload: TPayload,
-  meta: TMeta
-): Action<TType, TPayload, TMeta>
+export function createAction<
+  TType extends string,
+  TPayload extends Error,
+  TMeta
+>(type: TType, payload: TPayload, meta: TMeta): Action<TType, TPayload, TMeta>
 /**
  * Action with payload and meta factory
  * @example
  * const addTodo = ({ name, completed = false }: Todo, meta?: Meta) => action('[Todo] add', { name, completed }, meta);
  */
-export function action<TType extends string, TPayload, TMeta>(
+export function createAction<TType extends string, TPayload, TMeta>(
   type: TType,
   payload: TPayload,
   meta: TMeta
@@ -71,7 +71,7 @@ export function action<TType extends string, TPayload, TMeta>(
  * @example
  * const addTodo = ({ name, completed = false }: Todo, meta?: Meta) => action('[Todo] add', { name, completed }, meta);
  */
-export function action<TType extends string, TPayload, TMeta>(
+export function createAction<TType extends string, TPayload, TMeta>(
   type: TType,
   payload?: TPayload,
   meta?: TMeta

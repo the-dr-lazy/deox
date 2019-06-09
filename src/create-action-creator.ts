@@ -1,4 +1,4 @@
-import { action, Action, AnyAction } from './action'
+import { createAction, Action, AnyAction } from './create-action'
 
 export type ActionCreator<T extends AnyAction | string> = T extends AnyAction
   ? {
@@ -52,7 +52,9 @@ export function createActionCreator<
     ) => Action<TType, Payload, Meta>
   ) => TCallable = resolve => (() => resolve()) as any
 ) {
-  const callable = executor((payload, meta) => action(type, payload!, meta!))
+  const callable = executor((payload, meta) =>
+    createAction(type, payload!, meta!)
+  )
 
   return Object.assign(callable, {
     type,
