@@ -1,6 +1,6 @@
 export { configureStore } from 'redux-starter-kit'
 
-export { action, Action, AnyAction } from './action'
+export { createAction as action, Action, AnyAction } from './create-action'
 export {
   createActionCreator,
   createActionCreator as createAction,
