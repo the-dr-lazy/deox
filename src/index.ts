@@ -9,4 +9,11 @@ export {
 export { getType } from './get-type'
 export { createReducer } from './create-reducer'
 export { ofType } from './of-type'
-export { ActionType } from './types'
+export {
+  ActionType,
+  Immutable,
+  DeepImmutable,
+  DeepImmutableArray,
+  DeepImmutableMap,
+  DeepImmutableObject,
+} from './types'
