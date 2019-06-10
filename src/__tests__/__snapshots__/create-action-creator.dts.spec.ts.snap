@@ -8,7 +8,7 @@ exports[`createActionCreator createActionCreator(
       '[Todo] add',
       resolve => (name: string, completed = false) =>
         resolve({ name, completed }, 'Meta data of all todos')
-    ) 1`] = `"(<T>(name: string, completed?: any) => { type: \\"[Todo] add\\"; payload: { name: string; completed: any; }; meta: string; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
+    ) 1`] = `"(<_T>(name: string, completed?: any) => { type: \\"[Todo] add\\"; payload: { name: string; completed: any; }; meta: string; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
 
 exports[`createActionCreator createActionCreator(
       '[Todo] add',
@@ -16,7 +16,7 @@ exports[`createActionCreator createActionCreator(
     ) (type) should match snapshot: createActionCreator createActionCreator(
       '[Todo] add',
       resolve => (name: string, completed = false) => resolve({ name, completed })
-    ) 1`] = `"(<T>(name: string, completed?: any) => { type: \\"[Todo] add\\"; payload: { name: string; completed: any; }; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
+    ) 1`] = `"(<_T>(name: string, completed?: any) => { type: \\"[Todo] add\\"; payload: { name: string; completed: any; }; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
 
 exports[`createActionCreator createActionCreator(
       '[Todo] fetch rejected',
