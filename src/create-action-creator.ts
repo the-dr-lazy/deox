@@ -42,7 +42,7 @@ export type ActionCreator<T extends AnyAction | string> = T extends AnyAction
  */
 export function createActionCreator<
   TType extends string,
-  TCallable extends <T>(...args: any[]) => Action<TType> = () => Action<TType>
+  TCallable extends <_T>(...args: any[]) => Action<TType> = () => Action<TType>
 >(
   type: TType,
   executor: (
