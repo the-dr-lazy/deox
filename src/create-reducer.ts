@@ -6,7 +6,6 @@ import {
   InferNextStateFromHandlerMap,
 } from './create-handler-map'
 import { merge } from './utils'
-import { DeepImmutable } from './types'
 
 /**
  * Reducer factory
@@ -19,17 +18,15 @@ import { DeepImmutable } from './types'
  */
 export function createReducer<
   TPrevState,
-  THandlerMap extends HandlerMap<DeepImmutable<TPrevState>, any, any>
+  THandlerMap extends HandlerMap<TPrevState, any, any>
 >(
   defaultState: TPrevState,
-  handlerMapsCreator: (
-    handle: CreateHandlerMap<DeepImmutable<TPrevState>>
-  ) => THandlerMap[]
+  handlerMapsCreator: (handle: CreateHandlerMap<TPrevState>) => THandlerMap[]
 ) {
   const handlerMap = merge(...handlerMapsCreator(createHandlerMap))
 
   return (
-    state = <DeepImmutable<TPrevState>>defaultState,
+    state = defaultState,
     action: InferActionFromHandlerMap<THandlerMap>
   ): InferNextStateFromHandlerMap<THandlerMap> => {
     const handler = handlerMap[action.type]
