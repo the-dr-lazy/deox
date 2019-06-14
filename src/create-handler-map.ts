@@ -36,7 +36,7 @@ export type CreateHandlerMap<TPrevState> = <
  * @example
  * createHandlerMap([increment, increase], (state: number) => state + 1)
  */
-export const createHandlerMap = <
+export function createHandlerMap<
   TActionCreator extends ActionCreator<string>,
   TPrevState,
   TNextState extends TPrevState,
@@ -46,8 +46,8 @@ export const createHandlerMap = <
 >(
   actionCreators: TActionCreator | TActionCreator[],
   handler: Handler<TPrevState, TAction, TNextState>
-) =>
-  (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
+) {
+  return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
     .map(getType)
     .reduce<HandlerMap<TPrevState, TAction, TNextState>>(
       (acc, type) => {
@@ -56,3 +56,4 @@ export const createHandlerMap = <
       },
       {} as any
     )
+}
