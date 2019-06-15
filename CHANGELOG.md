@@ -1,5 +1,20 @@
 # Deox Changelog
 
+# [2.0.0](https://github.com/thebrodmann/deox/compare/v1.4.1...v2.0.0) (2019-06-15)
+
+
+### Features
+
+* export immutibility type helpers in public API ([b723d35](https://github.com/thebrodmann/deox/commit/b723d35))
+* make DeepImmutable optional in input/prev state ([0f35d7f](https://github.com/thebrodmann/deox/commit/0f35d7f)), closes [#58](https://github.com/thebrodmann/deox/issues/58) [#55](https://github.com/thebrodmann/deox/issues/55)
+
+
+### BREAKING CHANGES
+
+* The input/prev state argument in createHandlerMap (AKA handleAction) and returning
+reducer of createReducer will not obligated to be Immutable data structure by Deox which in turn can
+lead to changes in handler's and reducer's return type.
+
 ## [1.4.1](https://github.com/thebrodmann/deox/compare/v1.4.0...v1.4.1) (2019-06-09)
 
 
