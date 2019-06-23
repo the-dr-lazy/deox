@@ -31,7 +31,7 @@
     "prepare": "not-in-install || { npm run test && npm run test-dts && npm run build; }"
   },
   "dependencies": {
-    "redux-starter-kit": "0.4.3",
+    "redux-starter-kit": "0.5.1",
     "rxjs": "^6.3.3",
     "tslib": "^1.9.3"
   },
