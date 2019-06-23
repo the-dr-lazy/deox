@@ -27,7 +27,8 @@
     "postbuild": "rimraf tmp",
     "docs:dev": "DEBUG=true docz dev",
     "docs:build": "docz build",
-    "clean": "rimraf tmp dist coverage"
+    "clean": "rimraf tmp dist coverage",
+    "prepare": "npm run clean && npm run test && npm run test-dts && npm run build"
   },
   "dependencies": {
     "redux-starter-kit": "0.4.3",
