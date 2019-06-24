@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getType getType(viaToString) (type) should match snapshot: getType getType(viaToString) 1`] = `"\\"[Todo] truncate\\""`;
+exports[`getType getType(viaToString) (type) should match snapshot 1`] = `"\\"[Todo] truncate\\""`;
 
-exports[`getType getType(viaType) (type) should match snapshot: getType getType(viaType) 1`] = `"\\"[Todo] truncate\\""`;
+exports[`getType getType(viaType) (type) should match snapshot 1`] = `"\\"[Todo] truncate\\""`;
