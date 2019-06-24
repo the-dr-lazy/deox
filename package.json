@@ -52,6 +52,7 @@
     "dts-jest": "^22.0.4",
     "husky": "^2.0.0",
     "jest": "^24.0.0",
+    "jest-runner-tsc": "^1.5.1",
     "lint-staged": "^8.1.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.14.4",
@@ -63,7 +64,6 @@
     "rollup-plugin-terser": "^5.0.0",
     "rxjs-marbles": "^5.0.0",
     "semantic-release": "^15.13.3",
-    "ts-jest": "^24.0.0",
     "tslint": "^5.12.1",
     "typescript": "~3.5.2"
   },
