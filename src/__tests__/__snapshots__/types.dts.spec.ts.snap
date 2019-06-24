@@ -1,157 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DeepImmutable displayType<DeepImmutable<Function>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Function>>() 1`] = `"Function"`;
+exports[`DeepImmutable displayType<DeepImmutable<Function>>() (type) should match snapshot 1`] = `"Function"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Function[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Function[]>>() 1`] = `"DeepImmutableArray<Function>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Function[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<Function>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'boolean', boolean>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'boolean', boolean>>>() 1`] = `"DeepImmutableMap<\\"boolean\\", boolean>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'boolean', boolean>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"boolean\\", boolean>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'function', Function>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'function', Function>>>() 1`] = `"DeepImmutableMap<\\"function\\", Function>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'function', Function>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"function\\", Function>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'null', null>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'null', null>>>() 1`] = `"DeepImmutableMap<\\"null\\", null>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'null', null>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"null\\", null>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'number', number>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'number', number>>>() 1`] = `"DeepImmutableMap<\\"number\\", number>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'number', number>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"number\\", number>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'string', string>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'string', string>>>() 1`] = `"DeepImmutableMap<\\"string\\", string>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'string', string>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"string\\", string>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'undefined', undefined>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'undefined', undefined>>>() 1`] = `"DeepImmutableMap<\\"undefined\\", undefined>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'undefined', undefined>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"undefined\\", undefined>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'user', User>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'user', User>>>() 1`] = `"DeepImmutableMap<\\"user\\", User>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'user', User>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"user\\", User>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Map<'users', Users>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Map<'users', Users>>>() 1`] = `"DeepImmutableMap<\\"users\\", User[]>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Map<'users', Users>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"users\\", User[]>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<Function>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<Function>>>() 1`] = `"DeepImmutableArray<Function>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<Function>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<Function>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<User>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<User>>>() 1`] = `"DeepImmutableArray<User>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<User>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<User>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<Users>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<Users>>>() 1`] = `"DeepImmutableArray<User[]>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<Users>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<User[]>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<boolean>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<boolean>>>() 1`] = `"DeepImmutableArray<boolean>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<boolean>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<boolean>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<null>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<null>>>() 1`] = `"DeepImmutableArray<null>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<null>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<null>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<number>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<number>>>() 1`] = `"DeepImmutableArray<number>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<number>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<number>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<string>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<string>>>() 1`] = `"DeepImmutableArray<string>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<string>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<string>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<undefined>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyArray<undefined>>>() 1`] = `"DeepImmutableArray<undefined>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyArray<undefined>>>() (type) should match snapshot 1`] = `"DeepImmutableArray<undefined>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'boolean', boolean>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'boolean', boolean>>>() 1`] = `"DeepImmutableMap<\\"boolean\\", boolean>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'boolean', boolean>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"boolean\\", boolean>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'function', Function>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'function', Function>>>() 1`] = `"DeepImmutableMap<\\"function\\", Function>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'function', Function>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"function\\", Function>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'null', null>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'null', null>>>() 1`] = `"DeepImmutableMap<\\"null\\", null>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'null', null>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"null\\", null>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'number', number>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'number', number>>>() 1`] = `"DeepImmutableMap<\\"number\\", number>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'number', number>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"number\\", number>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'string', string>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'string', string>>>() 1`] = `"DeepImmutableMap<\\"string\\", string>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'string', string>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"string\\", string>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'undefined', undefined>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'undefined', undefined>>>() 1`] = `"DeepImmutableMap<\\"undefined\\", undefined>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'undefined', undefined>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"undefined\\", undefined>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'user', User>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'user', User>>>() 1`] = `"DeepImmutableMap<\\"user\\", User>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'user', User>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"user\\", User>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'users', Users>>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<ReadonlyMap<'users', Users>>>() 1`] = `"DeepImmutableMap<\\"users\\", User[]>"`;
+exports[`DeepImmutable displayType<DeepImmutable<ReadonlyMap<'users', Users>>>() (type) should match snapshot 1`] = `"DeepImmutableMap<\\"users\\", User[]>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<User>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<User>>() 1`] = `"DeepImmutableObject<User>"`;
+exports[`DeepImmutable displayType<DeepImmutable<User>>() (type) should match snapshot 1`] = `"DeepImmutableObject<User>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<User[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<User[]>>() 1`] = `"DeepImmutableArray<User>"`;
+exports[`DeepImmutable displayType<DeepImmutable<User[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<User>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<Users[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<Users[]>>() 1`] = `"DeepImmutableArray<User[]>"`;
+exports[`DeepImmutable displayType<DeepImmutable<Users[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<User[]>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<boolean>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<boolean>>() 1`] = `"boolean"`;
+exports[`DeepImmutable displayType<DeepImmutable<boolean>>() (type) should match snapshot 1`] = `"boolean"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<boolean[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<boolean[]>>() 1`] = `"DeepImmutableArray<boolean>"`;
+exports[`DeepImmutable displayType<DeepImmutable<boolean[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<boolean>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<null>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<null>>() 1`] = `"null"`;
+exports[`DeepImmutable displayType<DeepImmutable<null>>() (type) should match snapshot 1`] = `"null"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<null[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<null[]>>() 1`] = `"DeepImmutableArray<null>"`;
+exports[`DeepImmutable displayType<DeepImmutable<null[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<null>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<number>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<number>>() 1`] = `"number"`;
+exports[`DeepImmutable displayType<DeepImmutable<number>>() (type) should match snapshot 1`] = `"number"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<number[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<number[]>>() 1`] = `"DeepImmutableArray<number>"`;
+exports[`DeepImmutable displayType<DeepImmutable<number[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<number>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<string>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<string>>() 1`] = `"string"`;
+exports[`DeepImmutable displayType<DeepImmutable<string>>() (type) should match snapshot 1`] = `"string"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<string[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<string[]>>() 1`] = `"DeepImmutableArray<string>"`;
+exports[`DeepImmutable displayType<DeepImmutable<string[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<string>"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<undefined>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<undefined>>() 1`] = `"undefined"`;
+exports[`DeepImmutable displayType<DeepImmutable<undefined>>() (type) should match snapshot 1`] = `"undefined"`;
 
-exports[`DeepImmutable displayType<DeepImmutable<undefined[]>>() (type) should match snapshot: DeepImmutable displayType<DeepImmutable<undefined[]>>() 1`] = `"DeepImmutableArray<undefined>"`;
+exports[`DeepImmutable displayType<DeepImmutable<undefined[]>>() (type) should match snapshot 1`] = `"DeepImmutableArray<undefined>"`;
 
-exports[`Immutable displayType<Immutable<Function>>() (type) should match snapshot: Immutable displayType<Immutable<Function>>() 1`] = `"Function"`;
+exports[`Immutable displayType<Immutable<Function>>() (type) should match snapshot 1`] = `"Function"`;
 
-exports[`Immutable displayType<Immutable<Function[]>>() (type) should match snapshot: Immutable displayType<Immutable<Function[]>>() 1`] = `"ReadonlyArray<Function>"`;
+exports[`Immutable displayType<Immutable<Function[]>>() (type) should match snapshot 1`] = `"readonly Function[]"`;
 
-exports[`Immutable displayType<Immutable<Map<'boolean', boolean>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'boolean', boolean>>>() 1`] = `"ReadonlyMap<\\"boolean\\", boolean>"`;
+exports[`Immutable displayType<Immutable<Map<'boolean', boolean>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"boolean\\", boolean>"`;
 
-exports[`Immutable displayType<Immutable<Map<'function', Function>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'function', Function>>>() 1`] = `"ReadonlyMap<\\"function\\", Function>"`;
+exports[`Immutable displayType<Immutable<Map<'function', Function>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"function\\", Function>"`;
 
-exports[`Immutable displayType<Immutable<Map<'null', null>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'null', null>>>() 1`] = `"ReadonlyMap<\\"null\\", null>"`;
+exports[`Immutable displayType<Immutable<Map<'null', null>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"null\\", null>"`;
 
-exports[`Immutable displayType<Immutable<Map<'number', number>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'number', number>>>() 1`] = `"ReadonlyMap<\\"number\\", number>"`;
+exports[`Immutable displayType<Immutable<Map<'number', number>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"number\\", number>"`;
 
-exports[`Immutable displayType<Immutable<Map<'string', string>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'string', string>>>() 1`] = `"ReadonlyMap<\\"string\\", string>"`;
+exports[`Immutable displayType<Immutable<Map<'string', string>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"string\\", string>"`;
 
-exports[`Immutable displayType<Immutable<Map<'undefined', undefined>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'undefined', undefined>>>() 1`] = `"ReadonlyMap<\\"undefined\\", undefined>"`;
+exports[`Immutable displayType<Immutable<Map<'undefined', undefined>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"undefined\\", undefined>"`;
 
-exports[`Immutable displayType<Immutable<Map<'user', User>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'user', User>>>() 1`] = `"ReadonlyMap<\\"user\\", User>"`;
+exports[`Immutable displayType<Immutable<Map<'user', User>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"user\\", User>"`;
 
-exports[`Immutable displayType<Immutable<Map<'users', Users>>>() (type) should match snapshot: Immutable displayType<Immutable<Map<'users', Users>>>() 1`] = `"ReadonlyMap<\\"users\\", User[]>"`;
+exports[`Immutable displayType<Immutable<Map<'users', Users>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"users\\", User[]>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<Function>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<Function>>>() 1`] = `"ReadonlyArray<Function>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<Function>>>() (type) should match snapshot 1`] = `"readonly Function[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<User>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<User>>>() 1`] = `"ReadonlyArray<User>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<User>>>() (type) should match snapshot 1`] = `"readonly User[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<Users>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<Users>>>() 1`] = `"ReadonlyArray<User[]>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<Users>>>() (type) should match snapshot 1`] = `"readonly User[][]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<boolean>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<boolean>>>() 1`] = `"ReadonlyArray<boolean>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<boolean>>>() (type) should match snapshot 1`] = `"readonly boolean[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<null>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<null>>>() 1`] = `"ReadonlyArray<null>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<null>>>() (type) should match snapshot 1`] = `"readonly null[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<number>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<number>>>() 1`] = `"ReadonlyArray<number>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<number>>>() (type) should match snapshot 1`] = `"readonly number[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<string>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<string>>>() 1`] = `"ReadonlyArray<string>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<string>>>() (type) should match snapshot 1`] = `"readonly string[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyArray<undefined>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyArray<undefined>>>() 1`] = `"ReadonlyArray<undefined>"`;
+exports[`Immutable displayType<Immutable<ReadonlyArray<undefined>>>() (type) should match snapshot 1`] = `"readonly undefined[]"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'boolean', boolean>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'boolean', boolean>>>() 1`] = `"ReadonlyMap<\\"boolean\\", boolean>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'boolean', boolean>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"boolean\\", boolean>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'function', Function>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'function', Function>>>() 1`] = `"ReadonlyMap<\\"function\\", Function>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'function', Function>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"function\\", Function>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'null', null>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'null', null>>>() 1`] = `"ReadonlyMap<\\"null\\", null>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'null', null>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"null\\", null>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'number', number>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'number', number>>>() 1`] = `"ReadonlyMap<\\"number\\", number>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'number', number>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"number\\", number>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'string', string>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'string', string>>>() 1`] = `"ReadonlyMap<\\"string\\", string>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'string', string>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"string\\", string>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'undefined', undefined>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'undefined', undefined>>>() 1`] = `"ReadonlyMap<\\"undefined\\", undefined>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'undefined', undefined>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"undefined\\", undefined>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'user', User>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'user', User>>>() 1`] = `"ReadonlyMap<\\"user\\", User>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'user', User>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"user\\", User>"`;
 
-exports[`Immutable displayType<Immutable<ReadonlyMap<'users', Users>>>() (type) should match snapshot: Immutable displayType<Immutable<ReadonlyMap<'users', Users>>>() 1`] = `"ReadonlyMap<\\"users\\", User[]>"`;
+exports[`Immutable displayType<Immutable<ReadonlyMap<'users', Users>>>() (type) should match snapshot 1`] = `"ReadonlyMap<\\"users\\", User[]>"`;
 
-exports[`Immutable displayType<Immutable<User>>() (type) should match snapshot: Immutable displayType<Immutable<User>>() 1`] = `"Readonly<User>"`;
+exports[`Immutable displayType<Immutable<User>>() (type) should match snapshot 1`] = `"Readonly<User>"`;
 
-exports[`Immutable displayType<Immutable<User[]>>() (type) should match snapshot: Immutable displayType<Immutable<User[]>>() 1`] = `"ReadonlyArray<User>"`;
+exports[`Immutable displayType<Immutable<User[]>>() (type) should match snapshot 1`] = `"readonly User[]"`;
 
-exports[`Immutable displayType<Immutable<Users[]>>() (type) should match snapshot: Immutable displayType<Immutable<Users[]>>() 1`] = `"ReadonlyArray<User[]>"`;
+exports[`Immutable displayType<Immutable<Users[]>>() (type) should match snapshot 1`] = `"readonly User[][]"`;
 
-exports[`Immutable displayType<Immutable<boolean>>() (type) should match snapshot: Immutable displayType<Immutable<boolean>>() 1`] = `"boolean"`;
+exports[`Immutable displayType<Immutable<boolean>>() (type) should match snapshot 1`] = `"boolean"`;
 
-exports[`Immutable displayType<Immutable<boolean[]>>() (type) should match snapshot: Immutable displayType<Immutable<boolean[]>>() 1`] = `"ReadonlyArray<boolean>"`;
+exports[`Immutable displayType<Immutable<boolean[]>>() (type) should match snapshot 1`] = `"readonly boolean[]"`;
 
-exports[`Immutable displayType<Immutable<null>>() (type) should match snapshot: Immutable displayType<Immutable<null>>() 1`] = `"null"`;
+exports[`Immutable displayType<Immutable<null>>() (type) should match snapshot 1`] = `"null"`;
 
-exports[`Immutable displayType<Immutable<null[]>>() (type) should match snapshot: Immutable displayType<Immutable<null[]>>() 1`] = `"ReadonlyArray<null>"`;
+exports[`Immutable displayType<Immutable<null[]>>() (type) should match snapshot 1`] = `"readonly null[]"`;
 
-exports[`Immutable displayType<Immutable<number>>() (type) should match snapshot: Immutable displayType<Immutable<number>>() 1`] = `"number"`;
+exports[`Immutable displayType<Immutable<number>>() (type) should match snapshot 1`] = `"number"`;
 
-exports[`Immutable displayType<Immutable<number[]>>() (type) should match snapshot: Immutable displayType<Immutable<number[]>>() 1`] = `"ReadonlyArray<number>"`;
+exports[`Immutable displayType<Immutable<number[]>>() (type) should match snapshot 1`] = `"readonly number[]"`;
 
-exports[`Immutable displayType<Immutable<string>>() (type) should match snapshot: Immutable displayType<Immutable<string>>() 1`] = `"string"`;
+exports[`Immutable displayType<Immutable<string>>() (type) should match snapshot 1`] = `"string"`;
 
-exports[`Immutable displayType<Immutable<string[]>>() (type) should match snapshot: Immutable displayType<Immutable<string[]>>() 1`] = `"ReadonlyArray<string>"`;
+exports[`Immutable displayType<Immutable<string[]>>() (type) should match snapshot 1`] = `"readonly string[]"`;
 
-exports[`Immutable displayType<Immutable<undefined>>() (type) should match snapshot: Immutable displayType<Immutable<undefined>>() 1`] = `"undefined"`;
+exports[`Immutable displayType<Immutable<undefined>>() (type) should match snapshot 1`] = `"undefined"`;
 
-exports[`Immutable displayType<Immutable<undefined[]>>() (type) should match snapshot: Immutable displayType<Immutable<undefined[]>>() 1`] = `"ReadonlyArray<undefined>"`;
+exports[`Immutable displayType<Immutable<undefined[]>>() (type) should match snapshot 1`] = `"readonly undefined[]"`;

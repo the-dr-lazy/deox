@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ofType of(a(), b(), c()).pipe(ofType('a')) (type) should match snapshot: ofType of(a(), b(), c()).pipe(ofType('a')) 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; } | { type: \\"c\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType('a')) (type) should match snapshot 1`] = `"Observable<never>"`;
 
-exports[`ofType of(a(), b(), c()).pipe(ofType(['a', 'b'])) (type) should match snapshot: ofType of(a(), b(), c()).pipe(ofType(['a', 'b'])) 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; } | { type: \\"c\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType(['a', 'b'])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; } | { type: \\"c\\"; }>"`;
 
-exports[`ofType of(a(), b(), c()).pipe(ofType([a(), b()])) (type) should match snapshot: ofType of(a(), b(), c()).pipe(ofType([a(), b()])) 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType([a(), b()])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
 
-exports[`ofType of(a(), b(), c()).pipe(ofType([a, b])) (type) should match snapshot: ofType of(a(), b(), c()).pipe(ofType([a, b])) 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType([a, b])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
 
-exports[`ofType of(a(), b(), c()).pipe(ofType(a())) (type) should match snapshot: ofType of(a(), b(), c()).pipe(ofType(a())) 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType(a())) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
 
-exports[`ofType of(a(), b(), c()).pipe(ofType(a)) (type) should match snapshot: ofType of(a(), b(), c()).pipe(ofType(a)) 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType(a)) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
