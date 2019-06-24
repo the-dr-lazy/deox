@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [2.0.1](https://github.com/thebrodmann/deox/compare/v2.0.0...v2.0.1) (2019-06-24)
+
+
+### Bug Fixes
+
+* remove useless default generic value in createActionCreator ([7538ae0](https://github.com/thebrodmann/deox/commit/7538ae0))
+
 # [2.0.0](https://github.com/thebrodmann/deox/compare/v1.4.1...v2.0.0) (2019-06-15)
 
 
