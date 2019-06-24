@@ -42,7 +42,7 @@ export type ActionCreator<T extends AnyAction | string> = T extends AnyAction
  */
 export function createActionCreator<
   TType extends string,
-  TCallable extends <_T>(...args: any[]) => Action<TType> = () => Action<TType>
+  TCallable extends <_T>(...args: any[]) => Action<TType>
 >(
   type: TType,
   executor: (
@@ -50,7 +50,7 @@ export function createActionCreator<
       payload?: Payload,
       meta?: Meta
     ) => Action<TType, Payload, Meta>
-  ) => TCallable = resolve => (() => resolve()) as any
+  ) => TCallable = resolve => (() => resolve()) as TCallable
 ) {
   const callable = executor((payload, meta) =>
     createAction(type, payload!, meta!)
