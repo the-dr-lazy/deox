@@ -28,7 +28,7 @@
     "docs:dev": "DEBUG=true docz dev",
     "docs:build": "docz build",
     "clean": "rimraf tmp dist coverage",
-    "prepare": "not-in-install || npm run test && npm run test-dts && npm run build"
+    "prepare": "not-in-install || { npm run test && npm run test-dts && npm run build; }"
   },
   "dependencies": {
     "redux-starter-kit": "0.4.3",
