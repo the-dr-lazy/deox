@@ -28,7 +28,7 @@
     "docs:dev": "DEBUG=true docz dev",
     "docs:build": "docz build",
     "clean": "rimraf tmp dist coverage",
-    "prepare": "npm run clean && npm run test && npm run test-dts && npm run build"
+    "prepare": "not-in-install || npm run test && npm run test-dts && npm run build"
   },
   "dependencies": {
     "redux-starter-kit": "0.4.3",
@@ -51,6 +51,7 @@
     "docz-theme-default": "^1.0.0-rc.7",
     "dts-jest": "^23.0.0",
     "husky": "^2.0.0",
+    "in-publish": "^2.0.0",
     "jest": "^24.0.0",
     "jest-runner-tsc": "^1.5.1",
     "lint-staged": "^8.1.0",
