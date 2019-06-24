@@ -3,5 +3,6 @@
   "jest.pathToConfig": "jest.config.js",
   "files.associations": {
     ".releaserc": "json"
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
