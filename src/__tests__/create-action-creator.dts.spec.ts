@@ -19,13 +19,16 @@ createActionCreator(
 // @dts-jest:pass:snap
 createActionCreator(
   '[Todo] add',
-  resolve => (name: string, completed = false) => resolve({ name, completed })
+  // tslint:disable-next-line:no-inferrable-types
+  resolve => (name: string, completed: boolean = false) =>
+    resolve({ name, completed })
 )
 
 // @dts-jest:pass:snap
 createActionCreator(
   '[Todo] add',
-  resolve => (name: string, completed = false) =>
+  // tslint:disable-next-line:no-inferrable-types
+  resolve => (name: string, completed: boolean = false) =>
     resolve({ name, completed }, 'Meta data of all todos')
 )
 

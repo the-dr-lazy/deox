@@ -50,7 +50,8 @@ describe('createActionCreator', () => {
   it('should create action creator with non-error payload', () => {
     const actionCreator = createActionCreator(
       '[Todo] add',
-      resolve => (name: string, completed = false) =>
+      // tslint:disable-next-line:no-inferrable-types
+      resolve => (name: string, completed: boolean = false) =>
         resolve({ name, completed })
     )
 

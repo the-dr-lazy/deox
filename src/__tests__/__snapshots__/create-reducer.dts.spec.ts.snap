@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createReducer counter scenario (type) should match snapshot: createReducer counter scenario 1`] = `"(state: number | undefined, action: { type: \\"INCREMENT\\"; } | { type: \\"DECREMENT\\"; } | { type: \\"RESET\\"; payload: number; }) => number"`;
+exports[`createReducer counter scenario (type) should match snapshot 1`] = `"(state: number | undefined, action: { type: \\"INCREMENT\\"; } | { type: \\"DECREMENT\\"; } | { type: \\"RESET\\"; payload: number; }) => number"`;
 
-exports[`createReducer immutable items list scenario (type) should match snapshot: createReducer immutable items list scenario 1`] = `"(state: DeepImmutableArray<Item> | undefined, action: { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => DeepImmutableArray<Item> | DeepImmutableObject<Item>[]"`;
+exports[`createReducer immutable items list scenario (type) should match snapshot 1`] = `"(state: DeepImmutableArray<Item> | undefined, action: { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => DeepImmutableArray<Item> | DeepImmutableObject<Item>[]"`;
 
-exports[`createReducer mutable items list scenario (type) should match snapshot: createReducer mutable items list scenario 1`] = `"(state: Item[] | undefined, action: { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => Item[]"`;
+exports[`createReducer mutable items list scenario (type) should match snapshot 1`] = `"(state: Item[] | undefined, action: { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => Item[]"`;
