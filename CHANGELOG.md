@@ -1,5 +1,12 @@
 # Deox Changelog
 
+# [2.1.0](https://github.com/thebrodmann/deox/compare/v2.0.1...v2.1.0) (2019-06-25)
+
+
+### Features
+
+* upgrade redux-starter-kit to version 0.5.1 ([644acac](https://github.com/thebrodmann/deox/commit/644acac))
+
 ## [2.0.1](https://github.com/thebrodmann/deox/compare/v2.0.0...v2.0.1) (2019-06-24)
 
 
