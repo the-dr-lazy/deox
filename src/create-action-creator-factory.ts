@@ -1,36 +1,45 @@
-import { ActionCreator } from './create-action-creator'
 import { Action } from './create-action'
+import { createActionCreator } from './create-action-creator'
 
+type ReplaceActionType<
+  TAction extends Action<string>,
+  TNewType extends string
+> = TAction extends Action<string, infer P, infer M>
+  ? Action<TNewType, P, M>
+  : (TAction extends Action<string, infer P>
+    ? Action<TNewType, P>
+    : (TAction extends Action<string, undefined, infer M>
+      ? Action<TNewType, undefined, M>
+      : Action<TNewType>));
 
-type ActionCreatorFactory = (type: string) => ActionCreator<string>;
+type Executor = (
+  resolve: <TPayload = undefined, TMeta = undefined>(
+    payload?: TPayload,
+    meta?: TMeta
+  ) => Action<string, TPayload, TMeta>
+) => (...args: any) => Action<string>;
+
 
 interface ActionCreatorFactoryMapper {
-  [key: string]: ActionCreatorFactory;
+  [key: string]: Executor;
 }
 
 type ActionTypesMap<TMapper extends ActionCreatorFactoryMapper> = {
   [TKey in keyof TMapper]: string;
 };
 
-type ArgumentTypes<T> = T extends (...args: infer U) => any ? U : never;
-type ReplaceCreatorType<TCreator, TNewType extends string> = TCreator extends (
-  ...a: ArgumentTypes<TCreator>
-  ) => infer A
-  ? A extends Action<string, infer P, infer M>
-    ? (...a: ArgumentTypes<TCreator>) => Action<TNewType, P, M>
-    : (A extends Action<string, infer P>
-      ? (...a: ArgumentTypes<TCreator>) => Action<TNewType, P>
-      : (...a: ArgumentTypes<TCreator>) => A)
-  : never;
-
 type ActionCreatorMap<
   TMapper extends ActionCreatorFactoryMapper,
   TNames extends ActionTypesMap<TMapper>
   > = {
-  [TKey in keyof TMapper]: ReplaceCreatorType<
-    ReturnType<TMapper[TKey]>,
-    TNames[TKey]
+  [TKey in keyof TMapper]: {
+    (...args: Parameters<ReturnType<TMapper[TKey]>>): ReplaceActionType<
+      ReturnType<ReturnType<TMapper[TKey]>>,
+      TNames[TKey]
     >;
+    type: TNames[TKey];
+    toString(): TNames[TKey];
+  };
 };
 
 export function createActionCreatorFactory<TMapper extends ActionCreatorFactoryMapper>(
@@ -39,7 +48,7 @@ export function createActionCreatorFactory<TMapper extends ActionCreatorFactoryM
   return <TActionTypes extends ActionTypesMap<TMapper>>(names: TActionTypes) =>
     Object.keys(mapper).reduce<
       Partial<ActionCreatorMap<TMapper, TActionTypes>>
-      >((result, key) => {
-      return Object.assign(result, { [key]: mapper[key](names[key]) });
-    }, {}) as ActionCreatorMap<TMapper, TActionTypes>;
+    >((result, key) => Object.assign(
+      result, { [key]: createActionCreator(names[key], mapper[key]) }
+    ), {}) as ActionCreatorMap<TMapper, TActionTypes>;
 }
