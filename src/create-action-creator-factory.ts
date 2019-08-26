@@ -19,36 +19,39 @@ type Executor = (
   ) => Action<string, TPayload, TMeta>
 ) => (...args: any) => Action<string>;
 
-
-interface ActionCreatorFactoryMapper {
-  [key: string]: Executor;
-}
-
-type ActionTypesMap<TMapper extends ActionCreatorFactoryMapper> = {
-  [TKey in keyof TMapper]: string;
-};
+type CreatorMap = Record<string, Executor>;
+type ActionTypeMap<T> = Record<keyof T, string>;
 
 type ActionCreatorMap<
-  TMapper extends ActionCreatorFactoryMapper,
-  TNames extends ActionTypesMap<TMapper>
-  > = {
-  [TKey in keyof TMapper]: {
-    (...args: Parameters<ReturnType<TMapper[TKey]>>): ReplaceActionType<
-      ReturnType<ReturnType<TMapper[TKey]>>,
-      TNames[TKey]
+  TCreators extends CreatorMap,
+  TActionTypes extends ActionTypeMap<TCreators>
+> = {
+  readonly [TKey in keyof TCreators]: {
+    (...args: Parameters<ReturnType<TCreators[TKey]>>): ReplaceActionType<
+      ReturnType<ReturnType<TCreators[TKey]>>,
+      TActionTypes[TKey]
     >;
-    type: TNames[TKey];
-    toString(): TNames[TKey];
+    type: TActionTypes[TKey];
+    toString(): TActionTypes[TKey];
   };
 };
 
-export function createActionCreatorFactory<TMapper extends ActionCreatorFactoryMapper>(
-  mapper: TMapper
-) {
-  return <TActionTypes extends ActionTypesMap<TMapper>>(names: TActionTypes) =>
-    Object.keys(mapper).reduce<
-      Partial<ActionCreatorMap<TMapper, TActionTypes>>
-    >((result, key) => Object.assign(
-      result, { [key]: createActionCreator(names[key], mapper[key]) }
-    ), {}) as ActionCreatorMap<TMapper, TActionTypes>;
+type ActionCreatorFactory<TCreators extends CreatorMap> = <
+  TActionTypes extends ActionTypeMap<TCreators>
+>(
+  types: TActionTypes
+) => ActionCreatorMap<TCreators, TActionTypes>;
+
+export function createActionCreatorFactory<TCreators extends CreatorMap>(
+  creators: TCreators
+): ActionCreatorFactory<TCreators> {
+  return <TActionTypes extends Record<keyof TCreators, string>>(
+    types: TActionTypes
+  ) => {
+    return Object.keys(creators).reduce((result, key) => {
+      return Object.assign(result, {
+        [key]: createActionCreator(types[key], creators[key]),
+      });
+    }, {}) as ActionCreatorMap<TCreators, TActionTypes>;
+  };
 }
