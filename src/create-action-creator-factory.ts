@@ -68,7 +68,7 @@ export function createActionCreatorFactory<TCreators extends CreatorMap>(
         toString: () => type,
       })
     );
-    const keys = Object.keys(factories) as (Extract<keyof TCreators, string>)[];
+    const keys = Object.keys(factories) as Array<Extract<keyof TCreators, string>>;
     return keys.reduce((result, key) => {
       return Object.assign(result, {
         [key]: types[key](factories[key]),
