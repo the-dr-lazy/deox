@@ -1,18 +1,10 @@
 import { createAction, Action, AnyAction } from './create-action'
 
-export type ActionCreator<T extends AnyAction | string> = T extends AnyAction
-  ? {
-      (...args: any[]): T
-      type: T['type']
-      toString(): T['type']
-    }
-  : (T extends string
-      ? {
-          (...args: any[]): Action<T>
-          type: T
-          toString(): T
-        }
-      : never)
+export type ActionCreator<T extends AnyAction | string> = {
+  (...args: any[]): T extends string ? Action<T> : T
+  type: T extends AnyAction ? T['type'] : T
+  toString(): T extends AnyAction ? T['type'] : T
+}
 
 /**
  * Flux standard action creator factory
