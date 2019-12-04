@@ -35,13 +35,15 @@ describe('createReducer', () => {
   })
 
   it('should pass through state when there is no proper handler', () => {
-    expect(counterReducer(defaultCounterState, { type: 'NOT DEFINED' } as any)).toBe(
+    expect(counterReducer(defaultCounterState, { type: 'NOT DEFINED' })).toBe(
       defaultCounterState
     )
   })
 
   it('should calls related handler of the given action', () => {
-    expect(counterReducer(defaultCounterState, increment)).toBe(handleIncrement(defaultCounterState))
+    expect(counterReducer(defaultCounterState, increment)).toBe(
+      handleIncrement(defaultCounterState)
+    )
     expect(handleIncrement).toBeCalledTimes(2)
     expect(handleDecrement).not.toBeCalled()
     expect(handleReset).not.toBeCalled()

@@ -6,6 +6,7 @@ import {
   InferNextStateFromHandlerMap,
 } from './create-handler-map'
 import { merge } from './utils'
+import { AnyAction } from './create-action'
 
 /**
  * Reducer factory
@@ -27,9 +28,9 @@ export function createReducer<
 
   return (
     state = defaultState,
-    action: InferActionFromHandlerMap<THandlerMap>
+    action: InferActionFromHandlerMap<THandlerMap> | AnyAction
   ): InferNextStateFromHandlerMap<THandlerMap> => {
-    const handler = handlerMap[action.type]
+    const handler = handlerMap[(<any>action).type]
 
     return handler ? handler(<any>state, action) : state
   }
