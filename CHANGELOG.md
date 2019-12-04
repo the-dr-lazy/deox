@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [2.1.1](https://github.com/thebrodmann/deox/compare/v2.1.0...v2.1.1) (2019-12-04)
+
+
+### Bug Fixes
+
+* make ofType operator typing works with plain action types ([fecabda](https://github.com/thebrodmann/deox/commit/fecabda))
+
 # [2.1.0](https://github.com/thebrodmann/deox/compare/v2.0.1...v2.1.0) (2019-06-25)
 
 
