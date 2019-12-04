@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [2.1.3](https://github.com/thebrodmann/deox/compare/v2.1.2...v2.1.3) (2019-12-04)
+
+
+### Bug Fixes
+
+* use tslib and rxjs as peer dependencies ([65a8a4a](https://github.com/thebrodmann/deox/commit/65a8a4a))
+
 ## [2.1.2](https://github.com/thebrodmann/deox/compare/v2.1.1...v2.1.2) (2019-12-04)
 
 
