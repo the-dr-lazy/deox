@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [2.1.2](https://github.com/thebrodmann/deox/compare/v2.1.1...v2.1.2) (2019-12-04)
+
+
+### Bug Fixes
+
+* allow acceptance of any action by reducer created by createReducer ([1b39adb](https://github.com/thebrodmann/deox/commit/1b39adb))
+
 ## [2.1.1](https://github.com/thebrodmann/deox/compare/v2.1.0...v2.1.1) (2019-12-04)
 
 
