@@ -1,5 +1,18 @@
 # Deox Changelog
 
+# [3.0.0](https://github.com/thebrodmann/deox/compare/v2.1.2...v3.0.0) (2019-12-04)
+
+
+### Bug Fixes
+
+* use tslib and rxjs as peer dependencies ([a58a4a9](https://github.com/thebrodmann/deox/commit/a58a4a9))
+
+
+### BREAKING CHANGES
+
+* Please make sure you have tslib in your dependencies if you are using TypeScript.
+Also, make sure you have rxjs in your dependencies if you are using ofType rxjs operator.
+
 ## [2.1.2](https://github.com/thebrodmann/deox/compare/v2.1.1...v2.1.2) (2019-12-04)
 
 
