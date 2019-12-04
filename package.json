@@ -31,9 +31,7 @@
     "prepare": "not-in-install || { npm run test && npm run test-dts && npm run build; }"
   },
   "dependencies": {
-    "redux-starter-kit": "0.5.1",
-    "rxjs": "^6.3.3",
-    "tslib": "^1.9.3"
+    "redux-starter-kit": "0.5.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
@@ -67,6 +65,10 @@
     "semantic-release": "^15.13.3",
     "tslint": "^5.12.1",
     "typescript": "~3.5.2"
+  },
+  "peerDependencies": {
+    "tslib": "^1.9.0",
+    "rxjs": ">=6.0.0-beta.0 <7"
   },
   "keywords": [
     "reducer",
