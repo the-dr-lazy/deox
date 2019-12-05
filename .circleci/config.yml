@@ -27,12 +27,12 @@ jobs:
             - node_modules
 
       - run:
-          name: Unit Testing
-          command: yarn run test --ci --coverage
-
-      - run:
           name: TSC Testing
           command: yarn run test-tsc --ci
+
+      - run:
+          name: Unit Testing
+          command: yarn run test --ci --coverage
 
       - run:
           name: DTS Testing

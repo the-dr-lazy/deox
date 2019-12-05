@@ -30,7 +30,7 @@
     "docs:dev": "DEBUG=true docz dev",
     "docs:build": "docz build",
     "clean": "rimraf tmp dist coverage",
-    "prepare": "not-in-install || { npm run test && npm run test-dts && npm run build; }"
+    "prepare": "not-in-install || { npm run test-tsc && npm run test && npm run test-dts && npm run build; }"
   },
   "dependencies": {
     "redux-starter-kit": "0.5.1",
@@ -86,7 +86,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run lint && npm run test -- --bail && npm run test-tsc -- --bail && npm run test-dts -- --bail",
+      "pre-push": "npm run lint && npm run test-tsc -- --bail && npm run test -- --bail && npm run test-dts -- --bail",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -94,8 +94,8 @@
     "*.ts": [
       "npm run lint:fix --",
       "git add",
-      "npm run test -- --bail --findRelatedTests",
       "npm run test-tsc -- --bail --findRelatedTests",
+      "npm run test -- --bail --findRelatedTests",
       "npm run test-dts -- --bail --findRelatedTests"
     ],
     "*.{md,mdx,json,js}": [
