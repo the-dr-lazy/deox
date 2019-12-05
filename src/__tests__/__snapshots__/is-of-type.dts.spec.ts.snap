@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isOfType incrementAction (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }"`;
+
+exports[`isOfType isOfType([decrement, reset], reset(0)) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([decrement.type, reset.type])(reset(0)) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment(), decrement(), reset(0)], increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment(), decrement, reset.type])(increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment(), reset(0)])(decrement()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment(), reset.type])(decrement()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment, decrement, reset])(increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment.type, decrement(), reset], increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment.type, reset.type], decrement()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType([increment.type, reset], decrement()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType(decrement, increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType(decrement.type)(increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType(increment())(increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType(increment.type, increment()) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType(reset(0), reset(1)) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType isOfType(reset)(reset(0)) (type) should match snapshot 1`] = `"boolean"`;
+
+exports[`isOfType resetAction (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;

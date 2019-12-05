@@ -8,6 +8,7 @@ Object {
   "createActionCreator": [Function],
   "createReducer": [Function],
   "getType": [Function],
+  "isOfType": [Function],
   "ofType": [Function],
 }
 `;

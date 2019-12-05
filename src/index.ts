@@ -9,6 +9,7 @@ export {
 export { getType } from './get-type'
 export { createReducer } from './create-reducer'
 export { ofType } from './of-type'
+export { isOfType } from './is-of-type'
 export {
   ActionType,
   Immutable,
