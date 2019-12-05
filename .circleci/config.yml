@@ -31,6 +31,10 @@ jobs:
           command: yarn run test --ci --coverage
 
       - run:
+          name: TSC Testing
+          command: yarn run test-tsc --ci
+
+      - run:
           name: DTS Testing
           command: yarn run test-dts --ci
 
