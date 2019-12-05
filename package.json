@@ -16,6 +16,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "test-tsc": "jest -c jest.tsc.config.js",
+    "test-tsc:watch": "npm run test-dts -- --watch",
     "test-dts": "jest -c dts-jest.config.js",
     "test-dts:watch": "npm run test-dts -- --watch",
     "lint": "tslint -p .",
@@ -28,7 +30,7 @@
     "docs:dev": "DEBUG=true docz dev",
     "docs:build": "docz build",
     "clean": "rimraf tmp dist coverage",
-    "prepare": "not-in-install || { npm run test && npm run test-dts && npm run build; }"
+    "prepare": "not-in-install || { npm run test-tsc && npm run test && npm run test-dts && npm run build; }"
   },
   "dependencies": {
     "redux-starter-kit": "0.5.1",
@@ -65,6 +67,7 @@
     "rollup-plugin-terser": "^5.0.0",
     "rxjs-marbles": "^5.0.0",
     "semantic-release": "^15.13.3",
+    "ts-jest": "^24.2.0",
     "tslint": "^5.12.1",
     "typescript": "~3.5.2"
   },
@@ -83,7 +86,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run lint && npm run test -- --bail && npm run test-dts -- --bail",
+      "pre-push": "npm run lint && npm run test-tsc -- --bail && npm run test -- --bail && npm run test-dts -- --bail",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -91,6 +94,7 @@
     "*.ts": [
       "npm run lint:fix --",
       "git add",
+      "npm run test-tsc -- --bail --findRelatedTests",
       "npm run test -- --bail --findRelatedTests",
       "npm run test-dts -- --bail --findRelatedTests"
     ],
