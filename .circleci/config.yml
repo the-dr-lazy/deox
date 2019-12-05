@@ -27,6 +27,10 @@ jobs:
             - node_modules
 
       - run:
+          name: TSC Testing
+          command: yarn run test-tsc --ci
+
+      - run:
           name: Unit Testing
           command: yarn run test --ci --coverage
 
