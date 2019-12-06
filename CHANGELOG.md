@@ -13,6 +13,13 @@
 * Please make sure you have tslib in your dependencies if you are using TypeScript.
 Also, make sure you have rxjs in your dependencies if you are using ofType rxjs operator.
 
+## [2.1.4](https://github.com/thebrodmann/deox/compare/v2.1.3...v2.1.4) (2019-12-06)
+
+
+### Bug Fixes
+
+* generalize TActionCreator generic type in createHandlerMap ([a7dd90a](https://github.com/thebrodmann/deox/commit/a7dd90a)), closes [#128](https://github.com/thebrodmann/deox/issues/128)
+
 ## [2.1.2](https://github.com/thebrodmann/deox/compare/v2.1.1...v2.1.2) (2019-12-04)
 
 
