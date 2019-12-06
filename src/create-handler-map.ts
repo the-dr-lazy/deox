@@ -18,7 +18,7 @@ export type InferNextStateFromHandlerMap<
 > = THandlerMap extends HandlerMap<any, any, infer T> ? T : never
 
 export type CreateHandlerMap<TPrevState> = <
-  TActionCreator extends ActionCreator<string>,
+  TActionCreator extends ActionCreator<any>,
   TNextState extends TPrevState,
   TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
     ? T
@@ -37,7 +37,7 @@ export type CreateHandlerMap<TPrevState> = <
  * createHandlerMap([increment, increase], (state: number) => state + 1)
  */
 export function createHandlerMap<
-  TActionCreator extends ActionCreator<string>,
+  TActionCreator extends ActionCreator<any>,
   TPrevState,
   TNextState extends TPrevState,
   TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
@@ -49,11 +49,8 @@ export function createHandlerMap<
 ) {
   return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
     .map(getType)
-    .reduce<HandlerMap<TPrevState, TAction, TNextState>>(
-      (acc, type) => {
-        acc[type] = handler
-        return acc
-      },
-      {} as any
-    )
+    .reduce<HandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
+      acc[type] = handler
+      return acc
+    }, {} as any)
 }
