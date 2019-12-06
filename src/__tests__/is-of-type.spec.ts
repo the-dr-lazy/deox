@@ -9,119 +9,40 @@ describe('isOfType', () => {
     resolve => (value: number) => resolve(value)
   )
 
-  it('should work with single action type arg', () => {
-    expect(isOfType(increment.type, increment())).toBeTruthy()
-    expect(isOfType(decrement.type, increment())).toBeFalsy()
-    expect(isOfType(reset.type, reset(0))).toBeTruthy()
-  })
-
-  it('should work with multiple action type args', () => {
-    expect(
-      isOfType([increment.type, decrement.type, reset.type], increment())
-    ).toBeTruthy()
-    expect(isOfType([increment.type, reset.type], decrement())).toBeFalsy()
-    expect(isOfType([decrement.type, reset.type], reset(0))).toBeTruthy()
-  })
-
-  it('should work with single action arg', () => {
-    expect(isOfType(increment(), increment())).toBeTruthy()
-    expect(isOfType(decrement(), increment())).toBeFalsy()
-    expect(isOfType(reset(0), reset(1))).toBeTruthy()
-  })
-
-  it('should work with multiple action args', () => {
-    expect(
-      isOfType([increment(), decrement(), reset(0)], increment())
-    ).toBeTruthy()
-    expect(isOfType([increment(), reset(0)], decrement())).toBeFalsy()
-    expect(isOfType([decrement(), reset(0)], reset(0))).toBeTruthy()
-  })
-
-  it('should work with single action creator', () => {
-    expect(isOfType(increment, increment())).toBeTruthy()
-    expect(isOfType(decrement, increment())).toBeFalsy()
-    expect(isOfType(reset, reset(0))).toBeTruthy()
-  })
-
-  it('should work with multiple action creator args', () => {
-    expect(isOfType([increment, decrement, reset], increment())).toBeTruthy()
-    expect(isOfType([increment, reset], decrement())).toBeFalsy()
-    expect(isOfType([decrement, reset], reset(0))).toBeTruthy()
-  })
-
-  it('should work with multiple action type or action or action creator args', () => {
-    expect(
-      isOfType([increment.type, decrement(), reset], increment())
-    ).toBeTruthy()
-    expect(
-      isOfType([increment(), decrement, reset.type], increment())
-    ).toBeTruthy()
-    expect(
-      isOfType([increment, decrement.type, reset(0)], increment())
-    ).toBeTruthy()
-    expect(isOfType([increment.type, reset(0)], decrement())).toBeFalsy()
-    expect(isOfType([increment.type, reset], decrement())).toBeFalsy()
-    expect(isOfType([increment(), reset.type], decrement())).toBeFalsy()
-    expect(isOfType([increment(), reset], decrement())).toBeFalsy()
-    expect(isOfType([increment, reset.type], decrement())).toBeFalsy()
-    expect(isOfType([increment, reset(0)], decrement())).toBeFalsy()
-  })
-
-  it('should work with single action type arg (currying)', () => {
-    expect(isOfType(increment.type)(increment())).toBeTruthy()
-    expect(isOfType(decrement.type)(increment())).toBeFalsy()
-    expect(isOfType(reset.type)(reset(0))).toBeTruthy()
-  })
-
-  it('should work with multiple action type args (currying)', () => {
-    expect(
-      isOfType([increment.type, decrement.type, reset.type])(increment())
-    ).toBeTruthy()
-    expect(isOfType([increment.type, reset.type])(decrement())).toBeFalsy()
-    expect(isOfType([decrement.type, reset.type])(reset(0))).toBeTruthy()
-  })
-
-  it('should work with single action arg (currying)', () => {
-    expect(isOfType(increment())(increment())).toBeTruthy()
-    expect(isOfType(decrement())(increment())).toBeFalsy()
-    expect(isOfType(reset(0))(reset(1))).toBeTruthy()
-  })
-
-  it('should work with multiple action args (currying)', () => {
-    expect(
-      isOfType([increment(), decrement(), reset(0)])(increment())
-    ).toBeTruthy()
-    expect(isOfType([increment(), reset(0)])(decrement())).toBeFalsy()
-    expect(isOfType([decrement(), reset(0)])(reset(0))).toBeTruthy()
-  })
-
-  it('should work with single action creator (currying)', () => {
-    expect(isOfType(increment)(increment())).toBeTruthy()
-    expect(isOfType(decrement)(increment())).toBeFalsy()
-    expect(isOfType(reset)(reset(0))).toBeTruthy()
-  })
-
-  it('should work with multiple action creator args (currying)', () => {
-    expect(isOfType([increment, decrement, reset])(increment())).toBeTruthy()
-    expect(isOfType([increment, reset])(decrement())).toBeFalsy()
-    expect(isOfType([decrement, reset])(reset(0))).toBeTruthy()
-  })
-
-  it('should work with multiple action type or action or action creator args (currying)', () => {
-    expect(
-      isOfType([increment.type, decrement(), reset])(increment())
-    ).toBeTruthy()
-    expect(
-      isOfType([increment(), decrement, reset.type])(increment())
-    ).toBeTruthy()
-    expect(
-      isOfType([increment, decrement.type, reset(0)])(increment())
-    ).toBeTruthy()
-    expect(isOfType([increment.type, reset(0)])(decrement())).toBeFalsy()
-    expect(isOfType([increment.type, reset])(decrement())).toBeFalsy()
-    expect(isOfType([increment(), reset.type])(decrement())).toBeFalsy()
-    expect(isOfType([increment(), reset])(decrement())).toBeFalsy()
-    expect(isOfType([increment, reset.type])(decrement())).toBeFalsy()
-    expect(isOfType([increment, reset(0)])(decrement())).toBeFalsy()
-  })
+  it.each`
+    keys                                            | action          | expected
+    ${increment.type}                               | ${increment()}  | ${true}
+    ${decrement.type}                               | ${increment()}  | ${false}
+    ${reset.type}                                   | ${reset(0)}     | ${true}
+    ${[increment.type, decrement.type, reset.type]} | ${increment()}  | ${true}
+    ${[increment.type, reset.type]}                 | ${decrement()}  | ${false}
+    ${[decrement.type, reset.type]}                 | ${reset(0)}     | ${true}
+    ${increment()}                                  | ${increment()}  | ${true}
+    ${decrement()}                                  | ${increment()}  | ${false}
+    ${reset(0)}                                     | ${reset(1)}     | ${true}
+    ${[increment(), decrement(), reset(0)]}         | ${increment()}  | ${true}
+    ${[increment(), reset(0)]}                      | ${decrement()}  | ${false}
+    ${[decrement(), reset(1)]}                      | ${reset(0)}     | ${true}
+    ${increment}                                    | ${increment(0)} | ${true}
+    ${decrement}                                    | ${increment()}  | ${false}
+    ${reset}                                        | ${reset(0)}     | ${true}
+    ${[increment, decrement, reset]}                | ${increment()}  | ${true}
+    ${[increment, reset]}                           | ${decrement()}  | ${false}
+    ${[decrement, reset]}                           | ${reset(0)}     | ${true}
+    ${[increment.type, decrement(), reset]}         | ${increment()}  | ${true}
+    ${[increment(), decrement, reset.type]}         | ${increment()}  | ${true}
+    ${[increment, decrement.type, reset(0)]}        | ${increment()}  | ${true}
+    ${[increment.type, reset(0)]}                   | ${decrement()}  | ${false}
+    ${[increment.type, reset]}                      | ${decrement()}  | ${false}
+    ${[increment(), reset.type]}                    | ${decrement()}  | ${false}
+    ${[increment(), reset]}                         | ${decrement()}  | ${false}
+    ${[increment, reset.type]}                      | ${decrement()}  | ${false}
+    ${[increment, reset(0)]}                        | ${decrement()}  | ${false}
+  `(
+    'should return $expected with $keys and $action args',
+    ({ keys, action, expected }) => {
+      expect(isOfType(keys, action)).toBe(expected)
+      expect(isOfType(keys)(action)).toBe(expected)
+    }
+  )
 })
