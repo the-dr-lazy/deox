@@ -12,9 +12,6 @@
   <a href="https://codecov.io/gh/thebrodmann/deox">
     <img alt="Coverage Status" src="https://img.shields.io/codecov/c/gh/thebrodmann/deox.svg?style=flat-square">
   </a>
-  <a href="https://greenkeeper.io/">
-    <img alt="Greenkeeper Status" src="https://badges.greenkeeper.io/thebrodmann/deox.svg?style=flat-square">
-  </a>
   <a href="https://github.com/semantic-release/semantic-release">
     <img alt="Semantic Release" src="https://img.shields.io/badge/%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square">
   </a>
