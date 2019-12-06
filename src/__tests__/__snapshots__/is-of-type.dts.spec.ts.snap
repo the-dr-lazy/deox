@@ -1,37 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`isOfType incrementAction (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }"`;
+exports[`isOfType action (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }"`;
 
-exports[`isOfType isOfType([decrement, reset], reset(0)) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType action (type) should match snapshot 2`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; }"`;
 
-exports[`isOfType isOfType([decrement.type, reset.type])(reset(0)) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType action (type) should match snapshot 3`] = `"{ type: \\"[Counter] decrement\\"; }"`;
 
-exports[`isOfType isOfType([increment(), decrement(), reset(0)], increment()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType action (type) should match snapshot 4`] = `"{ type: \\"[Counter] reset\\"; payload: number; } | { type: \\"[Counter] decrement\\"; }"`;
 
-exports[`isOfType isOfType([increment(), decrement, reset.type])(increment()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType action (type) should match snapshot 5`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType isOfType([increment(), reset(0)])(decrement()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType action (type) should match snapshot 6`] = `"{ type: \\"[Counter] reset\\"; payload: number; } | { type: \\"[Counter] increment\\"; }"`;
 
-exports[`isOfType isOfType([increment(), reset.type])(decrement()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType action (type) should match snapshot 7`] = `"{ type: \\"[Counter] reset\\"; payload: number; } | { type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; }"`;
 
-exports[`isOfType isOfType([increment, decrement, reset])(increment()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType actions.filter(isOfType([decrement(), reset(0)])) (type) should match snapshot 1`] = `"(((<_T>(...args: any[]) => { type: \\"[Counter] decrement\\"; }) & { type: \\"[Counter] decrement\\"; toString(): \\"[Counter] decrement\\"; }) | (((value: number) => { type: \\"[Counter] reset\\"; payload: number; }) & { type: \\"[Counter] reset\\"; toString(): \\"[Counter] reset\\"; }))[]"`;
 
-exports[`isOfType isOfType([increment.type, decrement(), reset], increment()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType actions.filter(isOfType([increment.type, decrement(), reset])) (type) should match snapshot 1`] = `"(((<_T>(...args: any[]) => { type: \\"[Counter] increment\\"; }) & { type: \\"[Counter] increment\\"; toString(): \\"[Counter] increment\\"; }) | ((<_T>(...args: any[]) => { type: \\"[Counter] decrement\\"; }) & { type: \\"[Counter] decrement\\"; toString(): \\"[Counter] decrement\\"; }) | (((value: number) => { type: \\"[Counter] reset\\"; payload: number; }) & { type: \\"[Counter] reset\\"; toString(): \\"[Counter] reset\\"; }))[]"`;
 
-exports[`isOfType isOfType([increment.type, reset.type], decrement()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType actions.filter(isOfType([increment.type, decrement.type])) (type) should match snapshot 1`] = `"(((<_T>(...args: any[]) => { type: \\"[Counter] increment\\"; }) & { type: \\"[Counter] increment\\"; toString(): \\"[Counter] increment\\"; }) | ((<_T>(...args: any[]) => { type: \\"[Counter] decrement\\"; }) & { type: \\"[Counter] decrement\\"; toString(): \\"[Counter] decrement\\"; }))[]"`;
 
-exports[`isOfType isOfType([increment.type, reset], decrement()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType actions.filter(isOfType([reset, increment])) (type) should match snapshot 1`] = `"(((<_T>(...args: any[]) => { type: \\"[Counter] increment\\"; }) & { type: \\"[Counter] increment\\"; toString(): \\"[Counter] increment\\"; }) | (((value: number) => { type: \\"[Counter] reset\\"; payload: number; }) & { type: \\"[Counter] reset\\"; toString(): \\"[Counter] reset\\"; }))[]"`;
 
-exports[`isOfType isOfType(decrement, increment()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType actions.filter(isOfType(decrement())) (type) should match snapshot 1`] = `"((<_T>(...args: any[]) => { type: \\"[Counter] decrement\\"; }) & { type: \\"[Counter] decrement\\"; toString(): \\"[Counter] decrement\\"; })[]"`;
 
-exports[`isOfType isOfType(decrement.type)(increment()) (type) should match snapshot 1`] = `"boolean"`;
+exports[`isOfType actions.filter(isOfType(increment.type)) (type) should match snapshot 1`] = `"((<_T>(...args: any[]) => { type: \\"[Counter] increment\\"; }) & { type: \\"[Counter] increment\\"; toString(): \\"[Counter] increment\\"; })[]"`;
 
-exports[`isOfType isOfType(increment())(increment()) (type) should match snapshot 1`] = `"boolean"`;
-
-exports[`isOfType isOfType(increment.type, increment()) (type) should match snapshot 1`] = `"boolean"`;
-
-exports[`isOfType isOfType(reset(0), reset(1)) (type) should match snapshot 1`] = `"boolean"`;
-
-exports[`isOfType isOfType(reset)(reset(0)) (type) should match snapshot 1`] = `"boolean"`;
-
-exports[`isOfType resetAction (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
+exports[`isOfType actions.filter(isOfType(reset)) (type) should match snapshot 1`] = `"(((value: number) => { type: \\"[Counter] reset\\"; payload: number; }) & { type: \\"[Counter] reset\\"; toString(): \\"[Counter] reset\\"; })[]"`;

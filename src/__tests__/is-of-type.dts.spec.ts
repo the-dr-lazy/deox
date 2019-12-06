@@ -1,5 +1,6 @@
 import { isOfType } from '../is-of-type'
 import { createActionCreator } from '../create-action-creator'
+import { ActionType } from '../types'
 
 // @dts-jest:group isOfType
 
@@ -9,68 +10,69 @@ const reset = createActionCreator(
   '[Counter] reset',
   resolve => (value: number) => resolve(value)
 )
+const actions = [increment, decrement, reset]
+
+declare const action:
+  | ActionType<typeof increment>
+  | ActionType<typeof decrement>
+  | ActionType<typeof reset>
 
 {
   // @dts-jest:pass:snap
-  isOfType(increment.type, increment())
+  actions.filter(isOfType(increment.type))
 
   // @dts-jest:pass:snap
-  isOfType([increment.type, reset.type], decrement())
+  actions.filter(isOfType([increment.type, decrement.type]))
 
   // @dts-jest:pass:snap
-  isOfType(reset(0), reset(1))
+  actions.filter(isOfType(decrement()))
 
   // @dts-jest:pass:snap
-  isOfType([increment(), decrement(), reset(0)], increment())
+  actions.filter(isOfType([decrement(), reset(0)]))
 
   // @dts-jest:pass:snap
-  isOfType(decrement, increment())
+  actions.filter(isOfType(reset))
 
   // @dts-jest:pass:snap
-  isOfType([decrement, reset], reset(0))
+  actions.filter(isOfType([reset, increment]))
 
   // @dts-jest:pass:snap
-  isOfType([increment.type, decrement(), reset], increment())
-
-  // @dts-jest:pass:snap
-  isOfType([increment.type, reset], decrement())
-
-  // @dts-jest:pass:snap
-  isOfType(decrement.type)(increment())
-
-  // @dts-jest:pass:snap
-  isOfType([decrement.type, reset.type])(reset(0))
-
-  // @dts-jest:pass:snap
-  isOfType(increment())(increment())
-
-  // @dts-jest:pass:snap
-  isOfType([increment(), reset(0)])(decrement())
-
-  // @dts-jest:pass:snap
-  isOfType(reset)(reset(0))
-
-  // @dts-jest:pass:snap
-  isOfType([increment, decrement, reset])(increment())
-
-  // @dts-jest:pass:snap
-  isOfType([increment(), decrement, reset.type])(increment())
-
-  // @dts-jest:pass:snap
-  isOfType([increment(), reset.type])(decrement())
+  actions.filter(isOfType([increment.type, decrement(), reset]))
 }
 
 {
-  const incrementAction = increment()
-  const resetAction = reset(0)
-
-  if (isOfType([increment.type, decrement(), reset], incrementAction)) {
+  if (isOfType(increment.type, action)) {
     // @dts-jest:pass:snap
-    incrementAction // tslint:disable-line:no-unused-expression
+    action // tslint:disable-line:no-unused-expression
   }
 
-  if (isOfType([increment.type, decrement(), reset])(resetAction)) {
+  if (isOfType([increment.type, decrement.type], action)) {
     // @dts-jest:pass:snap
-    resetAction // tslint:disable-line:no-unused-expression
+    action // tslint:disable-line:no-unused-expression
+  }
+
+  if (isOfType(decrement())(action)) {
+    // @dts-jest:pass:snap
+    action // tslint:disable-line:no-unused-expression
+  }
+
+  if (isOfType([decrement(), reset(0)])(action)) {
+    // @dts-jest:pass:snap
+    action // tslint:disable-line:no-unused-expression
+  }
+
+  if (isOfType(reset)(action)) {
+    // @dts-jest:pass:snap
+    action // tslint:disable-line:no-unused-expression
+  }
+
+  if (isOfType([reset, increment], action)) {
+    // @dts-jest:pass:snap
+    action // tslint:disable-line:no-unused-expression
+  }
+
+  if (isOfType([increment.type, decrement(), reset])(action)) {
+    // @dts-jest:pass:snap
+    action // tslint:disable-line:no-unused-expression
   }
 }
