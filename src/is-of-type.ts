@@ -1,62 +1,49 @@
 import { Action, AnyAction } from './create-action'
 import { ActionCreator } from './create-action-creator'
 import { getType } from './get-type'
+import { castArray } from './utils'
 
 export function isOfType<
-  TType extends string | AnyAction | ActionCreator<string>,
+  TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
 >(
-  type: TType | TType[],
+  type: TSource | TSource[],
   action: TAction
 ): action is TAction extends Action<
-  TType extends string
-    ? TType
-    : TType extends AnyAction | ActionCreator<string>
-    ? TType['type']
+  TSource extends string
+    ? TSource
+    : TSource extends AnyAction | ActionCreator<AnyAction>
+    ? TSource['type']
     : never
 >
   ? TAction
   : never
 
 export function isOfType<
-  TType extends string | AnyAction | ActionCreator<string>
+  TSource extends string | AnyAction | ActionCreator<AnyAction>
 >(
-  type: TType | TType[]
+  type: TSource | TSource[]
 ): <TAction extends AnyAction>(
   action: TAction
 ) => action is TAction extends Action<
-  TType extends string
-    ? TType
-    : TType extends AnyAction | ActionCreator<string>
-    ? TType['type']
+  TSource extends string
+    ? TSource
+    : TSource extends AnyAction | ActionCreator<AnyAction>
+    ? TSource['type']
     : never
 >
   ? TAction
   : never
 
 export function isOfType<
-  TType extends string | AnyAction | ActionCreator<string>,
+  TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
->(typeOrTypes: TType | TType[], action?: TAction) {
-  const types = Array.isArray(typeOrTypes) ? typeOrTypes : [typeOrTypes]
+>(keys: TSource | TSource[], action?: TAction) {
+  const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
+    keys
+  ).map(key => (typeof key === 'string' ? key : getType(key)))
 
-  const isType = <TType>(type: unknown): type is TType & string =>
-    typeof type === 'string'
-  const isActionOrActionCreator = <TType>(
-    type: any
-  ): type is TType & (AnyAction | ActionCreator<string>) =>
-    (typeof type === 'object' || typeof type === 'function') &&
-    !!(type && type.type)
-
-  const assertFn = (action: TAction) =>
-    types.some(type => {
-      if (isType(type)) {
-        return type === action.type
-      }
-      if (isActionOrActionCreator<TType>(type)) {
-        return getType(type) === action.type
-      }
-    })
+  const assertFn = (action: TAction) => types.includes(action.type)
 
   // 1 arg case => return curried version
   if (action === undefined) {
