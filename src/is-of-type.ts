@@ -1,7 +1,8 @@
-import { Action, AnyAction } from './create-action'
+import { AnyAction } from './create-action'
 import { ActionCreator } from './create-action-creator'
 import { getType } from './get-type'
 import { castArray } from './utils'
+import { ExtractAction } from './types'
 
 /**
  * Non-curried function
@@ -24,15 +25,7 @@ export function isOfType<
 >(
   type: TSource | TSource[],
   action: TAction
-): action is TAction extends Action<
-  TSource extends string
-    ? TSource
-    : TSource extends AnyAction | ActionCreator<AnyAction>
-    ? TSource['type']
-    : never
->
-  ? TAction
-  : never
+): action is ExtractAction<TSource, TAction>
 
 /**
  * Curried function
@@ -51,15 +44,7 @@ export function isOfType<
   type: TSource | TSource[]
 ): <TAction extends AnyAction>(
   action: TAction
-) => action is TAction extends Action<
-  TSource extends string
-    ? TSource
-    : TSource extends AnyAction | ActionCreator<AnyAction>
-    ? TSource['type']
-    : never
->
-  ? TAction
-  : never
+) => action is ExtractAction<TSource, TAction>
 
 /**
  * Action type assertion helper
