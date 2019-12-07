@@ -10,7 +10,7 @@ const reset = createActionCreator(
   '[Counter] reset',
   resolve => (value: number) => resolve(value)
 )
-const actions = [increment, decrement, reset]
+const actions = [increment(), decrement(), reset(0)]
 
 declare const action:
   | ActionType<typeof increment>
