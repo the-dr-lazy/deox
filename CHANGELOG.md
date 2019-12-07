@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [3.0.1](https://github.com/thebrodmann/deox/compare/v3.0.0...v3.0.1) (2019-12-07)
+
+
+### Bug Fixes
+
+* generalize TActionCreator generic type in createHandlerMap ([9825477](https://github.com/thebrodmann/deox/commit/98254776533c6d1be5cfe07188b3724197c861a5)), closes [#128](https://github.com/thebrodmann/deox/issues/128)
+
 # [3.0.0](https://github.com/thebrodmann/deox/compare/v2.1.2...v3.0.0) (2019-12-04)
 
 
