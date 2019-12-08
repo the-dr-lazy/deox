@@ -19,7 +19,7 @@ export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
 >(
-  type: TSource | ReadonlyArray<TSource>,
+  keys: TSource | ReadonlyArray<TSource>,
   action: TAction
 ): action is ExtractAction<TSource, TAction>
 
@@ -37,7 +37,7 @@ export function isOfType<
 export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>
 >(
-  type: TSource | ReadonlyArray<TSource>
+  keys: TSource | ReadonlyArray<TSource>
 ): <TAction extends AnyAction>(
   action: TAction
 ) => action is ExtractAction<TSource, TAction>
