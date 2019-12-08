@@ -23,7 +23,7 @@ export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
 >(
-  type: TSource | TSource[],
+  type: TSource | ReadonlyArray<TSource>,
   action: TAction
 ): action is ExtractAction<TSource, TAction>
 
@@ -41,7 +41,7 @@ export function isOfType<
 export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>
 >(
-  type: TSource | TSource[]
+  type: TSource | ReadonlyArray<TSource>
 ): <TAction extends AnyAction>(
   action: TAction
 ) => action is ExtractAction<TSource, TAction>
@@ -67,7 +67,7 @@ export function isOfType<
 export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
->(keys: TSource | TSource[], action?: TAction) {
+>(keys: TSource | ReadonlyArray<TSource>, action?: TAction) {
   const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
     keys
   ).map(key => (typeof key === 'string' ? key : getType(key)))
