@@ -1,5 +1,13 @@
 # Deox Changelog
 
+# [3.1.0](https://github.com/thebrodmann/deox/compare/v3.0.1...v3.1.0) (2019-12-08)
+
+
+### Features
+
+* add isOfType helper ([#127](https://github.com/thebrodmann/deox/issues/127)) ([03e6210](https://github.com/thebrodmann/deox/commit/03e6210b9d2866ba0a99c5811254bdeb031ae738)), closes [#87](https://github.com/thebrodmann/deox/issues/87)
+* generalize isOfType keys argument to readonly array ([cc01d9d](https://github.com/thebrodmann/deox/commit/cc01d9dbd72ba59dbea4a1916e254c4ddfe9adfa))
+
 ## [3.0.1](https://github.com/thebrodmann/deox/compare/v3.0.0...v3.0.1) (2019-12-07)
 
 
