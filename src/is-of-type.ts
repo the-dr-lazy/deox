@@ -9,13 +9,9 @@ import { ExtractAction } from './types'
  * @example
  * const increment = createActionCreator('[Counter] increment')
  * const decrement = createActionCreator('[Counter] decrement')
- * const reset = createActionCreator(
- *   '[Counter] reset',
- *   resolve => (value: number) => resolve(value)
- * )
- * isOfType(increment.type, increment()) //=> true
+ * isOfType('[Counter] increment', increment()) //=> true
  * @example
- * isOfType([increment.type, decrement.type], increment()) //=> true
+ * isOfType(['[Counter] increment', '[Counter] decrement'], increment()) //=> true
  * @example
  * isOfType(decrement(), increment()) //=> false
  */
@@ -23,7 +19,7 @@ export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
 >(
-  type: TSource | TSource[],
+  keys: TSource | ReadonlyArray<TSource>,
   action: TAction
 ): action is ExtractAction<TSource, TAction>
 
@@ -32,16 +28,16 @@ export function isOfType<
  * @example
  * const increment = createActionCreator('[Counter] increment')
  * const decrement = createActionCreator('[Counter] decrement')
- * isOfType(increment.type)(increment()) //=> true
+ * isOfType('[Counter] increment')(increment()) //=> true
  * @example
- * isOfType([increment.type, decrement.type])(increment()) //=> true
+ * isOfType(['[Counter] increment', '[Counter] decrement'])(increment()) //=> true
  * @example
  * isOfType(decrement())(increment()) //=> false
  */
 export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>
 >(
-  type: TSource | TSource[]
+  keys: TSource | ReadonlyArray<TSource>
 ): <TAction extends AnyAction>(
   action: TAction
 ) => action is ExtractAction<TSource, TAction>
@@ -62,12 +58,12 @@ export function isOfType<
  * @example
  * isOfType([reset, increment], increment()) //=> true
  * @example
- * isOfType([increment.type, decrement(), reset], increment()) //=> true
+ * isOfType(['[Counter] increment', decrement(), reset], increment()) //=> true
  */
 export function isOfType<
   TSource extends string | AnyAction | ActionCreator<AnyAction>,
   TAction extends AnyAction
->(keys: TSource | TSource[], action?: TAction) {
+>(keys: TSource | ReadonlyArray<TSource>, action?: TAction) {
   const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
     keys
   ).map(key => (typeof key === 'string' ? key : getType(key)))
