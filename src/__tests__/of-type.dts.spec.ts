@@ -26,3 +26,6 @@ of(a(), b(), c()).pipe(ofType('a'))
 
 // @dts-jest:pass:snap
 of(a(), b(), c()).pipe(ofType(['a', 'b']))
+
+// @dts-jest:pass:snap
+of(a(), b(), c()).pipe(ofType(['a', b(), c]))

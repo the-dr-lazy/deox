@@ -77,4 +77,22 @@ describe('ofType', () => {
       keys: ['c', 'd', 'f'],
     },
   ])('should filter in with action type(s)', test)
+
+  it.each([
+    {
+      action: '  -a--b-^-c--d--e--f--c--h--|',
+      subs: '          ^-------------------!',
+      expected: '      --c-----------c-----|',
+      keys: 'c',
+    },
+    {
+      action: '  -a--b-^-c--d--e--f--c--h--|',
+      subs: '          ^-------------------!',
+      expected: '      --c--d-----f--c-----|',
+      keys: ['c', d(), f],
+    },
+  ])(
+    'should filter in with action type(s) or action(s) or action creator(s)',
+    test
+  )
 })

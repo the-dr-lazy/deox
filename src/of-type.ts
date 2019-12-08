@@ -1,10 +1,10 @@
-import { OperatorFunction } from 'rxjs'
 import { filter } from 'rxjs/operators'
 
 import { ActionCreator } from './create-action-creator'
-import { Action, AnyAction } from './create-action'
+import { AnyAction } from './create-action'
 import { getType } from './get-type'
 import { castArray } from './utils'
+import { ExtractAction } from './types'
 
 /**
  * Filter actions emitted by the source Observable by only emitting those that
@@ -22,27 +22,15 @@ import { castArray } from './utils'
  * )
  */
 export function ofType<
-  TSource extends AnyAction,
-  TActionCreator extends ActionCreator<TSource>,
->(
-  actionCreators: TActionCreator | ReadonlyArray<TActionCreator>
-): OperatorFunction<TSource, ReturnType<TActionCreator>>
-export function ofType<TSource extends AnyAction, TAction extends TSource>(
-  actions: TAction | ReadonlyArray<TAction>
-): OperatorFunction<TSource, TAction>
-export function ofType<
-  TSource extends AnyAction,
-  TType extends TSource['type']
->(
-  types: TType | ReadonlyArray<TType>
-): OperatorFunction<
-  TSource,
-  TSource extends Action<infer T> ? (T extends TType ? TSource : never) : never
->
-export function ofType(keys: ActionCreator<AnyAction> | AnyAction | string) {
-  const types = castArray(keys).map(key =>
-    typeof key === 'string' ? key : getType(key)
-  )
+  TSource extends string | AnyAction | ActionCreator<AnyAction>,
+  TAction extends AnyAction
+>(keys: TSource | ReadonlyArray<TSource>) {
+  const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
+    keys
+  ).map(key => (typeof key === 'string' ? key : getType(key)))
 
-  return filter<AnyAction>(action => types.includes(action.type))
+  return filter<TAction, ExtractAction<TSource, TAction>>(
+    (action): action is ExtractAction<TSource, TAction> =>
+      types.includes(action.type)
+  )
 }
