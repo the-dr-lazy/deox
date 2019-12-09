@@ -8,6 +8,7 @@ import { ofType } from '../of-type'
 const a = createActionCreator('a')
 const b = createActionCreator('b')
 const c = createActionCreator('c')
+const d = createActionCreator('d')
 
 // @dts-jest:pass:snap
 of(a(), b(), c()).pipe(ofType(a))
@@ -28,4 +29,4 @@ of(a(), b(), c()).pipe(ofType('a'))
 of(a(), b(), c()).pipe(ofType(['a', 'b']))
 
 // @dts-jest:pass:snap
-of(a(), b(), c()).pipe(ofType(['a', b(), c]))
+of(a(), b(), c(), d()).pipe(ofType(['a', b(), c]))
