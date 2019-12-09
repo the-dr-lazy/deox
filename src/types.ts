@@ -51,4 +51,16 @@ export type ActionType<
   T extends ActionCreator<AnyAction> | Reducer<any, Action<any>>
 > = T extends ActionCreator<AnyAction>
   ? ReturnType<T>
-  : (T extends Reducer<any, infer U> ? U : never)
+  : T extends Reducer<any, infer U>
+  ? U
+  : never
+
+export type ExtractAction<TKey, TAction> = TAction extends Action<
+  TKey extends string
+    ? TKey
+    : TKey extends AnyAction | ActionCreator<AnyAction>
+    ? TKey['type']
+    : never
+>
+  ? TAction
+  : never
