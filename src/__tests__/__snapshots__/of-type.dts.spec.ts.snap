@@ -2,7 +2,7 @@
 
 exports[`ofType of(a(), b(), c()).pipe(ofType('a')) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
 
-exports[`ofType of(a(), b(), c()).pipe(ofType(['a', 'b'])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+exports[`ofType of(a(), b(), c()).pipe(ofType(<const>['a', 'b'])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
 
 exports[`ofType of(a(), b(), c()).pipe(ofType([a(), b()])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
 
@@ -12,4 +12,4 @@ exports[`ofType of(a(), b(), c()).pipe(ofType(a())) (type) should match snapshot
 
 exports[`ofType of(a(), b(), c()).pipe(ofType(a)) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
 
-exports[`ofType of(a(), b(), c(), d()).pipe(ofType(['a', b(), c])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; } | { type: \\"c\\"; }>"`;
+exports[`ofType of(a(), b(), c(), d()).pipe(ofType(<const>['a', b(), c])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; } | { type: \\"c\\"; }>"`;

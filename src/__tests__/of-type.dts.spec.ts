@@ -26,7 +26,7 @@ of(a(), b(), c()).pipe(ofType([a(), b()]))
 of(a(), b(), c()).pipe(ofType('a'))
 
 // @dts-jest:pass:snap
-of(a(), b(), c()).pipe(ofType(['a', 'b']))
+of(a(), b(), c()).pipe(ofType(<const>['a', 'b']))
 
 // @dts-jest:pass:snap
-of(a(), b(), c(), d()).pipe(ofType(['a', b(), c]))
+of(a(), b(), c(), d()).pipe(ofType(<const>['a', b(), c]))

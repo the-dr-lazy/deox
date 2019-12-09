@@ -23,7 +23,7 @@ import { ExtractAction } from './types'
  */
 export function ofType<
   TSource extends AnyAction,
-  TKey extends string | AnyAction | ActionCreator<AnyAction>,
+  TKey extends TSource['type'] | TSource | ActionCreator<TSource>,
   TSink extends TSource = ExtractAction<TKey, TSource>
 >(keys: TKey | ReadonlyArray<TKey>) {
   const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
