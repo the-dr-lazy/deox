@@ -22,15 +22,15 @@ import { ExtractAction } from './types'
  * )
  */
 export function ofType<
-  TSource extends string | AnyAction | ActionCreator<AnyAction>,
-  TAction extends AnyAction
->(keys: TSource | ReadonlyArray<TSource>) {
+  TSource extends AnyAction,
+  TKey extends string | AnyAction | ActionCreator<AnyAction>,
+  TSink extends TSource = ExtractAction<TKey, TSource>
+>(keys: TKey | ReadonlyArray<TKey>) {
   const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
     keys
   ).map(key => (typeof key === 'string' ? key : getType(key)))
 
-  return filter<TAction, ExtractAction<TSource, TAction>>(
-    (action): action is ExtractAction<TSource, TAction> =>
-      types.includes(action.type)
+  return filter<TSource, TSink>((action): action is TSink =>
+    types.includes(action.type)
   )
 }
