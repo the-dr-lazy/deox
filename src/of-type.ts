@@ -2,8 +2,7 @@ import { filter } from 'rxjs/operators'
 
 import { ActionCreator } from './create-action-creator'
 import { AnyAction } from './create-action'
-import { getType } from './get-type'
-import { castArray } from './utils'
+import { isOfType } from './is-of-type'
 import { ExtractAction } from './types'
 
 /**
@@ -26,11 +25,5 @@ export function ofType<
   TKey extends TSource['type'] | TSource | ActionCreator<TSource>,
   TSink extends TSource = ExtractAction<TKey, TSource>
 >(keys: TKey | ReadonlyArray<TKey>) {
-  const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
-    keys
-  ).map(key => (typeof key === 'string' ? key : getType(key)))
-
-  return filter<TSource, TSink>((action): action is TSink =>
-    types.includes(action.type)
-  )
+  return filter<TSource, TSink>(isOfType(keys))
 }
