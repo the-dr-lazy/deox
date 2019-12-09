@@ -55,12 +55,13 @@ export type ActionType<
   ? U
   : never
 
-export type ExtractAction<TAction, TKey> = TAction extends Action<
-  TKey extends string
-    ? TKey
-    : TKey extends AnyAction | ActionCreator<AnyAction>
-    ? TKey['type']
-    : never
+export type ExtractAction<TAction, TKey> = Extract<
+  TAction,
+  Action<
+    TKey extends string
+      ? TKey
+      : TKey extends AnyAction | ActionCreator<AnyAction>
+      ? TKey['type']
+      : never
+  >
 >
-  ? TAction
-  : never
