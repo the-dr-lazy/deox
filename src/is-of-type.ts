@@ -18,7 +18,7 @@ import { ExtractAction } from './types'
 export function isOfType<
   TSource extends AnyAction,
   TKey extends string | AnyAction | ActionCreator<AnyAction>,
-  TSink extends TSource = ExtractAction<TKey, TSource>
+  TSink extends TSource = ExtractAction<TSource, TKey>
 >(keys: TKey | ReadonlyArray<TKey>, action: TSource): action is TSink
 
 /**
@@ -38,7 +38,7 @@ export function isOfType<
   keys: TKey | ReadonlyArray<TKey>
 ): <
   TSource extends AnyAction,
-  TSink extends TSource = ExtractAction<TKey, TSource>
+  TSink extends TSource = ExtractAction<TSource, TKey>
 >(
   action: TSource
 ) => action is TSink
