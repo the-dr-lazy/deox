@@ -16,12 +16,10 @@ import { ExtractAction } from './types'
  * isOfType(decrement(), increment()) //=> false
  */
 export function isOfType<
-  TSource extends string | AnyAction | ActionCreator<AnyAction>,
-  TAction extends AnyAction
->(
-  keys: TSource | ReadonlyArray<TSource>,
-  action: TAction
-): action is ExtractAction<TSource, TAction>
+  TSource extends AnyAction,
+  TKey extends string | AnyAction | ActionCreator<AnyAction>,
+  TSink extends TSource = ExtractAction<TKey, TSource>
+>(keys: TKey | ReadonlyArray<TKey>, action: TSource): action is TSink
 
 /**
  * Curried function
@@ -35,12 +33,15 @@ export function isOfType<
  * isOfType(decrement())(increment()) //=> false
  */
 export function isOfType<
-  TSource extends string | AnyAction | ActionCreator<AnyAction>
+  TKey extends string | AnyAction | ActionCreator<AnyAction>
 >(
-  keys: TSource | ReadonlyArray<TSource>
-): <TAction extends AnyAction>(
-  action: TAction
-) => action is ExtractAction<TSource, TAction>
+  keys: TKey | ReadonlyArray<TKey>
+): <
+  TSource extends AnyAction,
+  TSink extends TSource = ExtractAction<TKey, TSource>
+>(
+  action: TSource
+) => action is TSink
 
 /**
  * Action type assertion helper
@@ -61,14 +62,14 @@ export function isOfType<
  * isOfType(['[Counter] increment', decrement(), reset], increment()) //=> true
  */
 export function isOfType<
-  TSource extends string | AnyAction | ActionCreator<AnyAction>,
-  TAction extends AnyAction
->(keys: TSource | ReadonlyArray<TSource>, action?: TAction) {
+  TSource extends AnyAction,
+  TKey extends string | AnyAction | ActionCreator<AnyAction>
+>(keys: TKey | ReadonlyArray<TKey>, action?: TSource) {
   const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
     keys
   ).map(key => (typeof key === 'string' ? key : getType(key)))
 
-  const assertFn = (action: TAction) => types.includes(action.type)
+  const assertFn = (action: TSource) => types.includes(action.type)
 
   // 1 arg case => return curried version
   if (action === undefined) {
