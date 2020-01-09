@@ -22,7 +22,7 @@ import { ExtractAction } from './types'
  */
 export function ofType<
   TSource extends AnyAction,
-  TKey extends TSource['type'] | TSource | ActionCreator<TSource>,
+  TKey extends string | TSource | ActionCreator<TSource>,
   TSink extends TSource = ExtractAction<TSource, TKey>
 >(keys: TKey | ReadonlyArray<TKey>) {
   return filter<TSource, TSink>(isOfType(keys))
