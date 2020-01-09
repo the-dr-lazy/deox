@@ -13,3 +13,45 @@ exports[`ofType of(a(), b(), c()).pipe(ofType(a())) (type) should match snapshot
 exports[`ofType of(a(), b(), c()).pipe(ofType(a)) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
 
 exports[`ofType of(a(), b(), c(), d()).pipe(ofType(<const>['a', b(), c])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; } | { type: \\"c\\"; }>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType('a')) (type) should match snapshot 1`] = `"Observable<{ type: string; } & { type: \\"a\\"; }>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType(<const>['a', b(), c])) (type) should match snapshot 1`] = `"Observable<{ type: \\"b\\"; } | ({ type: string; } & { type: \\"a\\"; }) | { type: \\"c\\"; }>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType(['a', 'b'])) (type) should match snapshot 1`] = `"Observable<({ type: string; } & { type: \\"a\\"; }) | ({ type: string; } & { type: \\"b\\"; })>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType([a(), b()])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType([a, b])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType(a())) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+
+exports[`ofType of<AnyAction>().pipe(ofType(a)) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType('a')) (type) should match snapshot 1`] = `"Observable<Action<any> & { type: \\"a\\"; }>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType(<const>['a', b(), c])) (type) should match snapshot 1`] = `"Observable<{ type: \\"b\\"; } | { type: \\"c\\"; } | (Action<any> & { type: \\"a\\"; })>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType(['a', 'b'])) (type) should match snapshot 1`] = `"Observable<(Action<any> & { type: \\"a\\"; }) | (Action<any> & { type: \\"b\\"; })>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType([a(), b()])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType([a, b])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType(a())) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+
+exports[`ofType of<Redux.Action>().pipe(ofType(a)) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+
+exports[`ofType of<any>().pipe(ofType('a')) (type) should match snapshot 1`] = `"Observable<any>"`;
+
+exports[`ofType of<any>().pipe(ofType(<const>['a', b(), c])) (type) should match snapshot 1`] = `"Observable<any>"`;
+
+exports[`ofType of<any>().pipe(ofType(['a', 'b'])) (type) should match snapshot 1`] = `"Observable<any>"`;
+
+exports[`ofType of<any>().pipe(ofType([a(), b()])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+
+exports[`ofType of<any>().pipe(ofType([a, b])) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; } | { type: \\"b\\"; }>"`;
+
+exports[`ofType of<any>().pipe(ofType(a())) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;
+
+exports[`ofType of<any>().pipe(ofType(a)) (type) should match snapshot 1`] = `"Observable<{ type: \\"a\\"; }>"`;

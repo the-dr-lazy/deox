@@ -1,29 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`isOfType action (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }"`;
+exports[`isOfType action1 (type) should match snapshot 1`] = `"any"`;
 
-exports[`isOfType action (type) should match snapshot 2`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; }"`;
+exports[`isOfType action1 (type) should match snapshot 2`] = `"any"`;
 
-exports[`isOfType action (type) should match snapshot 3`] = `"{ type: \\"[Counter] decrement\\"; }"`;
+exports[`isOfType action1 (type) should match snapshot 3`] = `"{ type: \\"[Counter] decrement\\"; }"`;
 
-exports[`isOfType action (type) should match snapshot 4`] = `"{ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+exports[`isOfType action1 (type) should match snapshot 4`] = `"{ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType action (type) should match snapshot 5`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
+exports[`isOfType action1 (type) should match snapshot 5`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType action (type) should match snapshot 6`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+exports[`isOfType action1 (type) should match snapshot 6`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType action (type) should match snapshot 7`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+exports[`isOfType action1 (type) should match snapshot 7`] = `"any"`;
 
-exports[`isOfType actions.filter(isOfType([decrement(), reset(0)])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+exports[`isOfType action2 (type) should match snapshot 1`] = `"Action<any> & { type: \\"[Counter] increment\\"; }"`;
 
-exports[`isOfType actions.filter(isOfType([increment.type, decrement(), reset])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+exports[`isOfType action2 (type) should match snapshot 2`] = `"(Action<any> & { type: \\"[Counter] increment\\"; }) | (Action<any> & { type: \\"[Counter] decrement\\"; })"`;
 
-exports[`isOfType actions.filter(isOfType([increment.type, decrement.type])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; })[]"`;
+exports[`isOfType action2 (type) should match snapshot 3`] = `"{ type: \\"[Counter] decrement\\"; }"`;
 
-exports[`isOfType actions.filter(isOfType([reset, increment])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+exports[`isOfType action2 (type) should match snapshot 4`] = `"{ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType actions.filter(isOfType(decrement())) (type) should match snapshot 1`] = `"{ type: \\"[Counter] decrement\\"; }[]"`;
+exports[`isOfType action2 (type) should match snapshot 5`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType actions.filter(isOfType(increment.type)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }[]"`;
+exports[`isOfType action2 (type) should match snapshot 6`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
 
-exports[`isOfType actions.filter(isOfType(reset)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }[]"`;
+exports[`isOfType action2 (type) should match snapshot 7`] = `"{ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; } | (Action<any> & { type: \\"[Counter] increment\\"; })"`;
+
+exports[`isOfType action3 (type) should match snapshot 1`] = `"{ type: string; } & { type: \\"[Counter] increment\\"; }"`;
+
+exports[`isOfType action3 (type) should match snapshot 2`] = `"({ type: string; } & { type: \\"[Counter] increment\\"; }) | ({ type: string; } & { type: \\"[Counter] decrement\\"; })"`;
+
+exports[`isOfType action3 (type) should match snapshot 3`] = `"{ type: \\"[Counter] decrement\\"; }"`;
+
+exports[`isOfType action3 (type) should match snapshot 4`] = `"{ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action3 (type) should match snapshot 5`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action3 (type) should match snapshot 6`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action3 (type) should match snapshot 7`] = `"({ type: string; } & { type: \\"[Counter] increment\\"; }) | { type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 2`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 3`] = `"{ type: \\"[Counter] decrement\\"; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 4`] = `"{ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 5`] = `"{ type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 6`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType action4 (type) should match snapshot 7`] = `"{ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; }"`;
+
+exports[`isOfType actions1.filter(isOfType([decrement(), reset(0)])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions1.filter(isOfType([increment.type, decrement(), reset])) (type) should match snapshot 1`] = `"any[]"`;
+
+exports[`isOfType actions1.filter(isOfType([increment.type, decrement.type])) (type) should match snapshot 1`] = `"any[]"`;
+
+exports[`isOfType actions1.filter(isOfType([reset, increment])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions1.filter(isOfType(decrement())) (type) should match snapshot 1`] = `"{ type: \\"[Counter] decrement\\"; }[]"`;
+
+exports[`isOfType actions1.filter(isOfType(increment.type)) (type) should match snapshot 1`] = `"any[]"`;
+
+exports[`isOfType actions1.filter(isOfType(reset)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }[]"`;
+
+exports[`isOfType actions2.filter(isOfType([decrement(), reset(0)])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions2.filter(isOfType([increment.type, decrement(), reset])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; } | (Action<any> & { type: \\"[Counter] increment\\"; }))[]"`;
+
+exports[`isOfType actions2.filter(isOfType([increment.type, decrement.type])) (type) should match snapshot 1`] = `"((Action<any> & { type: \\"[Counter] increment\\"; }) | (Action<any> & { type: \\"[Counter] decrement\\"; }))[]"`;
+
+exports[`isOfType actions2.filter(isOfType([reset, increment])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions2.filter(isOfType(decrement())) (type) should match snapshot 1`] = `"{ type: \\"[Counter] decrement\\"; }[]"`;
+
+exports[`isOfType actions2.filter(isOfType(increment.type)) (type) should match snapshot 1`] = `"(Action<any> & { type: \\"[Counter] increment\\"; })[]"`;
+
+exports[`isOfType actions2.filter(isOfType(reset)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }[]"`;
+
+exports[`isOfType actions3.filter(isOfType([decrement(), reset(0)])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions3.filter(isOfType([increment.type, decrement(), reset])) (type) should match snapshot 1`] = `"(({ type: string; } & { type: \\"[Counter] increment\\"; }) | { type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions3.filter(isOfType([increment.type, decrement.type])) (type) should match snapshot 1`] = `"(({ type: string; } & { type: \\"[Counter] increment\\"; }) | ({ type: string; } & { type: \\"[Counter] decrement\\"; }))[]"`;
+
+exports[`isOfType actions3.filter(isOfType([reset, increment])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions3.filter(isOfType(decrement())) (type) should match snapshot 1`] = `"{ type: \\"[Counter] decrement\\"; }[]"`;
+
+exports[`isOfType actions3.filter(isOfType(increment.type)) (type) should match snapshot 1`] = `"({ type: string; } & { type: \\"[Counter] increment\\"; })[]"`;
+
+exports[`isOfType actions3.filter(isOfType(reset)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }[]"`;
+
+exports[`isOfType actions4.filter(isOfType([decrement(), reset(0)])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions4.filter(isOfType([increment.type, decrement(), reset])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions4.filter(isOfType([increment.type, decrement.type])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] decrement\\"; })[]"`;
+
+exports[`isOfType actions4.filter(isOfType([reset, increment])) (type) should match snapshot 1`] = `"({ type: \\"[Counter] increment\\"; } | { type: \\"[Counter] reset\\"; payload: number; })[]"`;
+
+exports[`isOfType actions4.filter(isOfType(decrement())) (type) should match snapshot 1`] = `"{ type: \\"[Counter] decrement\\"; }[]"`;
+
+exports[`isOfType actions4.filter(isOfType(increment.type)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] increment\\"; }[]"`;
+
+exports[`isOfType actions4.filter(isOfType(reset)) (type) should match snapshot 1`] = `"{ type: \\"[Counter] reset\\"; payload: number; }[]"`;
