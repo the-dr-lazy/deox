@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [3.2.1](https://github.com/thebrodmann/deox/compare/v3.2.0...v3.2.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* extract action from any, Redux.Action and AnyAction types ([18d0a9e](https://github.com/thebrodmann/deox/commit/18d0a9ec720e79c76df23fc7ae94f695aa3f5ae4)), closes [#141](https://github.com/thebrodmann/deox/issues/141)
+
 # [3.2.0](https://github.com/thebrodmann/deox/compare/v3.1.0...v3.2.0) (2019-12-09)
 
 
