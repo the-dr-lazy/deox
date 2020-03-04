@@ -5,31 +5,31 @@ exports[`createActionCreator createActionCreator(
       // tslint:disable-next-line:no-inferrable-types
       resolve => (name: string, completed: boolean = false) =>
         resolve({ name, completed })
-    ) (type) should match snapshot 1`] = `"((name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] add\\", (name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; }>"`;
 
 exports[`createActionCreator createActionCreator(
       '[Todo] add',
       // tslint:disable-next-line:no-inferrable-types
       resolve => (name: string, completed: boolean = false) =>
         resolve({ name, completed }, 'Meta data of all todos')
-    ) (type) should match snapshot 1`] = `"((name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; meta: string; }) & { type: \\"[Todo] add\\"; toString(): \\"[Todo] add\\"; }"`;
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] add\\", (name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; meta: string; }>"`;
 
 exports[`createActionCreator createActionCreator(
       '[Todo] fetch rejected',
       resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
-    ) (type) should match snapshot 1`] = `"((error: Error, meta?: { status: number; } | undefined) => { type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }) & { type: \\"[Todo] fetch rejected\\"; toString(): \\"[Todo] fetch rejected\\"; }"`;
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] fetch rejected\\", (error: Error, meta?: { status: number; } | undefined) => { type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }>"`;
 
 exports[`createActionCreator createActionCreator(
       '[Todo] generic',
       resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
-    ) (type) should match snapshot 1`] = `"(<Name, Meta>(name: Name, meta: Meta) => Action<\\"[Todo] generic\\", Name, Meta>) & { type: \\"[Todo] generic\\"; toString(): \\"[Todo] generic\\"; }"`;
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] generic\\", <Name, Meta>(name: Name, meta: Meta) => Action<\\"[Todo] generic\\", Name, Meta>>"`;
 
 exports[`createActionCreator createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
       resolve(error)
-    ) (type) should match snapshot 1`] = `"((error: Error) => { type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }) & { type: \\"[Todo] fetch rejected\\"; toString(): \\"[Todo] fetch rejected\\"; }"`;
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] fetch rejected\\", (error: Error) => { type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }>"`;
 
 exports[`createActionCreator createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
       resolve(name)
-    ) (type) should match snapshot 1`] = `"(<Name>(name: Name) => Action<\\"[Todo] generic\\", Name, undefined>) & { type: \\"[Todo] generic\\"; toString(): \\"[Todo] generic\\"; }"`;
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] generic\\", <Name>(name: Name) => Action<\\"[Todo] generic\\", Name, undefined>>"`;
 
-exports[`createActionCreator createActionCreator('[Todo] truncate') (type) should match snapshot 1`] = `"(<_T>(...args: any[]) => { type: \\"[Todo] truncate\\"; }) & { type: \\"[Todo] truncate\\"; toString(): \\"[Todo] truncate\\"; }"`;
+exports[`createActionCreator createActionCreator('[Todo] truncate') (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] truncate\\", () => { type: \\"[Todo] truncate\\"; }>"`;
