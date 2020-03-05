@@ -39,7 +39,44 @@ exports[`createActionCreator const todoVarArgs = createActionCreator(
       resolve => (...names: string[]) => resolve(names)
     ) (type) should match snapshot 1`] = `"any"`;
 
-exports[`createActionCreator todoAdd (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] add\\", (name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; }>"`;
+exports[`createActionCreator createActionCreator(
+      '[Todo] add',
+      // tslint:disable-next-line:no-inferrable-types
+      resolve => (name: string, completed: boolean = false) =>
+        resolve({ name, completed })
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] add\\", (name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; }>"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] add',
+      // tslint:disable-next-line:no-inferrable-types
+      resolve => (name: string, completed: boolean = false) =>
+        resolve({ name, completed }, 'Meta data of all todos')
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] add\\", (name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; meta: string; }>"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] fetch rejected',
+      resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] fetch rejected\\", (error: Error, meta?: { status: number; } | undefined) => { type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }>"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] generic',
+      resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] generic\\", <Name, Meta>(name: Name, meta: Meta) => Action<\\"[Todo] generic\\", Name, Meta>>"`;
+
+exports[`createActionCreator createActionCreator(
+      '[Todo] var-args',
+      resolve => (...names: string[]) => resolve(names)
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] var-args\\", (...names: string[]) => { type: \\"[Todo] var-args\\"; payload: string[]; }>"`;
+
+exports[`createActionCreator createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
+      resolve(error)
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] fetch rejected\\", (error: Error) => { type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }>"`;
+
+exports[`createActionCreator createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
+      resolve(name)
+    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] generic\\", <Name>(name: Name) => Action<\\"[Todo] generic\\", Name, undefined>>"`;
+
+exports[`createActionCreator createActionCreator('[Todo] truncate') (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] truncate\\", () => { type: \\"[Todo] truncate\\"; }>"`;
 
 exports[`createActionCreator todoAdd('buy presents') (type) should match snapshot 1`] = `"{ type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; }"`;
 
@@ -51,21 +88,15 @@ exports[`createActionCreator todoAdd() (type) should match snapshot 1`] = `"Expe
 
 exports[`createActionCreator todoAdd(false) (type) should match snapshot 1`] = `"Argument of type 'false' is not assignable to parameter of type 'string'."`;
 
-exports[`createActionCreator todoAdd2 (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] add\\", (name: string, completed?: boolean) => { type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; meta: string; }>"`;
-
 exports[`createActionCreator todoAdd2('buy presents') (type) should match snapshot 1`] = `"{ type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; meta: string; }"`;
 
 exports[`createActionCreator todoAdd2('buy presents', true) (type) should match snapshot 1`] = `"{ type: \\"[Todo] add\\"; payload: { name: string; completed: boolean; }; meta: string; }"`;
 
 exports[`createActionCreator todoAdd2() (type) should match snapshot 1`] = `"Expected 1-2 arguments, but got 0."`;
 
-exports[`createActionCreator todoFetchRejected (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] fetch rejected\\", (error: Error) => { type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }>"`;
-
 exports[`createActionCreator todoFetchRejected() (type) should match snapshot 1`] = `"Expected 1 arguments, but got 0."`;
 
 exports[`createActionCreator todoFetchRejected(new Error('')) (type) should match snapshot 1`] = `"{ type: \\"[Todo] fetch rejected\\"; payload: Error; error: true; }"`;
-
-exports[`createActionCreator todoFetchRejected2 (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] fetch rejected\\", (error: Error, meta?: { status: number; } | undefined) => { type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }>"`;
 
 exports[`createActionCreator todoFetchRejected2() (type) should match snapshot 1`] = `"Expected 1-2 arguments, but got 0."`;
 
@@ -79,8 +110,6 @@ exports[`createActionCreator todoFetchRejected2(new Error(''), { status: '' }) (
 
 exports[`createActionCreator todoFetchRejected2(new Error(''), { status: 200 }) (type) should match snapshot 1`] = `"{ type: \\"[Todo] fetch rejected\\"; payload: Error; meta: { status: number; }; error: true; }"`;
 
-exports[`createActionCreator todoGeneric (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] generic\\", <Name>(name: Name) => Action<\\"[Todo] generic\\", Name, undefined>>"`;
-
 exports[`createActionCreator todoGeneric('buy presents') (type) should match snapshot 1`] = `"{ type: \\"[Todo] generic\\"; payload: string; }"`;
 
 exports[`createActionCreator todoGeneric('buy presents', true) (type) should match snapshot 1`] = `"Expected 1 arguments, but got 2."`;
@@ -88,8 +117,6 @@ exports[`createActionCreator todoGeneric('buy presents', true) (type) should mat
 exports[`createActionCreator todoGeneric() (type) should match snapshot 1`] = `"Expected 1 arguments, but got 0."`;
 
 exports[`createActionCreator todoGeneric(false) (type) should match snapshot 1`] = `"{ type: \\"[Todo] generic\\"; payload: false; } | { type: \\"[Todo] generic\\"; payload: true; }"`;
-
-exports[`createActionCreator todoGeneric2 (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] generic\\", <Name, Meta>(name: Name, meta: Meta) => Action<\\"[Todo] generic\\", Name, Meta>>"`;
 
 exports[`createActionCreator todoGeneric2('The answer', 42) (type) should match snapshot 1`] = `"{ type: \\"[Todo] generic\\"; payload: string; meta: number; }"`;
 
@@ -101,13 +128,9 @@ exports[`createActionCreator todoGeneric2(42) (type) should match snapshot 1`] =
 
 exports[`createActionCreator todoGeneric2(42, 'The answer') (type) should match snapshot 1`] = `"{ type: \\"[Todo] generic\\"; payload: number; meta: string; }"`;
 
-exports[`createActionCreator todoTruncate (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] truncate\\", () => { type: \\"[Todo] truncate\\"; }>"`;
-
 exports[`createActionCreator todoTruncate('') (type) should match snapshot 1`] = `"Expected 0 arguments, but got 1."`;
 
 exports[`createActionCreator todoTruncate() (type) should match snapshot 1`] = `"{ type: \\"[Todo] truncate\\"; }"`;
-
-exports[`createActionCreator todoVarArgs (type) should match snapshot 1`] = `"ExactActionCreator<\\"[Todo] var-args\\", (...names: string[]) => { type: \\"[Todo] var-args\\"; payload: string[]; }>"`;
 
 exports[`createActionCreator todoVarArgs('Attend Christmas Party', 'Wish everyone a Merry Christmas') (type) should match snapshot 1`] = `"{ type: \\"[Todo] var-args\\"; payload: string[]; }"`;
 

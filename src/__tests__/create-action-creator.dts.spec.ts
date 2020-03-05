@@ -3,10 +3,10 @@ import { createActionCreator } from '../create-action-creator'
 // @dts-jest:group createActionCreator
 
 // @dts-jest:pass:snap
-const todoTruncate = createActionCreator('[Todo] truncate')
+createActionCreator('[Todo] truncate')
 
 // @dts-jest:pass:snap
-todoTruncate // tslint:disable-line:no-unused-expression
+const todoTruncate = createActionCreator('[Todo] truncate')
 
 // @dts-jest:fail:snap
 todoTruncate('')
@@ -15,12 +15,14 @@ todoTruncate('')
 todoTruncate()
 
 // @dts-jest:pass:snap
-const todoFetchRejected = createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
+createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
   resolve(error)
 )
 
 // @dts-jest:pass:snap
-todoFetchRejected // tslint:disable-line:no-unused-expression
+const todoFetchRejected = createActionCreator('[Todo] fetch rejected', resolve => (error: Error) =>
+  resolve(error)
+)
 
 // @dts-jest:fail:snap
 todoFetchRejected()
@@ -29,13 +31,16 @@ todoFetchRejected()
 todoFetchRejected(new Error(''))
 
 // @dts-jest:pass:snap
-const todoFetchRejected2 = createActionCreator(
+createActionCreator(
   '[Todo] fetch rejected',
   resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
 )
 
 // @dts-jest:pass:snap
-todoFetchRejected2 // tslint:disable-line:no-unused-expression
+const todoFetchRejected2 = createActionCreator(
+  '[Todo] fetch rejected',
+  resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)
+)
 
 // @dts-jest:fail:snap
 todoFetchRejected2()
@@ -50,7 +55,7 @@ todoFetchRejected2(new Error(''), { status: 200 })
 todoFetchRejected2(new Error(''), { status: '' })
 
 // @dts-jest:pass:snap
-const todoAdd = createActionCreator(
+createActionCreator(
   '[Todo] add',
   // tslint:disable-next-line:no-inferrable-types
   resolve => (name: string, completed: boolean = false) =>
@@ -58,7 +63,12 @@ const todoAdd = createActionCreator(
 )
 
 // @dts-jest:pass:snap
-todoAdd // tslint:disable-line:no-unused-expression
+const todoAdd = createActionCreator(
+  '[Todo] add',
+  // tslint:disable-next-line:no-inferrable-types
+  resolve => (name: string, completed: boolean = false) =>
+    resolve({ name, completed })
+)
 
 // @dts-jest:fail:snap
 todoAdd()
@@ -76,7 +86,7 @@ todoAdd('buy presents', true);
 todoAdd('buy presents', true, 42);
 
 // @dts-jest:pass:snap
-const todoAdd2 = createActionCreator(
+createActionCreator(
   '[Todo] add',
   // tslint:disable-next-line:no-inferrable-types
   resolve => (name: string, completed: boolean = false) =>
@@ -84,7 +94,12 @@ const todoAdd2 = createActionCreator(
 )
 
 // @dts-jest:pass:snap
-todoAdd2 // tslint:disable-line:no-unused-expression
+const todoAdd2 = createActionCreator(
+  '[Todo] add',
+  // tslint:disable-next-line:no-inferrable-types
+  resolve => (name: string, completed: boolean = false) =>
+    resolve({ name, completed }, 'Meta data of all todos')
+)
 
 // @dts-jest:fail:snap
 todoAdd2()
@@ -96,12 +111,14 @@ todoAdd2('buy presents');
 todoAdd2('buy presents', true);
 
 // @dts-jest:pass:snap
-const todoGeneric = createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
+createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
   resolve(name)
 )
 
 // @dts-jest:pass:snap
-todoGeneric // tslint:disable-line:no-unused-expression
+const todoGeneric = createActionCreator('[Todo] generic', resolve => <Name>(name: Name) =>
+  resolve(name)
+)
 
 // @dts-jest:fail:snap
 todoGeneric()
@@ -116,13 +133,16 @@ todoGeneric(false);
 todoGeneric('buy presents', true);
 
 // @dts-jest:pass:snap
-const todoGeneric2 = createActionCreator(
+createActionCreator(
   '[Todo] generic',
   resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
 )
 
 // @dts-jest:pass:snap
-todoGeneric2 // tslint:disable-line:no-unused-expression
+const todoGeneric2 = createActionCreator(
+  '[Todo] generic',
+  resolve => <Name, Meta>(name: Name, meta: Meta) => resolve(name, meta)
+)
 
 // @dts-jest:fail:snap
 todoGeneric2()
@@ -140,13 +160,16 @@ todoGeneric2('The answer', 42);
 todoGeneric2('The answer', 42, 'Zaphod');
 
 // @dts-jest:pass:snap
-const todoVarArgs = createActionCreator(
+createActionCreator(
   '[Todo] var-args',
   resolve => (...names: string[]) => resolve(names)
 )
 
 // @dts-jest:pass:snap
-todoVarArgs // tslint:disable-line:no-unused-expression
+const todoVarArgs = createActionCreator(
+  '[Todo] var-args',
+  resolve => (...names: string[]) => resolve(names)
+)
 
 // @dts-jest:fail:snap
 todoVarArgs(false)
