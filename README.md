@@ -36,7 +36,6 @@ Behold, the art of Deox:
 - **Minimalist** (almost no import cost) - checkout [Bundle Phobia](https://bundlephobia.com/result?p=deox@latest).
 - **Simple** - focused on self-declarative API.
 - **Secure** - complete test-suits for all of the edge and corners.
-- **Actively maintained** - monitoring issues and respond in a timely manner.
 
 ## Motivation
 
