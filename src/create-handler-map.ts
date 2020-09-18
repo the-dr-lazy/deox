@@ -78,6 +78,27 @@ handle.default = <
  * @example
  * createHandlerMap.default((state: number) => state + 1)
  */
-export const createHandlerMap = handle as typeof handle & { default: typeof handle.default }
+export const createHandlerMap = handle as (<
+  TActionCreator extends ActionCreator<any>,
+  TPrevState,
+  TNextState extends TPrevState,
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
+  >(
+  actionCreators: TActionCreator | TActionCreator[],
+  handler: Handler<TPrevState, TAction, TNextState>
+) => HandlerMap<TPrevState, TAction, TNextState>) & {
+  default: <
+    TActionCreator extends ActionCreator<any>,
+    TPrevState,
+    TNextState extends TPrevState,
+    TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+      ? T
+      : never
+    >(
+    handler: Handler<TPrevState, TAction, TNextState>
+  ) => { default: Handler<TPrevState, TAction, TNextState> }
+}
 
 
