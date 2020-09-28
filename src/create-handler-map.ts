@@ -17,56 +17,28 @@ export type InferNextStateFromHandlerMap<
   THandlerMap extends HandlerMap<any, any>
 > = THandlerMap extends HandlerMap<any, any, infer T> ? T : never
 
-export type CreateHandlerMap<TPrevState> = (<
-  TActionCreator extends ActionCreator<any>,
-  TNextState extends TPrevState,
-  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
-    ? T
-    : never
->(
-  actionCreators: TActionCreator | TActionCreator[],
-  handler: Handler<TPrevState, TAction, TNextState>
-) => HandlerMap<TPrevState, TAction, TNextState>) & {
-  default: <
-    TActionCreator extends ActionCreator<any>,
-    TNextState extends TPrevState,
-    TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
-      ? T
-      : never
-    >(
-    handler: Handler<TPrevState, TAction, TNextState>
-  ) => { default: Handler<TPrevState, TAction, TNextState> }
-}
+type InferActionFromCreator<TActionCreator> = TActionCreator extends (...args: any[]) => infer T ? T : never
 
-function handle<
+type CreateDefaultHandler<TPrevState> = <
   TActionCreator extends ActionCreator<any>,
-  TPrevState,
   TNextState extends TPrevState,
-  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
-    ? T
-    : never
+  TAction extends AnyAction = InferActionFromCreator<TActionCreator>
+  >(
+  handler: Handler<TPrevState, TAction, TNextState>
+) => { default: Handler<TPrevState, TAction, TNextState> }
+
+type CreateCustomHandlerMap<TPrevState> = <
+  TActionCreator extends ActionCreator<any>,
+  TNextState extends TPrevState,
+  TAction extends AnyAction = InferActionFromCreator<TActionCreator>
   >(
   actionCreators: TActionCreator | TActionCreator[],
   handler: Handler<TPrevState, TAction, TNextState>
-) {
-  return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
-    .map(getType)
-    .reduce<HandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
-      acc[type] = handler
-      return acc
-    }, {} as any)
-}
+) => HandlerMap<TPrevState, TAction, TNextState>
 
-handle.default = <
-  TActionCreator extends ActionCreator<any>,
-  TPrevState,
-  TNextState extends TPrevState,
-  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
-    ? T
-    : never
-  >(
-  handler: Handler<TPrevState, TAction, TNextState>
-) => ({ default: handler })
+export type CreateHandlerMap<TPrevState> = CreateCustomHandlerMap<TPrevState> & {
+  default: CreateDefaultHandler<TPrevState>
+}
 
 /**
  * Handler map factory
@@ -78,27 +50,30 @@ handle.default = <
  * @example
  * createHandlerMap.default((state: number) => state + 1)
  */
-export const createHandlerMap = handle as (<
-  TActionCreator extends ActionCreator<any>,
-  TPrevState,
-  TNextState extends TPrevState,
-  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
-    ? T
-    : never
-  >(
-  actionCreators: TActionCreator | TActionCreator[],
-  handler: Handler<TPrevState, TAction, TNextState>
-) => HandlerMap<TPrevState, TAction, TNextState>) & {
-  default: <
+export const createHandlerMap = Object.assign(
+  <
     TActionCreator extends ActionCreator<any>,
     TPrevState,
     TNextState extends TPrevState,
-    TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
-      ? T
-      : never
+    TAction extends AnyAction = InferActionFromCreator<TActionCreator>
     >(
+    actionCreators: TActionCreator | TActionCreator[],
     handler: Handler<TPrevState, TAction, TNextState>
-  ) => { default: Handler<TPrevState, TAction, TNextState> }
-}
-
-
+  ) => {
+    return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
+      .map(getType)
+      .reduce<HandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
+        acc[type] = handler
+        return acc
+      }, {} as any)
+  },
+  {
+    default: <TActionCreator extends ActionCreator<any>,
+      TPrevState,
+      TNextState extends TPrevState,
+      TAction extends AnyAction = InferActionFromCreator<TActionCreator>
+      >(
+      handler: Handler<TPrevState, TAction, TNextState>
+    ) => ({ default: handler })
+  }
+)
