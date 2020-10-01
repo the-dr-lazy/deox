@@ -1,5 +1,19 @@
 # Deox Changelog
 
+# [3.3.0](https://github.com/thebrodmann/deox/compare/v3.2.1...v3.3.0) (2020-10-01)
+
+
+### Bug Fixes
+
+* handle.others instead of handle.default ([ffe271b](https://github.com/thebrodmann/deox/commit/ffe271b664118eb28a233394f2f5641b65e76978))
+* more explicit typing to avoid TS4025 ([25b78c3](https://github.com/thebrodmann/deox/commit/25b78c34bcf40bde0747e0b39961788f59741f6a))
+* type for plain action creator. ([#144](https://github.com/thebrodmann/deox/issues/144)) ([f228b81](https://github.com/thebrodmann/deox/commit/f228b8179078dd68c2bd2e1789e94ef43a831ef1)), closes [#143](https://github.com/thebrodmann/deox/issues/143)
+
+
+### Features
+
+* default handler in createReducer ([0b3dfcf](https://github.com/thebrodmann/deox/commit/0b3dfcfc26e5dcbaa0e34a8888aa72ac266ae327)), closes [#152](https://github.com/thebrodmann/deox/issues/152)
+
 # [3.3.0](https://github.com/thebrodmann/deox/compare/v3.2.2...v3.3.0) (2020-10-01)
 
 
