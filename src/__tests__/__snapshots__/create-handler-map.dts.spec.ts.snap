@@ -4,4 +4,4 @@ exports[`createHandlerMap handle([increment, increase], (state: number) => state
 
 exports[`createHandlerMap handle(increment, (state: number) => state + 1) (type) should match snapshot 1`] = `"HandlerMap<number, { type: \\"[Counter] increment\\"; }, number>"`;
 
-exports[`createHandlerMap handle.default((state: number) => state + 1) (type) should match snapshot 1`] = `"{ default: Handler<number, any, number>; }"`;
+exports[`createHandlerMap handle.others((state: number) => state + 1) (type) should match snapshot 1`] = `"{ default: Handler<number, any, number>; }"`;

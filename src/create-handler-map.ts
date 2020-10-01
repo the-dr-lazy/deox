@@ -19,7 +19,7 @@ export type InferNextStateFromHandlerMap<
 
 type InferActionFromCreator<TActionCreator> = TActionCreator extends (...args: any[]) => infer T ? T : never
 
-type CreateDefaultHandler<TPrevState> = <
+type CreateOthersHandler<TPrevState> = <
   TActionCreator extends ActionCreator<any>,
   TNextState extends TPrevState,
   TAction extends AnyAction = InferActionFromCreator<TActionCreator>
@@ -37,7 +37,7 @@ type CreateCustomHandlerMap<TPrevState> = <
 ) => HandlerMap<TPrevState, TAction, TNextState>
 
 export type CreateHandlerMap<TPrevState> = CreateCustomHandlerMap<TPrevState> & {
-  default: CreateDefaultHandler<TPrevState>
+  others: CreateOthersHandler<TPrevState>
 }
 
 /**
@@ -68,7 +68,7 @@ export const createHandlerMap = Object.assign(
       }, {} as any)
   },
   {
-    default: <TActionCreator extends ActionCreator<any>,
+    others: <TActionCreator extends ActionCreator<any>,
       TPrevState,
       TNextState extends TPrevState,
       TAction extends AnyAction = InferActionFromCreator<TActionCreator>
