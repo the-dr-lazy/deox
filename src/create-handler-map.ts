@@ -17,28 +17,56 @@ export type InferNextStateFromHandlerMap<
   THandlerMap extends HandlerMap<any, any>
 > = THandlerMap extends HandlerMap<any, any, infer T> ? T : never
 
-type InferActionFromCreator<TActionCreator> = TActionCreator extends (...args: any[]) => infer T ? T : never
-
-type CreateDefaultHandler<TPrevState> = <
+export type CreateHandlerMap<TPrevState> = (<
   TActionCreator extends ActionCreator<any>,
   TNextState extends TPrevState,
-  TAction extends AnyAction = InferActionFromCreator<TActionCreator>
-  >(
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
+>(
+  actionCreators: TActionCreator | TActionCreator[],
   handler: Handler<TPrevState, TAction, TNextState>
-) => { default: Handler<TPrevState, TAction, TNextState> }
+) => HandlerMap<TPrevState, TAction, TNextState>) & {
+  default: <
+    TActionCreator extends ActionCreator<any>,
+    TNextState extends TPrevState,
+    TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+      ? T
+      : never
+    >(
+    handler: Handler<TPrevState, TAction, TNextState>
+  ) => { default: Handler<TPrevState, TAction, TNextState> }
+}
 
-type CreateCustomHandlerMap<TPrevState> = <
+function handle<
   TActionCreator extends ActionCreator<any>,
+  TPrevState,
   TNextState extends TPrevState,
-  TAction extends AnyAction = InferActionFromCreator<TActionCreator>
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
   >(
   actionCreators: TActionCreator | TActionCreator[],
   handler: Handler<TPrevState, TAction, TNextState>
-) => HandlerMap<TPrevState, TAction, TNextState>
-
-export type CreateHandlerMap<TPrevState> = CreateCustomHandlerMap<TPrevState> & {
-  default: CreateDefaultHandler<TPrevState>
+) {
+  return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
+    .map(getType)
+    .reduce<HandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
+      acc[type] = handler
+      return acc
+    }, {} as any)
 }
+
+handle.default = <
+  TActionCreator extends ActionCreator<any>,
+  TPrevState,
+  TNextState extends TPrevState,
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
+  >(
+  handler: Handler<TPrevState, TAction, TNextState>
+) => ({ default: handler })
 
 /**
  * Handler map factory
@@ -50,30 +78,27 @@ export type CreateHandlerMap<TPrevState> = CreateCustomHandlerMap<TPrevState> & 
  * @example
  * createHandlerMap.default((state: number) => state + 1)
  */
-export const createHandlerMap = Object.assign(
-  <
+export const createHandlerMap = handle as (<
+  TActionCreator extends ActionCreator<any>,
+  TPrevState,
+  TNextState extends TPrevState,
+  TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+    ? T
+    : never
+  >(
+  actionCreators: TActionCreator | TActionCreator[],
+  handler: Handler<TPrevState, TAction, TNextState>
+) => HandlerMap<TPrevState, TAction, TNextState>) & {
+  default: <
     TActionCreator extends ActionCreator<any>,
     TPrevState,
     TNextState extends TPrevState,
-    TAction extends AnyAction = InferActionFromCreator<TActionCreator>
+    TAction extends AnyAction = TActionCreator extends (...args: any[]) => infer T
+      ? T
+      : never
     >(
-    actionCreators: TActionCreator | TActionCreator[],
     handler: Handler<TPrevState, TAction, TNextState>
-  ) => {
-    return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
-      .map(getType)
-      .reduce<HandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
-        acc[type] = handler
-        return acc
-      }, {} as any)
-  },
-  {
-    default: <TActionCreator extends ActionCreator<any>,
-      TPrevState,
-      TNextState extends TPrevState,
-      TAction extends AnyAction = InferActionFromCreator<TActionCreator>
-      >(
-      handler: Handler<TPrevState, TAction, TNextState>
-    ) => ({ default: handler })
-  }
-)
+  ) => { default: Handler<TPrevState, TAction, TNextState> }
+}
+
+
