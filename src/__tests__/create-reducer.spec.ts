@@ -62,18 +62,18 @@ describe('createReducer', () => {
     const defaultCounterState = 0
 
     const handleReset = jest.fn(() => defaultCounterState);
-    const handleDefault = jest.fn((state: number, { payload }: Action<string, number>) => (
+    const handleOthers = jest.fn((state: number, { payload }: Action<string, number>) => (
       payload % 2 === 0 ? state + 1 : state
     ))
 
     const evenNumbersCounterReducer = createReducer(defaultCounterState, handleAction => [
       handleAction(resetCounter, handleReset),
-      handleAction.default(handleDefault)
+      handleAction.others(handleOthers)
     ])
 
     beforeEach(() => {
       handleReset.mockReset()
-      handleDefault.mockReset()
+      handleOthers.mockReset()
     })
 
     it('should initiate with default state when state is undefined', () => {
@@ -86,14 +86,14 @@ describe('createReducer', () => {
       expect(evenNumbersCounterReducer(5, resetCounter())).toBe(handleReset())
 
       expect(handleReset).toBeCalledTimes(2)
-      expect(handleDefault).not.toBeCalled()
+      expect(handleOthers).not.toBeCalled()
     })
 
     it('should calls the default handler when there is no proper handler', () => {
       const action = drawNumber(6)
 
       expect(evenNumbersCounterReducer(defaultCounterState, action)).toBe(
-        handleDefault(defaultCounterState, action)
+        handleOthers(defaultCounterState, action)
       )
     })
   })
