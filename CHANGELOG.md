@@ -1,18 +1,5 @@
 # Deox Changelog
 
-# [3.3.0](https://github.com/thebrodmann/deox/compare/v3.2.2...v3.3.0) (2020-10-01)
-
-
-### Bug Fixes
-
-* handle.others instead of handle.default ([f9aec53](https://github.com/thebrodmann/deox/commit/f9aec53a32acd72fa661ad9a216d5291764d1e89))
-* more explicit typing to avoid TS4025 ([e703730](https://github.com/thebrodmann/deox/commit/e703730104178496c23f683b150a72d8811e91bb))
-
-
-### Features
-
-* default handler in createReducer ([611184d](https://github.com/thebrodmann/deox/commit/611184d39167cac8007e3985d3adc791d82b2155)), closes [#152](https://github.com/thebrodmann/deox/issues/152)
-
 ## [3.2.2](https://github.com/thebrodmann/deox/compare/v3.2.1...v3.2.2) (2020-03-16)
 
 
