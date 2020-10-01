@@ -48,7 +48,7 @@ export type CreateHandlerMap<TPrevState> = CreateCustomHandlerMap<TPrevState> & 
  * @example
  * createHandlerMap([increment, increase], (state: number) => state + 1)
  * @example
- * createHandlerMap.default((state: number) => state + 1)
+ * createHandlerMap.others((state: number) => state + 1)
  */
 export const createHandlerMap = Object.assign(
   <
