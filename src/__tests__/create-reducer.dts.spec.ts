@@ -76,6 +76,6 @@ import { DeepImmutable } from '../types'
   // @dts-jest:pass:snap counter scenario
   createReducer(0, handleAction => [
     handleAction(increment, state => state + 1),
-    handleAction.default(() => 0),
+    handleAction.others(() => 0),
   ])
 }
