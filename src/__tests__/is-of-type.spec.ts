@@ -23,7 +23,7 @@ describe('isOfType', () => {
     ${[increment(), decrement(), reset(0)]}         | ${increment()}  | ${true}
     ${[increment(), reset(0)]}                      | ${decrement()}  | ${false}
     ${[decrement(), reset(1)]}                      | ${reset(0)}     | ${true}
-    ${increment}                                    | ${increment()}  | ${true}
+    ${increment}                                    | ${increment(0)} | ${true}
     ${decrement}                                    | ${increment()}  | ${false}
     ${reset}                                        | ${reset(0)}     | ${true}
     ${[increment, decrement, reset]}                | ${increment()}  | ${true}
