@@ -16,9 +16,4 @@ describe('createHandlerMap', () => {
       handle([increment, increase], (state: number) => state + 1)
     ).toMatchSnapshot()
   })
-
-  it('should put the handler by "default" key', () => {
-    const reducer = (state: number) => state + 1
-    expect(handle.default(reducer)).toEqual({ default: reducer });
-  })
 })

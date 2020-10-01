@@ -11,6 +11,3 @@ handle(increment, (state: number) => state + 1)
 
 // @dts-jest:pass:snap
 handle([increment, increase], (state: number) => state + 1)
-
-// @dts-jest:pass:snap
-handle.default((state: number) => state + 1)
