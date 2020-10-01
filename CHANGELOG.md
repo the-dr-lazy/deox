@@ -1,12 +1,5 @@
 # Deox Changelog
 
-## [3.2.2](https://github.com/thebrodmann/deox/compare/v3.2.1...v3.2.2) (2020-03-16)
-
-
-### Bug Fixes
-
-* type for plain action creator. ([#144](https://github.com/thebrodmann/deox/issues/144)) ([709fe60](https://github.com/thebrodmann/deox/commit/709fe605916ab806e9a9c94f4a56edd6ef65fb80)), closes [#143](https://github.com/thebrodmann/deox/issues/143)
-
 ## [3.2.1](https://github.com/thebrodmann/deox/compare/v3.2.0...v3.2.1) (2020-01-09)
 
 
