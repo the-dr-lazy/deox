@@ -3,11 +3,26 @@ import { AnyAction } from './create-action'
 import { getType } from './get-type'
 import { Handler } from './types'
 
-export type HandlerMap<
+export const othersHandlerKey = Symbol('others');
+
+type CustomHandlerMap<
   TPrevState,
   TAction extends AnyAction,
   TNextState extends TPrevState = TPrevState
 > = { [type in TAction['type']]: Handler<TPrevState, TAction, TNextState> }
+
+type OthersHandlerMap<
+  TPrevState,
+  TAction extends AnyAction,
+  TNextState extends TPrevState = TPrevState
+> = { [othersHandlerKey]?: Handler<TPrevState, TAction, TNextState> }
+
+export type HandlerMap<
+  TPrevState,
+  TAction extends AnyAction,
+  TNextState extends TPrevState = TPrevState
+> = CustomHandlerMap<TPrevState, TAction, TNextState> &
+  OthersHandlerMap<TPrevState, TAction, TNextState>
 
 export type InferActionFromHandlerMap<
   THandlerMap extends HandlerMap<any, any>
@@ -25,7 +40,7 @@ type CreateOthersHandler<TPrevState> = <
   TAction extends AnyAction = InferActionFromCreator<TActionCreator>
   >(
   handler: Handler<TPrevState, TAction, TNextState>
-) => { default: Handler<TPrevState, TAction, TNextState> }
+) => OthersHandlerMap<TPrevState, TAction, TNextState>
 
 type CreateCustomHandlerMap<TPrevState> = <
   TActionCreator extends ActionCreator<any>,
@@ -34,7 +49,7 @@ type CreateCustomHandlerMap<TPrevState> = <
   >(
   actionCreators: TActionCreator | TActionCreator[],
   handler: Handler<TPrevState, TAction, TNextState>
-) => HandlerMap<TPrevState, TAction, TNextState>
+) => CustomHandlerMap<TPrevState, TAction, TNextState>
 
 export type CreateHandlerMap<TPrevState> = CreateCustomHandlerMap<TPrevState> & {
   others: CreateOthersHandler<TPrevState>
@@ -62,18 +77,19 @@ export const createHandlerMap = Object.assign(
   ) => {
     return (Array.isArray(actionCreators) ? actionCreators : [actionCreators])
       .map(getType)
-      .reduce<HandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
+      .reduce<CustomHandlerMap<TPrevState, TAction, TNextState>>((acc, type) => {
         acc[type] = handler
         return acc
       }, {} as any)
   },
   {
-    others: <TActionCreator extends ActionCreator<any>,
+    others: <
+      TActionCreator extends ActionCreator<any>,
       TPrevState,
       TNextState extends TPrevState,
       TAction extends AnyAction = InferActionFromCreator<TActionCreator>
       >(
       handler: Handler<TPrevState, TAction, TNextState>
-    ) => ({ default: handler })
+    ) => ({ [othersHandlerKey]: handler }) as OthersHandlerMap<TPrevState, TAction, TNextState>
   }
 )

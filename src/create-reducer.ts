@@ -1,5 +1,6 @@
 import {
   createHandlerMap,
+  othersHandlerKey,
   CreateHandlerMap,
   HandlerMap,
   InferActionFromHandlerMap,
@@ -31,9 +32,10 @@ export function createReducer<
     action: InferActionFromHandlerMap<THandlerMap> | AnyAction
   ): InferNextStateFromHandlerMap<THandlerMap> => {
     const handler = handlerMap[(<any>action).type]
+    const othersHandler = handlerMap[othersHandlerKey]
 
     return handler ? handler(<any>state, action) :
-      handlerMap.default ? handlerMap.default(<any>state, action) :
+      othersHandler ? othersHandler(<any>state, action) :
         state
   }
 }
