@@ -31,11 +31,8 @@ export function createReducer<
     state = defaultState,
     action: InferActionFromHandlerMap<THandlerMap> | AnyAction
   ): InferNextStateFromHandlerMap<THandlerMap> => {
-    const handler = handlerMap[(<any>action).type]
-    const othersHandler = handlerMap[othersHandlerKey]
+    const handler = handlerMap[(<any>action).type] || handlerMap[othersHandlerKey]
 
-    return handler ? handler(<any>state, action) :
-      othersHandler ? othersHandler(<any>state, action) :
-        state
+    return handler ? handler(<any>state, action) : state
   }
 }
