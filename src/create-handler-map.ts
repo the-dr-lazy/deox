@@ -25,6 +25,13 @@ export type HandlerMap<
   | CustomHandlerMap<TPrevState, TAction, TNextState>
   | OthersHandlerMap<TPrevState, TAction, TNextState>
 
+export type MergedHandlerMap<
+  TPrevState,
+  TAction extends AnyAction,
+  TNextState extends TPrevState = TPrevState
+> = CustomHandlerMap<TPrevState, TAction, TNextState> &
+  OthersHandlerMap<TPrevState, TAction, TNextState>
+
 export type InferActionFromHandlerMap<
   THandlerMap extends HandlerMap<any, any>
 > = THandlerMap extends CustomHandlerMap<any, infer T> ? T : never
