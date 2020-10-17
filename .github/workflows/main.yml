@@ -3,6 +3,7 @@ on: [push, pull_request]
 jobs:
   test-build-release:
     runs-on: ubuntu-latest
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     steps:
       - uses: actions/checkout@v2
 
