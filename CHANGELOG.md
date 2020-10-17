@@ -1,5 +1,12 @@
 # Deox Changelog
 
+## [3.3.1](https://github.com/thebrodmann/deox/compare/v3.3.0...v3.3.1) (2020-10-17)
+
+
+### Bug Fixes
+
+* use symbol for the `others` handler ([f5b1cee](https://github.com/thebrodmann/deox/commit/f5b1ceecf35b515bdfd7984657740e6dcae13a35))
+
 # [3.3.0](https://github.com/thebrodmann/deox/compare/v3.2.1...v3.3.0) (2020-10-01)
 
 
