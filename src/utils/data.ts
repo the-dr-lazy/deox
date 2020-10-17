@@ -1,5 +1,4 @@
-export const merge = <T extends {}>(...objs: T[]): T =>
-  Object.assign({}, ...objs)
+export const merge = <T>(...objs: T[]): any => Object.assign({}, ...objs)
 
 export function castArray<TValue>(
   value: TValue | ReadonlyArray<TValue>

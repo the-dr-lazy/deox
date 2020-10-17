@@ -1,5 +1,5 @@
 import { createActionCreator } from '../create-action-creator'
-import { createHandlerMap as handle } from '../create-handler-map'
+import { createHandlerMap as handle, othersHandlerKey } from '../create-handler-map'
 
 describe('createHandlerMap', () => {
   it('should belong one action to one handler', () => {
@@ -19,6 +19,6 @@ describe('createHandlerMap', () => {
 
   it('should put the "others" handler by "default" key', () => {
     const reducer = (state: number) => state + 1
-    expect(handle.others(reducer)).toEqual({ default: reducer });
+    expect(handle.others(reducer)).toEqual({ [othersHandlerKey]: reducer });
   })
 })

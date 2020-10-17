@@ -1,9 +1,11 @@
 import {
   createHandlerMap,
+  othersHandlerKey,
   CreateHandlerMap,
   HandlerMap,
   InferActionFromHandlerMap,
   InferNextStateFromHandlerMap,
+  MergedHandlerMap,
 } from './create-handler-map'
 import { merge } from './utils'
 import { AnyAction } from './create-action'
@@ -24,16 +26,17 @@ export function createReducer<
   defaultState: TPrevState,
   handlerMapsCreator: (handle: CreateHandlerMap<TPrevState>) => THandlerMap[]
 ) {
-  const handlerMap = merge(...handlerMapsCreator(createHandlerMap))
+  const handlerMap: MergedHandlerMap<TPrevState, any, any> = merge(
+    ...handlerMapsCreator(createHandlerMap)
+  )
 
   return (
     state = defaultState,
     action: InferActionFromHandlerMap<THandlerMap> | AnyAction
   ): InferNextStateFromHandlerMap<THandlerMap> => {
-    const handler = handlerMap[(<any>action).type]
+    const handler =
+      handlerMap[(<AnyAction>action).type] || handlerMap[othersHandlerKey]
 
-    return handler ? handler(<any>state, action) :
-      handlerMap.default ? handlerMap.default(<any>state, action) :
-        state
+    return handler ? handler(<any>state, action) : state
   }
 }
