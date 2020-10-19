@@ -34,9 +34,7 @@ completeAllTodos() //=> { type: 'COMPLETE_ALL_TODOS' }
 ```ts
 import { createActionCreator } from 'deox'
 
-const addTodo = createActionCreator('ADD_TODO', resolve => (text: string) =>
-  resolve(text)
-)
+const addTodo = createActionCreator('ADD_TODO', resolve => (text: string) => resolve(text))
 addTodo('Read the docs') //=> { type: 'ADD_TODO', payload: 'Read the docs' }
 ```
 
@@ -45,10 +43,7 @@ addTodo('Read the docs') //=> { type: 'ADD_TODO', payload: 'Read the docs' }
 ```ts
 import { createActionCreator } from 'deox'
 
-const showTodos = createActionCreator(
-  'SHOW_TODOS',
-  resolve => (param: number) => resolve(undefined, param)
-)
+const showTodos = createActionCreator('SHOW_TODOS', resolve => (param: number) => resolve(undefined, param))
 showTodos(10) //=> { type: 'ADD_TODO', meta: 10 }
 ```
 
@@ -57,10 +52,7 @@ showTodos(10) //=> { type: 'ADD_TODO', meta: 10 }
 ```ts
 import { createActionCreator } from 'deox'
 
-const getTodo = createActionCreator(
-  'GET_TODO',
-  resolve => (id: number, meta: string) => resolve(id, meta)
-)
+const getTodo = createActionCreator('GET_TODO', resolve => (id: number, meta: string) => resolve(id, meta))
 getTodo(700, 'some-meta') //=> { type: 'GET_TODO', payload: 700, meta: 'some-meta' }
 ```
 
@@ -90,16 +82,14 @@ import { createActionCreator, createReducer } from 'deox'
 
 const increment = createActionCreator('INCREMENT')
 const decrement = createActionCreator('DECREMENT')
-const reset = createActionCreator('reset', resolve => (count: number) =>
-  resolve(count)
-)
+const reset = createActionCreator('reset', resolve => (count: number) => resolve(count))
 
 const defaultState = 0
 
 const counterReducer = createReducer(defaultState, handleAction => [
-  handleAction(increment, state => state + 1),
-  handleAction(decrement, state => state - 1),
-  handleAction(reset, (_, { payload }) => payload),
+    handleAction(increment, state => state + 1),
+    handleAction(decrement, state => state - 1),
+    handleAction(reset, (_, { payload }) => payload),
 ])
 ```
 
@@ -163,12 +153,7 @@ import { delay, mapTo } from 'rxjs/operators'
 
 const ping = createActionCreator('PING')
 
-const pingEpic = action$ =>
-  action$.pipe(
-    ofType(ping),
-    delay(1000),
-    mapTo({ type: 'PONG' })
-  )
+const pingEpic = action$ => action$.pipe(ofType(ping), delay(1000), mapTo({ type: 'PONG' }))
 ```
 
 #### With multiple action creators:
@@ -180,12 +165,7 @@ import { delay, mapTo } from 'rxjs/operators'
 const ping = createActionCreator('PING')
 const pong = createActionCreator('PONG')
 
-const pingPongEpic = action$ =>
-  action$.pipe(
-    ofType([ping, pong]),
-    delay(1000),
-    mapTo({ type: 'DONE' })
-  )
+const pingPongEpic = action$ => action$.pipe(ofType([ping, pong]), delay(1000), mapTo({ type: 'DONE' }))
 ```
 
 #### With action:
@@ -194,12 +174,7 @@ const pingPongEpic = action$ =>
 import { createActionCreator, ofType } from 'deox'
 import { delay, mapTo } from 'rxjs/operators'
 
-const pingEpic = action$ =>
-  action$.pipe(
-    ofType({ type: 'PING' }),
-    delay(1000),
-    mapTo({ type: 'PONG' })
-  )
+const pingEpic = action$ => action$.pipe(ofType({ type: 'PING' }), delay(1000), mapTo({ type: 'PONG' }))
 ```
 
 #### With action type:
@@ -208,12 +183,7 @@ const pingEpic = action$ =>
 import { createActionCreator, ofType } from 'deox'
 import { delay, mapTo } from 'rxjs/operators'
 
-const pingEpic = action$ =>
-  action$.pipe(
-    ofType('PING'),
-    delay(1000),
-    mapTo({ type: 'PONG' })
-  )
+const pingEpic = action$ => action$.pipe(ofType('PING'), delay(1000), mapTo({ type: 'PONG' }))
 ```
 
 ## _Action<Type, Payload, Meta>_

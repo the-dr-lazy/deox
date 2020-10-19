@@ -16,9 +16,9 @@ import { ExtractAction } from './types'
  * isOfType(decrement(), increment()) //=> false
  */
 export function isOfType<
-  TSource extends AnyAction,
-  TKey extends string | AnyAction | ActionCreator<AnyAction>,
-  TSink extends TSource = ExtractAction<TSource, TKey>
+    TSource extends AnyAction,
+    TKey extends string | AnyAction | ActionCreator<AnyAction>,
+    TSink extends TSource = ExtractAction<TSource, TKey>
 >(keys: TKey | ReadonlyArray<TKey>, action: TSource): action is TSink
 
 /**
@@ -32,16 +32,9 @@ export function isOfType<
  * @example
  * isOfType(decrement())(increment()) //=> false
  */
-export function isOfType<
-  TKey extends string | AnyAction | ActionCreator<AnyAction>
->(
-  keys: TKey | ReadonlyArray<TKey>
-): <
-  TSource extends AnyAction,
-  TSink extends TSource = ExtractAction<TSource, TKey>
->(
-  action: TSource
-) => action is TSink
+export function isOfType<TKey extends string | AnyAction | ActionCreator<AnyAction>>(
+    keys: TKey | ReadonlyArray<TKey>,
+): <TSource extends AnyAction, TSink extends TSource = ExtractAction<TSource, TKey>>(action: TSource) => action is TSink
 
 /**
  * Action type assertion helper
@@ -61,21 +54,19 @@ export function isOfType<
  * @example
  * isOfType(['[Counter] increment', decrement(), reset], increment()) //=> true
  */
-export function isOfType<
-  TSource extends AnyAction,
-  TKey extends string | AnyAction | ActionCreator<AnyAction>
->(keys: TKey | ReadonlyArray<TKey>, action?: TSource) {
-  const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(
-    keys
-  ).map(key => (typeof key === 'string' ? key : getType(key)))
+export function isOfType<TSource extends AnyAction, TKey extends string | AnyAction | ActionCreator<AnyAction>>(
+    keys: TKey | ReadonlyArray<TKey>,
+    action?: TSource,
+) {
+    const types = castArray<string | AnyAction | ActionCreator<AnyAction>>(keys).map(key => (typeof key === 'string' ? key : getType(key)))
 
-  const assertFn = (action: TSource) => types.includes(action.type)
+    const assertFn = (action: TSource) => types.includes(action.type)
 
-  // 1 arg case => return curried version
-  if (action === undefined) {
-    return assertFn
-  }
+    // 1 arg case => return curried version
+    if (action === undefined) {
+        return assertFn
+    }
 
-  // 2 args case => invoke assertFn and return the result
-  return assertFn(action)
+    // 2 args case => invoke assertFn and return the result
+    return assertFn(action)
 }

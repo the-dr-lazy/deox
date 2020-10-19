@@ -1,22 +1,22 @@
 $color: (
-  white: #ffffff,
-  big-stone: #152638,
-  blue-bayoux: #506173,
-  heather: #bdcad7,
-  dodger-blue: #208efe,
-  charade: #302c3c,
-  ship-gray: #413c4d,
-  whisper: #fbfafc,
-  santas-gray: #a19fa7,
-  spun-pearl: #a9a7ae,
-  zumthor: #ebf5ff,
+    white: #ffffff,
+    big-stone: #152638,
+    blue-bayoux: #506173,
+    heather: #bdcad7,
+    dodger-blue: #208efe,
+    charade: #302c3c,
+    ship-gray: #413c4d,
+    whisper: #fbfafc,
+    santas-gray: #a19fa7,
+    spun-pearl: #a9a7ae,
+    zumthor: #ebf5ff,
 );
 
 @function color($name) {
-  @if map-has-key($color, $name) {
-    @return map-get($color, $name);
-  }
+    @if map-has-key($color, $name) {
+        @return map-get($color, $name);
+    }
 
-  @warn "Unkown '#{$key}' in $color.";
-  @return null;
+    @warn "Unkown '#{$key}' in $color.";
+    @return null;
 }

@@ -5,17 +5,17 @@ $category-indicator-default-background-color: color(dodger-blue);
 $category-indicator-border-width: ratio(4px);
 
 .CategoryIndicator {
-  width: $category-indicator-width;
-  height: $category-indicator-height;
+    width: $category-indicator-width;
+    height: $category-indicator-height;
 
-  border-radius: $category-indicator-border-radius;
+    border-radius: $category-indicator-border-radius;
 
-  background-color: transparent;
-  border-style: solid;
-  border-width: $category-indicator-border-width;
+    background-color: transparent;
+    border-style: solid;
+    border-width: $category-indicator-border-width;
 
-  &--active {
-    background-color: $category-indicator-default-background-color;
-    border-color: transparent;
-  }
+    &--active {
+        background-color: $category-indicator-default-background-color;
+        border-color: transparent;
+    }
 }

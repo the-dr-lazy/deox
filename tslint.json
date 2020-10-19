@@ -1,7 +1,7 @@
 {
-  "defaultSeverity": "error",
-  "extends": ["@thebrodmann/tslint-config"],
-  "rules": {
-    "no-shadowed-variable": false
-  }
+    "defaultSeverity": "error",
+    "extends": ["@thebrodmann/tslint-config"],
+    "rules": {
+        "no-shadowed-variable": false
+    }
 }

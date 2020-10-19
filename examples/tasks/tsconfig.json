@@ -1,21 +1,21 @@
 {
-  "include": ["src/**/*"],
-  "compileOnSave": false,
-  "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "react",
-    "lib": ["dom", "es2018"],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "baseUrl": "./src",
-    "paths": {
-      "~/*": ["./*"]
-    },
-    "outDir": "./build"
-  }
+    "include": ["src/**/*"],
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "lib": ["dom", "es2018"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "baseUrl": "./src",
+        "paths": {
+            "~/*": ["./*"]
+        },
+        "outDir": "./build"
+    }
 }

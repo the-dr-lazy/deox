@@ -21,9 +21,9 @@ import { ExtractAction } from './types'
  * )
  */
 export function ofType<
-  TSource extends AnyAction,
-  TKey extends string | TSource | ActionCreator<TSource>,
-  TSink extends TSource = ExtractAction<TSource, TKey>
+    TSource extends AnyAction,
+    TKey extends string | TSource | ActionCreator<TSource>,
+    TSink extends TSource = ExtractAction<TSource, TKey>
 >(keys: TKey | ReadonlyArray<TKey>) {
-  return filter<TSource, TSink>(isOfType(keys))
+    return filter<TSource, TSink>(isOfType(keys))
 }

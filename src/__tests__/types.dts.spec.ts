@@ -1,7 +1,7 @@
 import { DeepImmutable, Immutable } from '../types'
 
 function displayType<T>(): T {
-  return <any>undefined
+    return <any>undefined
 }
 
 type User = { name: string; age: number; children: Users; parents: Users }

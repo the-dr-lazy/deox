@@ -1,19 +1,19 @@
 {
-  "include": ["src/**/*", "examples/**/*"],
-  "compileOnSave": false,
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": ["dom", "es2018"],
-    "strict": true,
-    "noUnusedLocals": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "declaration": false,
-    "baseUrl": ".",
-    "paths": {
-      "deox": ["./src"]
+    "include": ["src/**/*", "examples/**/*"],
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "lib": ["dom", "es2018"],
+        "strict": true,
+        "noUnusedLocals": true,
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "declaration": false,
+        "baseUrl": ".",
+        "paths": {
+            "deox": ["./src"]
+        }
     }
-  }
 }

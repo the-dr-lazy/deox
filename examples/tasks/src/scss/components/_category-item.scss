@@ -6,47 +6,47 @@ $category-item-border-radius: ratio(21px);
 $category-item-background-color: color(white);
 
 .CategoryItem {
-  width: $category-item-width;
-  height: $category-item-height;
-  padding: $category-item-vertical-padding $category-item-horizontal-padding;
+    width: $category-item-width;
+    height: $category-item-height;
+    padding: $category-item-vertical-padding $category-item-horizontal-padding;
 
-  border-radius: $category-item-border-radius;
+    border-radius: $category-item-border-radius;
 
-  box-shadow: 0 0 68px rgba(color(big-stone), 0.13);
+    box-shadow: 0 0 68px rgba(color(big-stone), 0.13);
 
-  display: grid;
-  grid-template-columns: auto $category-indicator-width;
-  grid-template-rows: $category-indicator-height auto;
-  grid-template-areas:
-    '. indicator'
-    'content .';
+    display: grid;
+    grid-template-columns: auto $category-indicator-width;
+    grid-template-rows: $category-indicator-height auto;
+    grid-template-areas:
+        '. indicator'
+        'content .';
 
-  justify-content: space-between;
-  align-content: space-between;
+    justify-content: space-between;
+    align-content: space-between;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  &__indicator {
-    grid-area: indicator;
-  }
+    &__indicator {
+        grid-area: indicator;
+    }
 
-  &__content {
-    grid-area: content;
+    &__content {
+        grid-area: content;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  &__label {
-    @extend .heading-4;
+    &__label {
+        @extend .heading-4;
 
-    grid-area: label;
-  }
+        grid-area: label;
+    }
 
-  &__value {
-    @extend .caption;
+    &__value {
+        @extend .caption;
 
-    grid-area: value;
-  }
+        grid-area: value;
+    }
 }

@@ -8,43 +8,43 @@ $app-description-top-margin: ratio(21px);
 $app-categories-top-margin: ratio(55px);
 
 .App {
-  display: grid;
-  grid-template-columns: auto ratio(144px) 50vw;
-  grid-template-rows: ratio(148px) auto;
-  grid-template-areas:
-    'introduction . header'
-    'introduction . main';
+    display: grid;
+    grid-template-columns: auto ratio(144px) 50vw;
+    grid-template-rows: ratio(148px) auto;
+    grid-template-areas:
+        'introduction . header'
+        'introduction . main';
 
-  &__introduction {
-    grid-area: introduction;
-    justify-self: end;
-    align-self: center;
+    &__introduction {
+        grid-area: introduction;
+        justify-self: end;
+        align-self: center;
 
-    padding: $app-introduction-vertical-padding 0;
-  }
+        padding: $app-introduction-vertical-padding 0;
+    }
 
-  &__brand {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    &__brand {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
 
-    margin-left: $app-brand-left-margin;
-  }
+        margin-left: $app-brand-left-margin;
+    }
 
-  &__description {
-    max-width: $app-description-max-width;
-    margin-top: $app-description-top-margin;
-  }
+    &__description {
+        max-width: $app-description-max-width;
+        margin-top: $app-description-top-margin;
+    }
 
-  &__categories {
-    margin-top: $app-categories-top-margin;
-  }
+    &__categories {
+        margin-top: $app-categories-top-margin;
+    }
 
-  &__header {
-    grid-area: header;
-  }
+    &__header {
+        grid-area: header;
+    }
 
-  &__main {
-    grid-area: main;
-  }
+    &__main {
+        grid-area: main;
+    }
 }

@@ -1,31 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createActionCreator createActionCreator(
-      'D',
-      // tslint:disable-next-line:no-inferrable-types
-      resolve => (name: string, completed: boolean = false) =>
-        resolve({ name, completed })
+        'D',
+        // tslint:disable-next-line:no-inferrable-types
+        resolve => (name: string, completed: boolean = false) => resolve({ name, completed }),
     ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"D\\", (name: string, completed?: boolean) => { type: \\"D\\"; payload: { name: string; completed: boolean; }; }>"`;
 
 exports[`createActionCreator createActionCreator(
-      'E',
-      // tslint:disable-next-line:no-inferrable-types
-      resolve => (name: string, completed: boolean = false) =>
-        resolve({ name, completed }, 'Meta')
+        'E',
+        // tslint:disable-next-line:no-inferrable-types
+        resolve => (name: string, completed: boolean = false) => resolve({ name, completed }, 'Meta'),
     ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"E\\", (name: string, completed?: boolean) => { type: \\"E\\"; payload: { name: string; completed: boolean; }; meta: string; }>"`;
 
 exports[`createActionCreator createActionCreator('A') (type) should match snapshot 1`] = `"ExactActionCreator<\\"A\\", () => { type: \\"A\\"; }>"`;
 
 exports[`createActionCreator createActionCreator('B', resolve => (error: Error) => resolve(error)) (type) should match snapshot 1`] = `"ExactActionCreator<\\"B\\", (error: Error) => { type: \\"B\\"; payload: Error; error: true; }>"`;
 
-exports[`createActionCreator createActionCreator('C', resolve => (error: Error, meta?: { status: number }) =>
-      resolve(error, meta)
-    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"C\\", (error: Error, meta?: { status: number; } | undefined) => { type: \\"C\\"; payload: Error; meta: { status: number; }; error: true; }>"`;
+exports[`createActionCreator createActionCreator('C', resolve => (error: Error, meta?: { status: number }) => resolve(error, meta)) (type) should match snapshot 1`] = `"ExactActionCreator<\\"C\\", (error: Error, meta?: { status: number; } | undefined) => { type: \\"C\\"; payload: Error; meta: { status: number; }; error: true; }>"`;
 
 exports[`createActionCreator createActionCreator('F', resolve => <TName>(name: TName) => resolve(name)) (type) should match snapshot 1`] = `"ExactActionCreator<\\"F\\", <TName>(name: TName) => Action<\\"F\\", TName, undefined>>"`;
 
-exports[`createActionCreator createActionCreator('G', resolve => <TName, TMeta>(name: TName, meta: TMeta) =>
-      resolve(name, meta)
-    ) (type) should match snapshot 1`] = `"ExactActionCreator<\\"G\\", <TName, TMeta>(name: TName, meta: TMeta) => Action<\\"G\\", TName, TMeta>>"`;
+exports[`createActionCreator createActionCreator('G', resolve => <TName, TMeta>(name: TName, meta: TMeta) => resolve(name, meta)) (type) should match snapshot 1`] = `"ExactActionCreator<\\"G\\", <TName, TMeta>(name: TName, meta: TMeta) => Action<\\"G\\", TName, TMeta>>"`;
 
 exports[`createActionCreator createActionCreator('H', resolve => (...names: string[]) => resolve(names)) (type) should match snapshot 1`] = `"ExactActionCreator<\\"H\\", (...names: string[]) => { type: \\"H\\"; payload: string[]; }>"`;

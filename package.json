@@ -1,112 +1,112 @@
 {
-  "name": "deox",
-  "version": "3.3.1",
-  "description": "Functional Type-safe Flux Standard Utilities",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/deox.umd.min.js",
-  "sideEffects": false,
-  "repository": "https://github.com/thebrodmann/deox",
-  "author": "Mohammad Hasani <atretoname@gmail.com> (https://github.com/thebrodmann)",
-  "license": "MIT",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test-tsc": "jest -c jest.tsc.config.js",
-    "test-tsc:watch": "npm run test-dts -- --watch",
-    "test-dts": "jest -c dts-jest.config.js",
-    "test-dts:watch": "npm run test-dts -- --watch",
-    "lint": "tslint -p .",
-    "lint:fix": "npm run lint -- --fix",
-    "lint:circleci": "circleci config validate",
-    "pretty": "prettier --write",
-    "prebuild": "npm run clean",
-    "build": "tsc -p tsconfig.build.json && rollup -c",
-    "postbuild": "rimraf tmp",
-    "docs:dev": "DEBUG=true docz dev",
-    "docs:build": "docz build",
-    "clean": "rimraf tmp dist coverage",
-    "prepare": "not-in-install || { npm run test-tsc && npm run test && npm run test-dts && npm run build; }"
-  },
-  "dependencies": {
-    "redux-starter-kit": "0.5.1"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
-    "@semantic-release/changelog": "^3.0.2",
-    "@semantic-release/commit-analyzer": "^7.0.0-beta.7",
-    "@semantic-release/git": "^7.1.0-beta.10",
-    "@semantic-release/github": "^5.6.0-beta.6",
-    "@semantic-release/npm": "^6.0.0-beta.7",
-    "@semantic-release/release-notes-generator": "^7.1.4",
-    "@thebrodmann/tslint-config": "0.2.1",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^10.12.18",
-    "codecov": "^3.1.0",
-    "docz": "^1.0.0-rc.7",
-    "docz-theme-default": "^1.0.0-rc.7",
-    "dts-jest": "^23.0.0",
-    "husky": "^2.0.0",
-    "in-publish": "^2.0.0",
-    "jest": "^24.0.0",
-    "jest-runner-tsc": "^1.5.1",
-    "lint-staged": "^8.1.0",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.14.4",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-filesize": "^6.0.0",
-    "rollup-plugin-node-resolve": "^5.0.0",
-    "rollup-plugin-sizes": "^0.5.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-terser": "^5.0.0",
-    "rxjs-marbles": "^5.0.0",
-    "semantic-release": "^16.0.0-beta.43",
-    "ts-jest": "^24.2.0",
-    "tslint": "^5.12.1",
-    "typescript": "~3.5.2"
-  },
-  "peerDependencies": {
-    "rxjs": ">=6.0.0-beta.0 <7",
-    "tslib": "^1.9.0"
-  },
-  "keywords": [
-    "reducer",
-    "action",
-    "typesafe",
-    "redux",
-    "react",
-    "angular",
-    "rxjs",
-    "ngrx",
-    "typescript",
-    "action-creator"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run lint && npm run test-tsc -- --bail && npm run test -- --bail && npm run test-dts -- --bail",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "name": "deox",
+    "version": "3.3.1",
+    "description": "Functional Type-safe Flux Standard Utilities",
+    "types": "dist/index.d.ts",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "unpkg": "dist/deox.umd.min.js",
+    "sideEffects": false,
+    "repository": "https://github.com/thebrodmann/deox",
+    "author": "Mohammad Hasani <atretoname@gmail.com> (https://github.com/thebrodmann)",
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test-tsc": "jest -c jest.tsc.config.js",
+        "test-tsc:watch": "npm run test-dts -- --watch",
+        "test-dts": "jest -c dts-jest.config.js",
+        "test-dts:watch": "npm run test-dts -- --watch",
+        "lint": "tslint -p .",
+        "lint:fix": "npm run lint -- --fix",
+        "lint:circleci": "circleci config validate",
+        "pretty": "prettier --write",
+        "prebuild": "npm run clean",
+        "build": "tsc -p tsconfig.build.json && rollup -c",
+        "postbuild": "rimraf tmp",
+        "docs:dev": "DEBUG=true docz dev",
+        "docs:build": "docz build",
+        "clean": "rimraf tmp dist coverage",
+        "prepare": "not-in-install || { npm run test-tsc && npm run test && npm run test-dts && npm run build; }"
+    },
+    "dependencies": {
+        "redux-starter-kit": "0.5.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@semantic-release/changelog": "^3.0.2",
+        "@semantic-release/commit-analyzer": "^7.0.0-beta.7",
+        "@semantic-release/git": "^7.1.0-beta.10",
+        "@semantic-release/github": "^5.6.0-beta.6",
+        "@semantic-release/npm": "^6.0.0-beta.7",
+        "@semantic-release/release-notes-generator": "^7.1.4",
+        "@thebrodmann/tslint-config": "0.2.1",
+        "@types/jest": "^24.0.0",
+        "@types/node": "^10.12.18",
+        "codecov": "^3.1.0",
+        "docz": "^1.0.0-rc.7",
+        "docz-theme-default": "^1.0.0-rc.7",
+        "dts-jest": "^23.0.0",
+        "husky": "^2.0.0",
+        "in-publish": "^2.0.0",
+        "jest": "^24.0.0",
+        "jest-runner-tsc": "^1.5.1",
+        "lint-staged": "^8.1.0",
+        "rimraf": "^2.6.3",
+        "rollup": "^1.14.4",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-filesize": "^6.0.0",
+        "rollup-plugin-node-resolve": "^5.0.0",
+        "rollup-plugin-sizes": "^0.5.0",
+        "rollup-plugin-sourcemaps": "^0.4.2",
+        "rollup-plugin-terser": "^5.0.0",
+        "rxjs-marbles": "^5.0.0",
+        "semantic-release": "^16.0.0-beta.43",
+        "ts-jest": "^24.2.0",
+        "tslint": "^5.12.1",
+        "typescript": "~3.5.2"
+    },
+    "peerDependencies": {
+        "rxjs": ">=6.0.0-beta.0 <7",
+        "tslib": "^1.9.0"
+    },
+    "keywords": [
+        "reducer",
+        "action",
+        "typesafe",
+        "redux",
+        "react",
+        "angular",
+        "rxjs",
+        "ngrx",
+        "typescript",
+        "action-creator"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "npm run lint && npm run test-tsc -- --bail && npm run test -- --bail && npm run test-dts -- --bail",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "*.ts": [
+            "npm run lint:fix --",
+            "git add",
+            "npm run test-tsc -- --bail --findRelatedTests",
+            "npm run test -- --bail --findRelatedTests",
+            "npm run test-dts -- --bail --findRelatedTests"
+        ],
+        "*.{md,mdx,json,js}": [
+            "npm run pretty --",
+            "git add"
+        ],
+        ".circleci/config.yml": [
+            "npm run lint:circleci"
+        ]
     }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "npm run lint:fix --",
-      "git add",
-      "npm run test-tsc -- --bail --findRelatedTests",
-      "npm run test -- --bail --findRelatedTests",
-      "npm run test-dts -- --bail --findRelatedTests"
-    ],
-    "*.{md,mdx,json,js}": [
-      "npm run pretty --",
-      "git add"
-    ],
-    ".circleci/config.yml": [
-      "npm run lint:circleci"
-    ]
-  }
 }

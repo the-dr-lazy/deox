@@ -1,81 +1,81 @@
 $modularscale: (
-  base: ratio(1rem),
-  ratio: $fourth,
+    base: ratio(1rem),
+    ratio: $fourth,
 );
 
 $font-weight: (
-  light: 300,
-  medium: 500,
-  semi-bold: 600,
-  bold: 700,
+    light: 300,
+    medium: 500,
+    semi-bold: 600,
+    bold: 700,
 );
 
 @function type-scale($level) {
-  @return ms($level);
+    @return ms($level);
 }
 
 @function font-weight($weight) {
-  @if map-has-key($font-weight, $weight) {
-    @return map-get($font-weight, $weight);
-  }
+    @if map-has-key($font-weight, $weight) {
+        @return map-get($font-weight, $weight);
+    }
 
-  @warn "Unkown '#{$key}' in $font-weight.";
-  @return null;
+    @warn "Unkown '#{$key}' in $font-weight.";
+    @return null;
 }
 
 @function line-height($level) {
-  @return $golden * ms($level);
+    @return $golden * ms($level);
 }
 
 @mixin type-setting($level: 0, $weight: medium) {
-  font-size: type-scale($level);
-  font-weight: font-weight($weight);
-  line-height: line-height($level);
+    font-size: type-scale($level);
+    font-weight: font-weight($weight);
+    line-height: line-height($level);
 }
 
 %reset-margin {
-  margin: 0;
+    margin: 0;
 }
 
 $heading-weights: (
-  1: bold,
-  2: semi-bold,
-  3: medium,
-  4: semi-bold,
-  5: semi-bold,
-  6: semi-bold,
+    1: bold,
+    2: semi-bold,
+    3: medium,
+    4: semi-bold,
+    5: semi-bold,
+    6: semi-bold,
 );
 
 @for $i from 1 through 6 {
-  .heading-#{$i} {
-    @extend %reset-margin;
-    @include type-setting(4 - $i, map-get($heading-weights, $i));
+    .heading-#{$i} {
+        @extend %reset-margin;
+        @include type-setting(4 - $i, map-get($heading-weights, $i));
 
-    color: color(big-stone);
-  }
+        color: color(big-stone);
+    }
 }
 
 .paragraph {
-  @extend %reset-margin;
-  @include type-setting();
+    @extend %reset-margin;
+    @include type-setting();
 
-  color: color(blue-bayoux);
+    color: color(blue-bayoux);
 }
 
 .anchor {
-  @extend %reset-margin;
+    @extend %reset-margin;
 
-  @include type-setting();
-  text-decoration: none;
+    @include type-setting();
+    text-decoration: none;
 
-  border-bottom: solid 1px color(dodger-blue);
+    border-bottom: solid 1px color(dodger-blue);
 
-  color: color(dodger-blue);
+    color: color(dodger-blue);
 }
 
 .caption {
-  @extend %reset-margin;
-  @include type-setting(-0.5);
+    @extend %reset-margin;
+    @include type-setting(-0.5);
 
-  color: color(heather);
+    color: color(heather);
 }

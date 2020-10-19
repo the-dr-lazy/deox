@@ -54,8 +54,8 @@ You can see all of these utilities at API reference page.
 
 The most important utility functions that Deox provides are:
 
-- [`createActionCreator`](/api-reference#createactioncreatortype-executor): creates an **action creator** by given action type (AKA [`createAction`](/api-reference#createactiontype-executor))
-- [`createReducer`](/api-reference#createreducerdefaultstate-handlermapscreator): creates a **reducer** by given default state and an array of action handlers
+-   [`createActionCreator`](/api-reference#createactioncreatortype-executor): creates an **action creator** by given action type (AKA [`createAction`](/api-reference#createactiontype-executor))
+-   [`createReducer`](/api-reference#createreducerdefaultstate-handlermapscreator): creates a **reducer** by given default state and an array of action handlers
 
 Let's see the famous simple counter example:
 
@@ -64,16 +64,14 @@ import { createActionCreator, createReducer } from 'deox'
 
 const increment = createActionCreator('INCREMENT')
 const decrement = createActionCreator('DECREMENT')
-const reset = createActionCreator('RESET', resolve => (count: number) =>
-  resolve(count)
-)
+const reset = createActionCreator('RESET', resolve => (count: number) => resolve(count))
 
 const defaultState = 0
 
 const counterReducer = createReducer(defaultState, handleAction => [
-  handleAction(increment, state => state + 1),
-  handleAction(decrement, state => state - 1),
-  handleAction(reset, (_state, { payload }) => payload),
+    handleAction(increment, state => state + 1),
+    handleAction(decrement, state => state - 1),
+    handleAction(reset, (_state, { payload }) => payload),
 ])
 
 counterReducer(undefined, increment()) //=> 1
@@ -89,7 +87,7 @@ How? It's Magic!
 
 The [Deox repository](https://github.com/thebrodmann/deox) contains several example demonstrating various aspects of how to use Deox.
 
-- **Tasks**: [Source](https://github.com/thebrodmann/deox/tree/master/examples/tasks)
+-   **Tasks**: [Source](https://github.com/thebrodmann/deox/tree/master/examples/tasks)
 
 ## Help and Discussion
 

@@ -5,16 +5,13 @@ import { createEpicMiddleware } from 'redux-observable'
 import { root as reducer, rootEpic as epic } from './root'
 
 const epicMiddlware = createEpicMiddleware({
-  dependencies: {},
+    dependencies: {},
 })
 
 export function configureStore() {
-  const store = createStore(
-    reducer,
-    composeWithDevTools(applyMiddleware(epicMiddlware))
-  )
+    const store = createStore(reducer, composeWithDevTools(applyMiddleware(epicMiddlware)))
 
-  epicMiddlware.run(epic)
+    epicMiddlware.run(epic)
 
-  return store
+    return store
 }

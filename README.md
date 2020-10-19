@@ -33,9 +33,9 @@ Behold, the art of Deox:
 
 ## Highlights
 
-- **Minimalist** (almost no import cost) - checkout [Bundle Phobia](https://bundlephobia.com/result?p=deox@latest).
-- **Simple** - focused on self-declarative API.
-- **Secure** - complete test-suits for all of the edge and corners.
+-   **Minimalist** (almost no import cost) - checkout [Bundle Phobia](https://bundlephobia.com/result?p=deox@latest).
+-   **Simple** - focused on self-declarative API.
+-   **Secure** - complete test-suits for all of the edge and corners.
 
 ## Motivation
 
@@ -84,16 +84,14 @@ import { createActionCreator, createReducer } from 'deox'
 
 const increment = createActionCreator('INCREMENT')
 const decrement = createActionCreator('DECREMENT')
-const reset = createActionCreator('RESET', resolve => (count: number) =>
-  resolve(count)
-)
+const reset = createActionCreator('RESET', resolve => (count: number) => resolve(count))
 
 const defaultState = 0
 
 const counterReducer = createReducer(defaultState, handleAction => [
-  handleAction(increment, state => state + 1),
-  handleAction(decrement, state => state - 1),
-  handleAction(reset, (_state, { payload }) => payload),
+    handleAction(increment, state => state + 1),
+    handleAction(decrement, state => state - 1),
+    handleAction(reset, (_state, { payload }) => payload),
 ])
 
 counterReducer(undefined, increment()) //=> 1
@@ -103,13 +101,13 @@ counterReducer(3, reset(0)) //=> 0
 
 ## Documentation
 
-- [Introduction](https://deox.js.org)
-- [Getting started](https://deox.js.org/getting-started)
-- [API reference](https://deox.js.org/api-reference)
-- [FAQ](https://deox.js.org/api-reference)
-  - [Using redux-thunk with Deox](https://deox.js.org/faq#using-redux-thunk-with-deox)
-  - [Using redux-saga with Deox](https://deox.js.org/faq#using-redux-saga-with-deox)
-  - [Using redux-observable with Deox](https://deox.js.org/faq#using-redux-observable-with-deox)
+-   [Introduction](https://deox.js.org)
+-   [Getting started](https://deox.js.org/getting-started)
+-   [API reference](https://deox.js.org/api-reference)
+-   [FAQ](https://deox.js.org/api-reference)
+    -   [Using redux-thunk with Deox](https://deox.js.org/faq#using-redux-thunk-with-deox)
+    -   [Using redux-saga with Deox](https://deox.js.org/faq#using-redux-saga-with-deox)
+    -   [Using redux-observable with Deox](https://deox.js.org/faq#using-redux-observable-with-deox)
 
 ## FAQ
 
@@ -171,8 +169,8 @@ Please read through our [contributing guidelines](CONTRIBUTING.md).
 
 ## Inspiration
 
-- [redux-actions](https://github.com/redux-utilities/redux-actions) - Flux Standard Action utilities for Redux
-- [typesafe-actions](https://github.com/piotrwitek/typesafe-actions) - Typesafe Action Creators for Redux / Flux Architectures (in TypeScript)
+-   [redux-actions](https://github.com/redux-utilities/redux-actions) - Flux Standard Action utilities for Redux
+-   [typesafe-actions](https://github.com/piotrwitek/typesafe-actions) - Typesafe Action Creators for Redux / Flux Architectures (in TypeScript)
 
 ## License
 

@@ -7,9 +7,9 @@ type Type = typeof type
 
 const viaType = { type: <Type>type }
 const viaToString = {
-  toString(): Type {
-    return type
-  },
+    toString(): Type {
+        return type
+    },
 }
 
 // @dts-jest:pass:snap

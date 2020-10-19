@@ -1,16 +1,16 @@
 {
-  "extends": "./tsconfig.json",
-  "files": ["./src/index.ts"],
-  "include": [],
-  "exclude": [],
-  "compilerOptions": {
-    "target": "es5",
-    "declaration": true,
-    "outDir": "./tmp",
-    "rootDir": "./src",
-    "declarationDir": "./dist",
-    "noEmitOnError": true,
-    "baseUrl": ".",
-    "paths": {}
-  }
+    "extends": "./tsconfig.json",
+    "files": ["./src/index.ts"],
+    "include": [],
+    "exclude": [],
+    "compilerOptions": {
+        "target": "es5",
+        "declaration": true,
+        "outDir": "./tmp",
+        "rootDir": "./src",
+        "declarationDir": "./dist",
+        "noEmitOnError": true,
+        "baseUrl": ".",
+        "paths": {}
+    }
 }
