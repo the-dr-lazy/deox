@@ -1,4 +1,4 @@
-export { configureStore } from 'redux-starter-kit'
+export { configureStore } from '@reduxjs/toolkit'
 
 export { createAction as action, Action, AnyAction } from './create-action'
 export { createActionCreator, createActionCreator as createAction, ActionCreator } from './create-action-creator'

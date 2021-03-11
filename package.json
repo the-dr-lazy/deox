@@ -1,6 +1,6 @@
 {
     "name": "deox",
-    "version": "3.3.1",
+    "version": "3.3.2",
     "description": "Functional Type-safe Flux Standard Utilities",
     "types": "dist/index.d.ts",
     "main": "dist/index.js",
@@ -33,7 +33,7 @@
         "prepare": "not-in-install || { npm run test-tsc && npm run test && npm run test-dts && npm run build; }"
     },
     "dependencies": {
-        "redux-starter-kit": "0.5.1"
+        "@reduxjs/toolkit": "^1.5.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^8.0.0",
