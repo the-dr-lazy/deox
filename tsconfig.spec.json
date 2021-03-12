@@ -2,7 +2,7 @@
     "extends": "./tsconfig.json",
     "include": ["./src/**/__tests__/*"],
     "compilerOptions": {
-        "target": "esnext",
+        "target": "es2019",
         "esModuleInterop": true
     }
 }
