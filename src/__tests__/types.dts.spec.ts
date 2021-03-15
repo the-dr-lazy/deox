@@ -28,7 +28,7 @@ displayType<Immutable<User>>()
 // @dts-jest:pass:snap
 displayType<Immutable<undefined[]>>()
 // @dts-jest:pass:snap
-displayType<Immutable<null[]>>()
+displayType<Immutable<Array<null>>>()
 // @dts-jest:pass:snap
 displayType<Immutable<boolean[]>>()
 // @dts-jest:pass:snap
@@ -114,7 +114,7 @@ displayType<DeepImmutable<User>>()
 // @dts-jest:pass:snap
 displayType<DeepImmutable<undefined[]>>()
 // @dts-jest:pass:snap
-displayType<DeepImmutable<null[]>>()
+displayType<DeepImmutable<Array<null>>>()
 // @dts-jest:pass:snap
 displayType<DeepImmutable<boolean[]>>()
 // @dts-jest:pass:snap
