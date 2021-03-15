@@ -6,4 +6,4 @@ exports[`createReducer counter scenario (type) should match snapshot 2`] = `"(st
 
 exports[`createReducer immutable items list scenario (type) should match snapshot 1`] = `"(state: DeepImmutableArray<Item> | undefined, action: { type: string; } | { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => DeepImmutableArray<Item> | DeepImmutableObject<Item>[]"`;
 
-exports[`createReducer mutable items list scenario (type) should match snapshot 1`] = `"(state: Item[] | undefined, action: { type: string; } | { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => Item[]"`;
+exports[`createReducer mutable items list scenario (type) should match snapshot 1`] = `"(state: ItemsState | undefined, action: { type: string; } | { type: \\"IDENTITY\\"; } | { type: \\"ADD_ITEM\\"; payload: string; } | { type: \\"REMOVE_ITEM\\"; payload: string; }) => ItemsState | Item[]"`;
