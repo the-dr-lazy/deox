@@ -1,5 +1,23 @@
 # Deox Changelog
 
+# [4.0.0](https://github.com/thebrodmann/deox/compare/v3.3.1...v4.0.0) (2021-03-15)
+
+
+### Features
+
+* remove `configureStore` function and dependency to @reduxjs/toolkit ([1f488a1](https://github.com/thebrodmann/deox/commit/1f488a1650729c13e70d48f31c07fa82e81923a2)), closes [#164](https://github.com/thebrodmann/deox/issues/164) [#151](https://github.com/thebrodmann/deox/issues/151)
+
+
+### BREAKING CHANGES
+
+* - `configureStore` function has been removed from public API.
+- There is no dependency to [redux-starter-kit](https://github.com/reduxjs/redux-toolkit) package
+anymore.
+- TypeScript version and `tslib` version has been bumped.
+
+Co-authored-by: Michael Schmid <michael.schmid@raisenow.com>
+Co-authored-by: Mohammad Hasani <the-dr-lazy@pm.me>
+
 ## [3.3.1](https://github.com/thebrodmann/deox/compare/v3.3.0...v3.3.1) (2020-10-17)
 
 ### Bug Fixes
