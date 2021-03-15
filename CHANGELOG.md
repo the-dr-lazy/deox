@@ -1,9 +1,5 @@
 # Deox Changelog
 
-## [3.3.2](https://github.com/thebrodmann/deox/compare/v3.3.0...v3.3.2) (2021-03-11)
-
--   Replace _redux-starter-kit_ with its successor @reduxjs/toolkit to fix a critical security issue in the immer dependency (see [Github advisory](https://github.com/advisories/GHSA-9qmh-276g-x5pj)).
-
 ## [3.3.1](https://github.com/thebrodmann/deox/compare/v3.3.0...v3.3.1) (2020-10-17)
 
 ### Bug Fixes
