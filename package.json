@@ -32,9 +32,6 @@
         "clean": "rimraf tmp dist coverage",
         "prepare": "not-in-install || { npm run test-tsc && npm run test && npm run test-dts && npm run build; }"
     },
-    "dependencies": {
-        "@reduxjs/toolkit": "^1.5.0"
-    },
     "devDependencies": {
         "@commitlint/cli": "^12.0.1",
         "@commitlint/config-conventional": "^12.0.1",
